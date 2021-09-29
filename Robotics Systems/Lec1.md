@@ -16,7 +16,7 @@
 
 ![ ](./pics/Webots_ArenaFloor.png)
 
-## Labsheet1
+## Lab
 
 >有关实验过程演示的视频(已搬运到b站，安心食用）：
 
@@ -26,7 +26,7 @@
 
 ### 1. Getting started
 
-关于 webots 界面的操作方法可以查看 [webots 的官方介绍](https://cyberbotics.com/doc/guide/getting-started-with-webots)，这里就不再多说，直接看老师提供的控制器代码，由于是用 C 写的实在太丑了，打算改成 C++ 面向对象的程序。
+关于 webots 界面的操作方法可以查看 [webots 的官方介绍](https://cyberbotics.com/doc/guide/getting-started-with-webots)，这里就不再多说，直接看老师提供的控制器代码。
 
 **老师提供的代码**
 
@@ -230,8 +230,14 @@ void delay_ms( float ms ) {
 }
 ```
 
-#### 1.1 将 C 改成 cpp
+#### 1.1 将编辑器换成 vscode
 
-```cpp
+![ ](./pics/2.png)
 
-```
+win 上的 `webots` 的界面实在是太丑了，还是换到我熟悉的 `vscode` 比较舒服。
+
+只需要做一步，就是把 `webots` 库的路径添加进 `vscode` 就可以了。使用快捷键 `f1` 打开搜索栏，再输入 `C/C++:Edit Configuration(JSON)` 打开配置文件，添加你安装`webots`的路径`xxx\\Webots\\include\\**"`，就可以在`vscode`上进行开发了。
+
+![ ](pics/3.png)
+
+#### 1.2 将程序修改成 C++ 面向对象的风格
