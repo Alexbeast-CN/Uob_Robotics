@@ -236,8 +236,132 @@ void delay_ms( float ms ) {
 
 win 上的 `webots` 的界面实在是太丑了，还是换到我熟悉的 `vscode` 比较舒服。
 
-只需要做一步，就是把 `webots` 库的路径添加进 `vscode` 就可以了。使用快捷键 `f1` 打开搜索栏，再输入 `C/C++:Edit Configuration(JSON)` 打开配置文件，添加你安装`webots`的路径`xxx\\Webots\\include\\**"`，就可以在`vscode`上进行开发了。
+只需要做一步，就是把 `webots` 库的路径添加进 `vscode` 就可以了。使用快捷键 `f1` 打开搜索栏，再输入 `C/C++:Edit Configuration(JSON)` 打开配置文件，添加你安装`webots`的路径`"xxx\\Webots\\include\\**"`，就可以在`vscode`上进行开发了。
 
 ![ ](pics/3.png)
 
-#### 1.2 将程序修改成 C++ 面向对象的风格
+#### 1.2 Exercise 1: Motor Velocity (2hours)
+
+1. Conduct some research: what type of motor does the real e-puck use to rotate it's wheels?  
+ - what are some advantages to this type of motor?
+ - what are some disadvantages to this type of motor?
+
+**Ans:** 
+E-puck robot uses typically DC motors without encoder.
+ - The advantages for DC motor without encoder are each and easy to control.
+ - The disadvantages for it are unreliable due to cumulative error. 
+
+ref: http://users.softlab.ntua.gr/~ktzaf/Courses/epuck-robotica2009.pdf
+
+2. Explore: Write a controller to have your robot move fowards continuously.
+
+**Ans:**
+Change the code block as follows to move the robot fowards:
+```c
+void moving_forwards()
+{  
+wb_motor_set_velocity(left_motor, 1.0);
+wb_motor_set_velocity(right_motor, 1.0);
+}
+```
+
+3. Explore: Write a controller to have your robot move backwards continuously.
+
+**Ans:**
+Change the code block as follows to move the robot backwards:
+```c
+void moving_backwards()
+{
+wb_motor_set_velocity(left_motor, -1.0);
+wb_motor_set_velocity(right_motor, -1.0);
+}
+```
+
+4. Explore: Find the maximum and minimum velocities which can be used with the motors.
+
+**Ans:**
+
+
+5. Solve: Write a controller to increment a positive motor velocity on each simulation time step to maximum velocity, and then to decrement the motor velocity back to zero at each time step.
+ - tip: create a variable to store the last motor velocity used.  
+ - tip: it might be useful to create a variable to store whether you are currently incrementing or decrementing the motor velocity.
+ - tip: remember to consider `local` and `global` scope of variables.
+
+6. Explore: Write a controller to have your robot rotate on the spot (i.e. no forward or backward movement).
+ - which pair of values cause the robot to rotate left?
+ - which pair values cause the robot to rotate right?
+
+**Ans:**
+Change the code block as follows to move the robot rotate right:
+```c
+void rotate_right()
+{
+wb_motor_set_velocity(left_motor, 1.0);
+wb_motor_set_velocity(right_motor, -1.0);
+}
+```
+
+Change the code block as follows to move the robot rotate left:
+```c
+void rotate_left()
+{
+wb_motor_set_velocity(left_motor, -1.0);
+wb_motor_set_velocity(right_motor, 1.0);
+}
+  
+```
+
+7. Solve: Find the best motor velocities to have your robot move on an arc, to trace the same half-circle curve of the provided line following map. 
+
+#### 1.3 Exercise 2: Time (3hours)
+
+1. When your (simulated or real) robot reads the time that has passed since it was activated, is this **`exteroceptive`** or **`proprioceptive`** information?
+
+**Ans:**
+The time is proprioceptive information.
+
+2. Solve: Use `wb_robot_get_time()` to program your robot to drive forwards for the first 4 seconds of simulation, and then stop.
+
+**Ans:**
+Add a condition to motor speed code block in the loop function:
+
+```c
+void loop() {
+...
+if (wb_robot_get_time() < 4.0)
+{
+  moving_forwards();
+}
+else
+{
+  stop_moving();
+}
+...
+}
+```
+3. Solve: Write some code so that your robot drives forwards for 2 seconds, then stops for 2 seconds, and can repeat this procedure endlessly. 
+  - **help**: to implement this, considering capturing the **`elapsed time`** (or difference in time, `dt`).  You can use `global variables` to operate as `time stamps` - a variable to record the time value on specific events.
+  - **help**: it is useful to write a function to operate as a timer to return a `true` or `false` value if a requested period of time has elapsed.
+
+**Ans：**
+Add a condition to motor speed code block in the loop function:
+
+```c
+void loop() {
+...
+double dt = 2;
+
+```
+
+4. Solve: Adjust the code for (3) so that your robot drives forwards for 2 seconds, and then turns right for 2 seconds, and repeats this procedure endlessly.
+  - Can you adjust your code so that the robot coordinates its motion to create square pattern?
+  - Can you adjust the time values so that your robot can trace the square starting box on the line following map provided?
+  - Alternatively, adjust the time values so that your robot can move around one of the square obstacles without colliding.
+
+5. Are these exercises implementing **`closed-loop`** or **`open-loop`** control?
+
+**Ans:**
+They are open-loop control.
+
+![ ](pics/Webots_NavigateSquare.png)
+
