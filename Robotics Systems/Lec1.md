@@ -247,11 +247,11 @@ win 上的 `webots` 的界面实在是太丑了，还是换到我熟悉的 `vsco
  - what are some disadvantages to this type of motor?
 
 **Ans:** 
-E-puck robot uses typically DC motors without encoder.
- - The advantages for DC motor without encoder are each and easy to control.
- - The disadvantages for it are unreliable due to cumulative error. 
+E-puck robot uses 2 stepper motors with 20 steps per revolution and a 50:1 reduction gear.
+ - The advantages are each and easy to control.
+ - The disadvantages are difficult to run at a higher speed and difficult to obtain large torque. 
 
-ref: http://users.softlab.ntua.gr/~ktzaf/Courses/epuck-robotica2009.pdf
+ref: https://cyberbotics.com/doc/guide/epuck
 
 2. Explore: Write a controller to have your robot move fowards continuously.
 
@@ -280,7 +280,10 @@ wb_motor_set_velocity(right_motor, -1.0);
 4. Explore: Find the maximum and minimum velocities which can be used with the motors.
 
 **Ans:**
+ - The maximum forwards velocity is 0.25 m/s 
+ - The maximum rotation speed is 6.28 rad/s
 
+ref: https://cyberbotics.com/doc/guide/epuck#devices-names
 
 5. Solve: Write a controller to increment a positive motor velocity on each simulation time step to maximum velocity, and then to decrement the motor velocity back to zero at each time step.
  - tip: create a variable to store the last motor velocity used.  
@@ -344,21 +347,49 @@ else
   - **help**: it is useful to write a function to operate as a timer to return a `true` or `false` value if a requested period of time has elapsed.
 
 **Ans：**
-Add a condition to motor speed code block in the loop function:
+- write a bool timer
 
 ```c
-void loop() {
-...
-double dt = 2;
-
+bool timer(double t, bool flag)
+{
+  if (wb_robot_get_time() < t + DT)
+  {
+    flag = 1;
+  }
+  else if (wb_robot_get_time() < t + 2*DT)
+  {
+    flag = 0;
+  }
+  return flag;
+}
 ```
+
+- write the moving function in loop
+  
+```c
+  static  bool flag = 1;
+  int tim_now = wb_robot_get_time();
+  int n = tim_now / 4;
+  int t = ZERO + n * 4;
+
+  if (timer(t,flag))
+  {
+    moving_forwards();
+  }
+  else
+  {
+    stop_moving();
+  }
+  ```
 
 4. Solve: Adjust the code for (3) so that your robot drives forwards for 2 seconds, and then turns right for 2 seconds, and repeats this procedure endlessly.
   - Can you adjust your code so that the robot coordinates its motion to create square pattern?
   - Can you adjust the time values so that your robot can trace the square starting box on the line following map provided?
   - Alternatively, adjust the time values so that your robot can move around one of the square obstacles without colliding.
 
-5. Are these exercises implementing **`closed-loop`** or **`open-loop`** control?
+> Kinda easy for me. Skiped.
+
+1. Are these exercises implementing **`closed-loop`** or **`open-loop`** control?
 
 **Ans:**
 They are open-loop control.

@@ -25,6 +25,9 @@
 #define GS_LEFT 0
 #define GS_CENTER 1
 #define GS_RIGHT 2
+#define DT 2
+#define ZERO 0
+
 WbDeviceTag gs[NB_GROUND_SENS]; /* ground sensors */
 unsigned short gs_value[NB_GROUND_SENS] = {0, 0, 0};
 
@@ -58,7 +61,15 @@ void loop( );
 // An example function to cause a delay
 void delay_ms( float ms );
 
+// robot movement functions:
+void moving_forwards();
+void moving_backwards();
+void stop_moving();
+void rotate_right();
+void rotate_left();
 
+// timer function
+bool timer(double t, bool flag);
 
 
 /*********************************************
@@ -121,8 +132,9 @@ void setup() {
   right_motor = wb_robot_get_device("right wheel motor");
   wb_motor_set_position(left_motor, INFINITY);
   wb_motor_set_position(right_motor, INFINITY);
-  wb_motor_set_velocity(left_motor, 0.0);
-  wb_motor_set_velocity(right_motor, 0.0);
+  wb_motor_set_velocity(left_motor, 0);
+  wb_motor_set_velocity(right_motor, 0);
+
   
   // get a handler to the position sensors and enable them.
   left_position_sensor = wb_robot_get_device("left wheel sensor");
@@ -156,6 +168,33 @@ void loop() {
   // Report current time.
   printf("Loop at %.2f (secs)\n", wb_robot_get_time() );
   
+  // set robot's motor speed to forward 4sec then stop
+  // if (wb_robot_get_time() < 4.0)
+  // {
+  //   moving_forwards();
+  // }
+  // else
+  // {
+  //   stop_moving();
+  // }
+
+  // let the robot repeat move forwards for 2sec then stop for 2sec 
+
+  static  bool flag = 1;
+  int tim_now = wb_robot_get_time();
+  int n = tim_now / 4;
+  int t = ZERO + n * 4;
+
+  if (timer(t,flag))
+  {
+    moving_forwards();
+  }
+  else
+  {
+    stop_moving();
+  }
+  
+
   // Get latest ground sensor readings
   gs_value[0] = wb_distance_sensor_get_value(gs[0]);
   gs_value[1] = wb_distance_sensor_get_value(gs[1]);  
@@ -195,4 +234,48 @@ void delay_ms( float ms ) {
   } 
   
   return;
+}
+
+void moving_forwards()
+{  
+wb_motor_set_velocity(left_motor, 1.0);
+wb_motor_set_velocity(right_motor, 1.0);
+}
+
+void moving_backwards()
+{
+wb_motor_set_velocity(left_motor, -1.0);
+wb_motor_set_velocity(right_motor, -1.0);
+}
+
+void stop_moving()
+{
+wb_motor_set_velocity(left_motor, 0);
+wb_motor_set_velocity(right_motor, 0);
+}
+
+void rotate_right()
+{
+wb_motor_set_velocity(left_motor, 1.0);
+wb_motor_set_velocity(right_motor, -1.0);
+}
+
+void rotate_left()
+{
+wb_motor_set_velocity(left_motor, -1.0);
+wb_motor_set_velocity(right_motor, 1.0);
+}
+
+// function of timer
+bool timer(double t, bool flag)
+{
+  if (wb_robot_get_time() < t + DT)
+  {
+    flag = 1;
+  }
+  else if (wb_robot_get_time() < t + 2*DT)
+  {
+    flag = 0;
+  }
+  return flag;
 }
