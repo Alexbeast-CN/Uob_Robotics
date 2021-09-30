@@ -1,6 +1,7 @@
 #! https://zhuanlan.zhihu.com/p/414973593
 # Lec1. Introduction to robotic systems
 
+> 由此访问[专栏目录](https://zhuanlan.zhihu.com/p/414973930)
 ## Lec
 
 第一节课关于机器人的系统大部分的内容都没有以概念的形式呈现出来，更多的是需要我们动手实践，以仿真或者实体的形式去编写机器人的程序。
@@ -381,6 +382,8 @@ bool timer(double t, bool flag)
     stop_moving();
   }
   ```
+
+![ ](pics/1.gif)
 
 4. Solve: Adjust the code for (3) so that your robot drives forwards for 2 seconds, and then turns right for 2 seconds, and repeats this procedure endlessly.
   - Can you adjust your code so that the robot coordinates its motion to create square pattern?
