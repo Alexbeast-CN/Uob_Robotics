@@ -370,8 +370,7 @@ bool timer(double t, bool flag)
 ```c
   static  bool flag = 1;
   int tim_now = wb_robot_get_time();
-  int n = tim_now / 4;
-  int t = ZERO + n * 4;
+  int t = ZERO + tim_now;
 
   if (timer(t,flag))
   {

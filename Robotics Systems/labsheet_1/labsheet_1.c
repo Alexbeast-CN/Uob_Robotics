@@ -181,9 +181,9 @@ void loop() {
   // let the robot repeat move forwards for 2sec then stop for 2sec 
 
   static  bool flag = 1;
-  int tim_now = wb_robot_get_time();
-  int n = tim_now / 4;
-  int t = ZERO + n * 4;
+  double t;
+  t = wb_robot_get_time();
+
 
   if (timer(t,flag))
   {
