@@ -8,7 +8,7 @@
             "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
-            "program": "输入程序名称，例如 ${workspaceFolder}/a.exe",
+            "program": "输入程序名称，例如 ${workspaceFolder}/${fileDirname}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

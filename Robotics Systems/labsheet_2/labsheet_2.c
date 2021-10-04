@@ -200,11 +200,7 @@ void loop()
     }
     else if (gs_value[0] >= WHITE && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
     {
-        int tim_now = wb_robot_get_time();
-        while(wb_robot_get_time() < tim_now + 0.5)
-        {
-            moving_forwards();
-        }
+        moving_forwards();
     }
     
 

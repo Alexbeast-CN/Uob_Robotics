@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/416903088
-# Lec2. Line follow Robot
+# Lec2. Line follower
 > 程序目前还有一点问题，欢迎 issue 与 contribute。更新中...
 
 ## Lec
@@ -64,15 +64,15 @@ If the robot is starting off the line, I expect it can turn itself to trying to 
 
 ### Sec2. Bang bang controller
 
-这是一个不平滑的转动控制器，使用`if`语句编写程序。在正式编写程序之前，先写几个`function()`。
+这是一个不平滑的转动控制器，使用`if`语句编写程序。在正式编写程序之前，先写几个运动`function()`，机器人转弯的时候要注意控制速度，否则比较容易偏航。
 
 ```c
 
 // movement functions
 void moving_forwards()
 {
-    wb_motor_set_velocity(left_motor, 1.0);
-    wb_motor_set_velocity(right_motor, 1.0);
+    wb_motor_set_velocity(left_motor, 0.75);
+    wb_motor_set_velocity(right_motor, 0.75);
 }
 
 void moving_backwards()
@@ -90,12 +90,12 @@ void stop_moving()
 void turn_left()
 {
     wb_motor_set_velocity(left_motor, 0);
-    wb_motor_set_velocity(right_motor, 0.25);
+    wb_motor_set_velocity(right_motor, 1);
 }
 
 void turn_right()
 {
-    wb_motor_set_velocity(left_motor, 0.25);
+    wb_motor_set_velocity(left_motor, 1);
     wb_motor_set_velocity(right_motor, 0);
 }
 
@@ -136,7 +136,7 @@ ref: [Difference between Open Loop & Closed Loop Control System](https://www.elp
 **Ans:**
 
    - gs[0,1,2] namely represents left centre and right.
-   - typical white value is 1, but values above 800 can be regarded as white.
+   - typical white value is 1000, but values above 800 can be regarded as white.
    - typical black value is 0, but values below 300 can be regarded as black.
    - **I'm not sure how to find or do I need to collect data?**
    - As we are in a ideal simulation environment, use above 800 and below 300 to reprsent white and black is acceptable.
@@ -154,37 +154,46 @@ ref: [Difference between Open Loop & Closed Loop Control System](https://www.elp
     - `!=` not equal to
   - **help**: what is the functional difference between the two code examples immediately below?
   
+**Ans:**
+
+Drag the robot to the line.
+
+![ ](./pics/5.png)
+
+Then, save the world.
+
+Adding the code block below to the `loop()`:
+
   ```c
   // before the loop define the color
-    #define BLACK 300
+    #define BLACK 550
     #define WHITE 800
 
   // Example 1
-    if (gs_value[0] <= BLACK)
+    if (gs_value[0] <= BLACK && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
     {
-        turn_right();
+        turn_left();
     }
-    else if (gs_value[1] <= BLACK)
+    else if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
     {
         moving_forwards();
     }
-    else if (gs_value[2] <= BLACK)
+    else if (gs_value[0] >= WHITE && gs_value[1] <= WHITE && gs_value[2] <= BLACK)
     {
         turn_right();
     }
+    // 这里我希望让机器人旋转180°，但目前应该还缺少一个位姿传感器，或 pid 控制器，这里先用开环的方法代替
     else if (gs_value[0] <= BLACK && gs_value[1] <= BLACK && gs_value[2] <= BLACK)
     {
         rotate_left();
     }
     else if (gs_value[0] >= WHITE && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
     {
-        int tim_now = wb_robot_get_time();
-        if(wb_robot_get_time() < tim_now + 1)
-        {
-            moving_forwards();
-        }
+        moving_forwards();
     }
   ```
+
+![ ](pics/2.gif)
 
 4. Does your robot conduct `turn` and `move fowards` operations seperately?  
   - Can these be integrated so that the robot does not stop moving forwards?
