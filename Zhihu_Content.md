@@ -6,8 +6,9 @@
 >整个笔记文件由 Markdown 编写，笔记以及一些代码已有 github 托管，可以由此[链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
 ## Robotics Systems
 
-[Lec1. Introduction to robotic systems](https://zhuanlan.zhihu.com/p/414973593)
-[Lec2. updating](https://zhuanlan.zhihu.com/p/416903088)
+- [Lec1. Introduction to robotic systems](https://zhuanlan.zhihu.com/p/414973593)
+
+- [Lec2. updating](https://zhuanlan.zhihu.com/p/416903088)
 ## Roboics Research Technology and Methods
 
 ## Robotic Fundamentals
