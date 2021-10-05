@@ -4,6 +4,7 @@
 
 ## Lec
 
+目前来看所有的 Lecture 都不会以授课的形式进行，而全部是 Q&A，没有特殊情况的话，以后的文章里不会再有 Lec 章节了。
 ## Lab
 
 > 本阶段的笔记基于 `labsheet2` line following
@@ -18,7 +19,7 @@
 
 ![ ](pics/Webots_LineFeedback.png)
 
-当传感器`GS0`返回信号为 “黑” 时，则机器人需要直行。而如果是`GS0`/`GS2`时，机器人则需要左转或右转。
+当传感器`GS0`返回信号为 “黑线” 时，则机器人需要直行。而如果是`GS0`/`GS2`时，机器人则需要左转或右转。
 
 ### Exercise 1: Ground Sensor (30 minutes)
 
@@ -138,7 +139,7 @@ ref: [Difference between Open Loop & Closed Loop Control System](https://www.elp
    - gs[0,1,2] namely represents left centre and right.
    - typical white value is 1000, but values above 800 can be regarded as white.
    - typical black value is 0, but values below 300 can be regarded as black.
-   - **I'm not sure how to find or do I need to collect data?**
+   - **I'm not sure how to find. Do I need to collect data?**
    - As we are in a ideal simulation environment, use above 800 and below 300 to reprsent white and black is acceptable.
 
 3. Implement the discussed bang-bang controller logic to achieve line-following:
@@ -182,14 +183,15 @@ Adding the code block below to the `loop()`:
     {
         turn_right();
     }
-    // 这里我希望让机器人旋转180°，但目前应该还缺少一个位姿传感器，或 pid 控制器，这里先用开环的方法代替
+    // 这里我希望让机器人旋转 90°，但目前应该还缺少一个位姿传感器，或 pid 控制器，这里先用开环的方法代替
     else if (gs_value[0] <= BLACK && gs_value[1] <= BLACK && gs_value[2] <= BLACK)
     {
-        rotate_left();
+        rotate_halfpi();
     }
     else if (gs_value[0] >= WHITE && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
     {
         moving_forwards();
+        rotate_pi();
     }
   ```
 
@@ -203,10 +205,60 @@ Adding the code block below to the `loop()`:
   - For a selected foward speed, which elements of the line following map can be completed, and which cannot?  Decide upon a set of consistent labels for the elements of the line following map.
   - Decide a discrete list of forward speed intervals to capture the **`failure modes`** you observe.  Are the different forward speeds clearly seperable in their line following performance?
 
+> I'm sure what I need to do here. Will do this later.
+
 5. Start your robot off the line, and allow it to travel forward to join and follow the line.  Currently, what is the most extreme <a href="https://en.wikipedia.org/wiki/Angle_of_incidence_(optics)">angle of incidence</a> where your controller can still successfully begin line following?
   - if you were to create a results table of different angles when joining the line, how could you quantify the reliability of the controller?
 
-6. What information about the line does the robot have when no sensors are activated?
+**Ans:**
+
+To answer this question, I need to figure out how to control the turning motion of the robot.
+
+My first thought is to use a open-loop controller.
+
+- Try1：
+
+The theory of this open-loop controller is to one rotating angle finished in a single loop time, which about is 0.58s.
+
+Use the pattern on the map to determine the control method. Put the robot on the rotating scale rule. Use a test program to find out how the robot rotates.
+
+![ ](pics/6.png)
+
+```c
+// rotate function
+void rotate_right()
+{
+wb_motor_set_velocity(left_motor, x);
+wb_motor_set_velocity(right_motor, -x);
+}
+```
+
+```c
+// In the loop write a test function
+  static int i = 0;
+
+  if (i%2)
+    rotate_right();
+  else
+    stop_moving();
+
+  i++;
+```
+
+![ ](pics/3.gif)
+
+|Angel| pi/4| pi/2| pi| 2pi|
+|-    |-    |-    |-  |-   |
+|x    |1.93 |F    | F |   F|
+
+> This method works, when the rotation angel is small. When the angel goes up to pi/2, it doesn't work any more not matter how large the x value is. The reason might be the limited loop time. Therefore, I'm going fixed the rotation speed, but let the time varries.
+
+- Try 2:
+
+
+
+
+1. What information about the line does the robot have when no sensors are activated?
   - When might this circumstance occur?
   - What would be an appropriate response in this condition?
   - What other information is available to the robot that might be useful?
