@@ -218,7 +218,7 @@ My first thought is to use a open-loop controller.
 
 - Try1：
 
-The theory of this open-loop controller is to one rotating angle finished in a single loop time, which about is 0.58s.
+The theory of this open-loop controller is to one rotating angle finished in a single loop time, which about is 0.532s.
 
 Use the pattern on the map to determine the control method. Put the robot on the rotating scale rule. Use a test program to find out how the robot rotates.
 
@@ -255,6 +255,52 @@ wb_motor_set_velocity(right_motor, -x);
 
 - Try 2:
 
+```c
+#define T 1
+#define Rotate_Speed 1.5
+
+// in the loop
+  static double t = 0;
+  double dt = 2*T;
+
+  if (wb_robot_get_time() > t + dt)
+  {
+    t += dt;
+  }
+
+  if (timer(t))
+  {
+    rotate_right();
+  }
+  else
+  {
+    stop_moving();
+  }
+
+  // Call a delay function
+  // 下面不是一个很好的delay时间，可能会与计时器作用出现bug，但我还不太清楚如何优化
+  delay_ms( T*1000-50);
+
+
+// out of loop
+// timer function
+bool timer(double t, bool flag)
+{
+  if (wb_robot_get_time() < t + T)
+  {
+    flag = 1;
+  }
+  else 
+  {
+    flag = 0;
+  }
+  return flag;
+}
+```
+
+|Angel| pi/4| pi/2|pi    | 2pi|
+|-    |-    |-    |-     |-   |
+|T    |0.7  |1.45 |2.9   |5.8 |
 
 
 
