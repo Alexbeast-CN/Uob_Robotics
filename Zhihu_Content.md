@@ -8,7 +8,7 @@
 
 - [Lec1. Introduction to robotic systems](https://zhuanlan.zhihu.com/p/414973593)
 
-- [Lec2. updating](https://zhuanlan.zhihu.com/p/416903088)
+- [Lec2. Line following](https://zhuanlan.zhihu.com/p/416903088)
 ## Roboics Research Technology and Methods
 
 ## Robotic Fundamentals
