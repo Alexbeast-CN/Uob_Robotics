@@ -1,7 +1,7 @@
 #! https://zhuanlan.zhihu.com/p/416903088
 # Lec2. Line follower
 
-> 目前这一阶段的代码写的与老师要求的还有一定的区别，这个慢慢改掉。之前说的 C++ 的控制器代码将会在 `labsheet3` 之前做出来。那么，目前为止 `labsheet2`要求的功能已经全部达成，相关代码位于 [labsheet_2_2.c]()请各位客官放心食用。同时欢迎 issue 和 contribute。
+> 目前这一阶段的代码写的与老师要求的还有一定的区别，这个慢慢改掉。之前说的 C++ 的控制器代码将会在 `labsheet3` 之前做出来。那么，目前为止 `labsheet2`要求的功能已经全部达成，代码位于 [labsheet_2_2.c](https://github.com/Alexbeast-CN/Uob_Robotics/blob/main/Robotics%20Systems/labsheet_2/labsheet_2_2.c),请各位客官放心食用。同时欢迎 issue 和 contribute。
 
 ## Lec
 

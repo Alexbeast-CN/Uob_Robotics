@@ -348,26 +348,29 @@ else
   - **help**: it is useful to write a function to operate as a timer to return a `true` or `false` value if a requested period of time has elapsed.
 
 **Ans：**
-- write a bool timer
 
-```c
-bool timer(double t, bool flag)
-{
-  if (wb_robot_get_time() < t + DT)
-  {
-    flag = 1;
-  }
-  else if (wb_robot_get_time() < t + 2*DT)
-  {
-    flag = 0;
-  }
-  return flag;
-}
-```
-
-- write the moving function in loop
+- Method 1:
   
-```c
+  - write a bool timer
+
+  ```c
+  bool timer(double t, bool flag)
+  {
+    if (wb_robot_get_time() < t + DT)
+    {
+      flag = 1;
+    }
+    else if (wb_robot_get_time() < t + 2*DT)
+    {
+      flag = 0;
+    }
+    return flag;
+  }
+  ```
+
+  - write the moving function in loop
+  
+  ```c
   static  bool flag = 1;
   int tim_now = wb_robot_get_time();
   int t = ZERO + tim_now;
@@ -382,9 +385,48 @@ bool timer(double t, bool flag)
   }
   ```
 
+- Method2
+  
+  - bool timer
+  ```c
+  bool timer(double t)
+  {
+    bool flag;
+
+    if (wb_robot_get_time() < t + DT)
+    {
+      flag = 1;
+    }
+    else if (wb_robot_get_time() < t + 2*DT)
+    {
+      flag = 0;
+    }
+    return flag;
+  }  
+  ```
+
+  - in loop
+  ```c
+  int t = 0;
+  if (wb_robot_get_time() < t + DT * 2)
+  {
+    t += DT * 2;
+  }
+
+  if (timer(t))
+  {
+    moving_forwards();
+  }
+  else
+  {
+    stop_moving();
+  }
+  ```
+
+
 ![ ](pics/1.gif)
 
-4. Solve: Adjust the code for (3) so that your robot drives forwards for 2 seconds, and then turns right for 2 seconds, and repeats this procedure endlessly.
+1. Solve: Adjust the code for (3) so that your robot drives forwards for 2 seconds, and then turns right for 2 seconds, and repeats this procedure endlessly.
   - Can you adjust your code so that the robot coordinates its motion to create square pattern?
   - Can you adjust the time values so that your robot can trace the square starting box on the line following map provided?
   - Alternatively, adjust the time values so that your robot can move around one of the square obstacles without colliding.

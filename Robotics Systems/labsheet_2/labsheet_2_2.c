@@ -32,14 +32,14 @@ unsigned short gs_value[NB_GROUND_SENS] = {0, 0, 0};
 #define WHITE 800
 
 // motion time
-#define T_Pi 2.9
-#define T_Pi_2 1.42
-#define T_forward 4
+#define T_Pi 2.7
+#define T_Pi_2 0.5
+//#define T_forward 6
 
 // robot speed
 #define R_speed 1.5
 #define F_speed 1
-#define T_speed 0.75
+#define T_speed 1.5
 
 // Motors
 WbDeviceTag left_motor, right_motor;
@@ -189,30 +189,29 @@ void loop()
     printf(" 0: %d\n", gs_value[1]);
     printf(" 0: %d\n\n", gs_value[2]);
 
-    if (gs_value[0] <= BLACK && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
-    {
-        turn_left();
-    }
-    else if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
+    if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
     {
         moving_forwards();
-    }
-    else if (gs_value[0] >= WHITE && gs_value[1] <= WHITE && gs_value[2] <= BLACK)
-    {
-        turn_right();
     }
     // 这里我希望让机器人旋转90°，但目前应该还缺少一个位姿传感器，所以先用开环的方法代替
     else if (gs_value[0] <= BLACK && gs_value[1] <= BLACK && gs_value[2] <= BLACK)
     {
-        rotate_left();
+        moving_forwards();
+        delay_ms(1500);
+        rotate_right();
         delay_ms(T_Pi_2*1000);
     }
     else if (gs_value[0] >= WHITE && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
     {
         moving_forwards();
-        delay_ms(T_forward*1000);
-        rotate_right();
-        delay_ms(T_Pi*1000);
+    }
+    else if (gs_value[0] + 100 < gs_value[1])
+    {
+        turn_left();
+    }
+    else if (gs_value[2] + 100 < gs_value[1])
+    {
+        turn_right();
     }
 
     // Call a delay function
@@ -268,14 +267,14 @@ void stop_moving()
 
 void turn_left()
 {
-    wb_motor_set_velocity(left_motor, 0);
+    wb_motor_set_velocity(left_motor, 0.3);
     wb_motor_set_velocity(right_motor, T_speed);
 }
 
 void turn_right()
 {
     wb_motor_set_velocity(left_motor, T_speed);
-    wb_motor_set_velocity(right_motor, 0);
+    wb_motor_set_velocity(right_motor, 0.3);
 }
 
 void rotate_right()
