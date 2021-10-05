@@ -1,13 +1,14 @@
 #! https://zhuanlan.zhihu.com/p/416903088
 # Lec2. Line follower
-> 程序目前还有一点问题，欢迎 issue 与 contribute。更新中...
+
+> 目前这一阶段的代码写的与老师要求的还有一定的区别，这个慢慢改掉。之前说的 C++ 的控制器代码将会在 `labsheet3` 之前做出来。那么，目前为止 `labsheet2`要求的功能已经全部达成，相关代码位于 [labsheet_2_2.c]()请各位客官放心食用。同时欢迎 issue 和 contribute。
 
 ## Lec
 
 目前来看所有的 Lecture 都不会以授课的形式进行，而全部是 Q&A，没有特殊情况的话，以后的文章里不会再有 Lec 章节了。
 ## Lab
 
-> 本阶段的笔记基于 `labsheet2` line following
+> 本阶段的笔记基于 [labsheet2](https://colab.research.google.com/github/paulodowd/EMATM0053_21_22/blob/main/WLabsheets/L2_LineFollowing.ipynb)
 
 ### Sec1. Ground sensor
 
@@ -205,9 +206,20 @@ Adding the code block below to the `loop()`:
   - For a selected foward speed, which elements of the line following map can be completed, and which cannot?  Decide upon a set of consistent labels for the elements of the line following map.
   - Decide a discrete list of forward speed intervals to capture the **`failure modes`** you observe.  Are the different forward speeds clearly seperable in their line following performance?
 
-> I'm sure what I need to do here. Will do this later.
+**Ans:**
 
-5. Start your robot off the line, and allow it to travel forward to join and follow the line.  Currently, what is the most extreme <a href="https://en.wikipedia.org/wiki/Angle_of_incidence_(optics)">angle of incidence</a> where your controller can still successfully begin line following?
+- To let the robot moving forward while its turn, just give the 2 wheels a diffent forward speed, like:
+```c
+void turn_left()
+{
+    wb_motor_set_velocity(left_motor, 0.5);
+    wb_motor_set_velocity(right_motor, 1);
+}
+```
+
+Not sure how to do other questions.
+
+1. Start your robot off the line, and allow it to travel forward to join and follow the line.  Currently, what is the most extreme <a href="https://en.wikipedia.org/wiki/Angle_of_incidence_(optics)">angle of incidence</a> where your controller can still successfully begin line following?
   - if you were to create a results table of different angles when joining the line, how could you quantify the reliability of the controller?
 
 **Ans:**
@@ -256,62 +268,94 @@ wb_motor_set_velocity(right_motor, -x);
 - Try 2:
 
 ```c
-#define T 1
+#define T 0.7
 #define Rotate_Speed 1.5
 
 // in the loop
-  static double t = 0;
-  double dt = 2*T;
-
-  if (wb_robot_get_time() > t + dt)
-  {
-    t += dt;
-  }
-
-  if (timer(t))
-  {
-    rotate_right();
-  }
-  else
-  {
-    stop_moving();
-  }
-
-  // Call a delay function
-  // 下面不是一个很好的delay时间，可能会与计时器作用出现bug，但我还不太清楚如何优化
-  delay_ms( T*1000-50);
-
-
-// out of loop
-// timer function
-bool timer(double t, bool flag)
-{
-  if (wb_robot_get_time() < t + T)
-  {
-    flag = 1;
-  }
-  else 
-  {
-    flag = 0;
-  }
-  return flag;
-}
+rotate_left();
+delay_ms(T*1000);
+stop_moving();
 ```
 
 |Angel| pi/4| pi/2|pi    | 2pi|
 |-    |-    |-    |-     |-   |
-|T    |0.7  |1.45 |2.9   |5.8 |
+|T    |0.7  |1.42 |2.95  |5.9 |
 
+>知乎不能渲染markdown表格，让我很是无语
 
+![ ](pics/7.png)
 
-1. What information about the line does the robot have when no sensors are activated?
+**Now let's do the problem** 
+
+```c
+if (gs_value[0] <= BLACK && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
+    {
+        turn_left();
+    }
+    else if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
+    {
+        moving_forwards();
+    }
+    else if (gs_value[0] >= WHITE && gs_value[1] <= WHITE && gs_value[2] <= BLACK)
+    {
+        turn_right();
+    }
+    // 这里我希望让机器人旋转90°，但目前应该还缺少一个位姿传感器，所以先用开环的方法代替
+    else if (gs_value[0] <= BLACK && gs_value[1] <= BLACK && gs_value[2] <= BLACK)
+    {
+        rotate_right();
+        // 这里的时间我一直调不好，与之前测试的不太一样，很令我困扰。
+        delay_ms(T_Pi_2*1000);
+        // 这里旋转之后，机器人不在线上了，我也感到很奇怪。
+    }
+    else if (gs_value[0] >= WHITE && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
+    {
+        moving_forwards();
+    }
+
+```
+
+> 做到这里我发现，其实自己被老师给出的机器人转向的条件误导了。机器人的3个灯，两两之间就可以形成条件，这样相比与中间的灯只用于控制前进多了一个微调的动作。而这个微调的条件不再取决与黑色或白色，而是直接比较3个灯返回来数值的大小。依照这个逻辑，便有了下面的代码：
+
+```c
+if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
+    {
+        moving_forwards();
+    }
+    // 这里我希望让机器人旋转90°，但目前应该还缺少一个位姿传感器，所以先用开环的方法代替
+    else if (gs_value[0] <= BLACK && gs_value[1] <= BLACK && gs_value[2] <= BLACK)
+    {
+        moving_forwards();
+        delay_ms(1500);
+        rotate_right();
+        delay_ms(T_Pi_2*1000);
+    }
+    else if (gs_value[0] >= WHITE && gs_value[1] >= WHITE && gs_value[2] >= WHITE)
+    {
+        moving_forwards();
+    }
+    else if (gs_value[0] + 100 < gs_value[1])
+    {
+        turn_left();
+    }
+    else if (gs_value[2] + 100 < gs_value[1])
+    {
+        turn_right();
+    }
+```
+
+6. What information about the line does the robot have when no sensors are activated?
   - When might this circumstance occur?
   - What would be an appropriate response in this condition?
   - What other information is available to the robot that might be useful?
   
+> See prob 5
+
 7. Write a function to simply confirm if the robot is on a black line.  The function should report a `true` or `false` value when called.
   - is there a reason to discriminate between which of the sensors is active?  Explain your reasoning, adjust the function if necessary.
   
+> See prob 5
+
 8. Write a specific function to operate the robot when it is **`initialised`** ("powered on" for the first time) off the line, so that it can successfully join a line at 90 degrees (orthogonal) to the forward direction of travel. 
   - Aligning your robot to 45 degrees (approx. `0.785` radians) in the `start box` on the provided arena floor will achieve this starting condition.
   - Decide what your robot should do when it meets an orthogonal line, or how to bias your robot behaviour away from this circumstance.
@@ -319,3 +363,5 @@ bool timer(double t, bool flag)
   - Use the `setup()` function in the template to set initial variable values, such as `STATE`.
   - Use an `if()` statement to switch the behaviour between `join line` or `follow line` depending on the global variable `STATE`.
   - Use the prior line detection function (`true` / `false`) to transition your robot between the **`join line`** behaviour, and the **`follow line`** behaviour.
+
+> 这里我使用的方法不太一样。
