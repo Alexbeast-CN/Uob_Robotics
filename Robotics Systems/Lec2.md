@@ -344,17 +344,19 @@ if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
     }
 ```
 
+> 做到这里发现，已经达成了巡线的功能，剩下的题目就不会那么认真的做了，主要是从老师的思路中找到优化代码的方法。
+
 6. What information about the line does the robot have when no sensors are activated?
   - When might this circumstance occur?
   - What would be an appropriate response in this condition?
   - What other information is available to the robot that might be useful?
   
-> See prob 5
+> Skiped
 
 7. Write a function to simply confirm if the robot is on a black line.  The function should report a `true` or `false` value when called.
   - is there a reason to discriminate between which of the sensors is active?  Explain your reasoning, adjust the function if necessary.
   
-> See prob 5
+> Skiped
 
 8. Write a specific function to operate the robot when it is **`initialised`** ("powered on" for the first time) off the line, so that it can successfully join a line at 90 degrees (orthogonal) to the forward direction of travel. 
   - Aligning your robot to 45 degrees (approx. `0.785` radians) in the `start box` on the provided arena floor will achieve this starting condition.
@@ -364,4 +366,113 @@ if (gs_value[0] >= WHITE && gs_value[1] <= BLACK && gs_value[2] >= WHITE)
   - Use an `if()` statement to switch the behaviour between `join line` or `follow line` depending on the global variable `STATE`.
   - Use the prior line detection function (`true` / `false`) to transition your robot between the **`join line`** behaviour, and the **`follow line`** behaviour.
 
-> 这里我使用的方法不太一样。
+> 此处利用设置模式：“加入线”与“巡线”，来优化代码。但是我选择了在loop中做这样的模式选择。
+
+**Ans:**
+
+When all 3 ground sensor values are above 800, it should be at `join line` state. When meeting the condition of any of those 3 sensor values are below 400, it should change to `follow line` behaviour. 
+
+```c
+// in the loop() function
+
+// When all 3 gs are white, the robot is in join line mode.
+if (gs_value[0]>800 && gs_value[1] > 800 && gs_value[2] > 800)
+  bool STATE=0;
+// Otherwise, it is in follow line mode.
+else
+  bool STATE=1;
+```
+
+### Sec3. Weighted-Measurement
+
+<p align="center">
+<img width="50%" src="https://github.com/paulodowd/EMATM0053_21_22/blob/main/images/Webots_GS_Weighted.png?raw=true">
+</p>
+
+Weight Measurement 看起来是用来衡量小车左转还是右转的最佳方案。这里我们无需确定颜色所代表的数值，只需根据这3个传感器数值之间的差，来控制小车的转动方向和转动速度的大小。具体的方法如下：
+
+### Exercise 3: Weighted-Line Measurement
+
+1.  Implement the weighted-line sensing as discussed above. There are still further considerations to make:
+  - is your ground sensor `active low` or `active high`?   How could you invert the value of a sensor reading?  Is this necessary?
+  - does the `sign` (-/+) of the error signal intuitively indicate the direction your robot should turn?  Which direction of rotation should -/+ be?
+  - how can you invert the sign of the error signal?
+  - **Decompose the problem**: first of all, test your robot without any forward velocity.  Is your robot able to re-centre itself over the line?  Check by manually placing your robot in different circumstances.
+  - **help**: What would you expect your robot to do when it is not on a line?  Why is this?
+  - **help**: The following code extract may help you to get started:
+
+- I think it's not necessary to know since I only using simulation.
+- The sign (-/+) indicate the direction, when the sign is -, the robot should turn left, otherwise, it should turn right.
+- Change the position of gs[0] and gs[2] in the algorithm.
+
+```c
+
+void loop() {
+
+  // Get the line error
+  float e_line;
+  e_line = getLineError();
+
+  // Determine a proportional rotation speed
+  float turn_velocity;
+  turn_velocity = 1;  // What is a sensible maximum speed?
+  turn_velocty = turn_velocity * e_line;
+
+  // Set motor values.
+  // What does "0 -" and "0 +" achieve here?
+  wb_motor_set_velocity(right_motor, 0 - turn_velocity);
+  wb_motor_set_velocity(left_motor, 0 + turn_velocity);
+  
+}
+
+// A function to return an error signal representative
+// of the line placement under the ground sensor.
+float getLineError() {
+  float e_line;
+
+  // Read ground sensor, store result
+  gs_value[0] = wb_distance_sensor_get_value(gs[0]);
+  gs_value[1] = wb_distance_sensor_get_value(gs[1]);  
+  gs_value[2] = wb_distance_sensor_get_value(gs[2]);
+
+  // Sum ground sensor activation
+  float sum_gs;
+  sum_gs = gs_value[0] + gs_value[1] + gs_value[2];
+
+  // Normalise individual sensor readings
+  gs_value[0] /= sum_gs;
+  gs_value[1] /= sum_gs;
+  gs_value[2] /= sum_gs;
+
+  // Calculated error signal
+  double w_left;
+  w_left = gs_value[0] + (gs_value[1] * 0.5);
+  double w_right;
+  w_right = (gs_value[1]*0.5) + gs_value[2];
+  e_line = (w_left - w_right)/sum_gs;
+
+  // Return result
+  return e_line;
+}
+
+```
+
+2. Explore the gain value for the central sensing element (described with value `0.5` above:
+  - What is the effect of alternative gain values?
+  - What other formulation could be used to utilise the weighted 3 sensing elements in combination?
+
+> I can't see any points on this prob
+
+3. Modify your solution to (1) to implement a forward velocity with your robot.
+  - How fast can your robot move forwards and still reliably follow the line?
+  - Which parts of the line following map present the greatest challenge to your solution?
+  
+>skiped
+
+4. Implement a mechanism to vary the foward velocity of your robot independently of the turning velocity:
+  - Aim for high forward velocity on straight-line segments, and low forward velocity on sharp corners.
+  - How can your robot measure it's own line following performance?
+  - How can you convert this line performance measure into another `proportional control` mechanism for forward velocity?
+
+> This is a optimization process. I will try to done this part, but it's hard to get 100% correct answer. My answer will be included in my codes.
+
