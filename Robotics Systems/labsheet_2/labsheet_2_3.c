@@ -27,7 +27,11 @@
 #define GS_RIGHT 2
 
 // robot speed
-#define Max_speed 1.5
+#define Max_speed 1
+
+// rotate angle
+#define R_pi_2 1400
+#define R_pi 2800
 
 WbDeviceTag gs[NB_GROUND_SENS]; /* ground sensors */
 unsigned short gs_value[NB_GROUND_SENS] = {0, 0, 0};
@@ -78,7 +82,7 @@ float getLineError();
 
 // Robot mode functions
 bool mode_chose();
-void join_line();
+int join_line(int i);
 void follow_line(float e_line);
 
 
@@ -188,18 +192,29 @@ void loop() {
   printf(" 0: %d\n", gs_value[1] );
   printf(" 0: %d\n\n", gs_value[2] );
 
+  // When all 3 gs are black
+  if (gs_value[0] + gs_value[1] + gs_value[2] < 1000)
+  {
+    moving_forwards();
+    delay_ms(600);
+    rotate_right();
+    delay_ms(R_pi_2);
+  }
+
   // A counter for turning mode
   static int i = 0;
   if (mode_chose())
   {
-    i = 0;
     follow_line(getLineError());
+    i = 0;
   }
   else
-    join_line(i);
+  {
+    i = join_line(i);
+  }
 
   // Call a delay function
-  delay_ms( 500 );
+  delay_ms( 200 );
 }
 
 
@@ -260,18 +275,6 @@ void rotate_left()
     wb_motor_set_velocity(right_motor, Max_speed);
 }
 
-void turn_left(float e_line)
-{
-    wb_motor_set_velocity(left_motor,  Max_speed * e_line);
-    wb_motor_set_velocity(right_motor, Max_speed * e_line / 2);
-}
-
-void turn_right(float e_line)
-{
-    wb_motor_set_velocity(left_motor, -Max_speed);
-    wb_motor_set_velocity(right_motor, Max_speed);
-}
-
 
 // A function to return an error signal representative
 // of the line placement under the ground sensor.
@@ -294,13 +297,14 @@ float getLineError() {
   gs_valuef[2] = gs_valuef[2]/sum_gs;
 
   // Calculated error signal
-  double w_left;
-  w_left = gs_value[0] + (gs_value[1] * 0.5);
-  double w_right;
-  w_right = (gs_value[1]*0.5) + gs_value[2];
-  e_line = (w_left - w_right)/sum_gs;
+  float w_left;
+  w_left = gs_valuef[0] + (gs_valuef[1] * 0.5);
+  float w_right;
+  w_right = (gs_valuef[1]*0.5) + gs_valuef[2];
+  e_line = w_left - w_right;
 
   // Return result
+  printf("e_line = %f\n",e_line);
   return e_line;
 }
 
@@ -309,42 +313,34 @@ float getLineError() {
 void follow_line(float e_line)
 {
 
-
-  if(e_line > -0.001 && e_line < 0.001)
+  
+  if(e_line > -0.01 && e_line < 0.01)
   {
     moving_forwards();
-  }
-  else if (e_line > -0.01 && e_line < 0.01)
-  {
-    moving_forwards();
-    delay_ms(500);
-    rotate_right();
-    delay_ms(500);
   }
   else
   {
     printf("turning\n");
     // Determine a proportional rotation speed
     float turn_velocity;
-    turn_velocity = 1;  // What is a sensible maximum speed?
+    turn_velocity = 10;  // What is a sensible maximum speed?
     turn_velocity = turn_velocity * e_line;
 
     // Set motor values.
     // What does "0 -" and "0 +" achieve here?
-    wb_motor_set_velocity(right_motor, 0 - turn_velocity);
-    wb_motor_set_velocity(left_motor, 0 + turn_velocity);
+    wb_motor_set_velocity(right_motor, Max_speed - turn_velocity);
+    wb_motor_set_velocity(left_motor, Max_speed + turn_velocity);
   }
 }
 
 // join line mode
 
-void join_line(int i)
+int join_line(int i)
 {
-  // The robot can only moving forwards for 10 loop time in join line mode
-  if (i/10)
+  if (i/20)
   {
     rotate_right();
-    delay_ms(1500);
+    delay_ms(R_pi);
     i = 0;
   }
   else
@@ -352,6 +348,8 @@ void join_line(int i)
     moving_forwards();
     i++;
   }
+  // The robot can only moving forwards for 8 loop time in join line mode
+  return i;
 }
 
 // Setup motion mode
