@@ -335,7 +335,7 @@ int follow_line(float e_line)
         wb_motor_set_velocity(left_motor, Max_speed + turn_velocity);
     }
     
-    return {STATE_FOUND_LINE,i};
+    return STATE_FOUND_LINE;
 }
 
 // join line mode

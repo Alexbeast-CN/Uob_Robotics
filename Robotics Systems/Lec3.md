@@ -40,4 +40,4 @@ The following code extract provides a suggested method to implement a Finite Sta
   - Test the robot performs in a repeatable manner.  
 
 
-> See code at [labsheet_3.c]()
+> See code at [labsheet_3.c](https://github.com/Alexbeast-CN/Uob_Robotics/blob/main/Robotics%20Systems/labsheet_3/labsheet_3.c)
