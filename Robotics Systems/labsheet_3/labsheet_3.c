@@ -27,16 +27,17 @@
 #define GS_RIGHT 2
 
 // robot speed
-#define Max_speed 1
+#define Max_speed 1.5
 
 // Robot state 
 #define STATE_INITIAL        0
 #define STATE_FIND_LINE      1
 #define STATE_FOUND_LINE     2
 
-// rotate angle
-#define R_pi_2 1400
-#define R_pi 2800
+// geometry state
+#define R_pi_2 1900/Max_speed
+#define R_pi 3800/Max_speed
+#define half_rob 800/Max_speed
 
 WbDeviceTag gs[NB_GROUND_SENS]; /* ground sensors */
 unsigned short gs_value[NB_GROUND_SENS] = {0, 0, 0};
@@ -208,7 +209,7 @@ void loop() {
         state = follow_line(getLineError());
 
   // Call a delay function
-  delay_ms( 200 );
+  delay_ms( 100 );
 }
 
 
@@ -300,20 +301,21 @@ float getLineError() {
 // follow line mode
 int follow_line(float e_line)
 {
+    static int i = 0;
     if (gs_value[0] + gs_value[1] + gs_value[2] < 1000)
     {
+        i = 0;
         moving_forwards();
-        delay_ms(500);
+        delay_ms(half_rob);
         rotate_left();
         delay_ms(R_pi_2);
     }
-    else if(gs_value[0] + gs_value[1] + gs_value[2] > 2400)
+    else if(gs_value[0] + gs_value[1] + gs_value[2] > 2500)
     {
-        static int i = 0;
-        if (i/8)
+        if (i/10)
         {
             rotate_left();
-            delay_ms(R_pi_2);
+            delay_ms(R_pi);
             i = 0;
         }
         else
@@ -324,10 +326,11 @@ int follow_line(float e_line)
     }
     else
     {
+        i = 0;
         // Use Weight Measurement to follow line
         // Determine a proportional rotation speed
         float turn_velocity;
-        turn_velocity = 5;  // What is a sensible maximum speed?
+        turn_velocity = 8;  // What is a sensible maximum speed?
         turn_velocity = turn_velocity * e_line;
 
         // Set motor values.

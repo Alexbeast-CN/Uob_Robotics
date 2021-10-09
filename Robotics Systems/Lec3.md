@@ -39,5 +39,6 @@ The following code extract provides a suggested method to implement a Finite Sta
   - Build each new state progressively, one after the other.  
   - Test the robot performs in a repeatable manner.  
 
+![ ](pics/4.gif)
 
 > See code at [labsheet_3.c](https://github.com/Alexbeast-CN/Uob_Robotics/blob/main/Robotics%20Systems/labsheet_3/labsheet_3.c)
