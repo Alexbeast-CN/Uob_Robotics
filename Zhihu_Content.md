@@ -15,6 +15,7 @@
 - [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
 ## Robotic Fundamentals
 
+- [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
 ## Machine Vision
 
 ## Human-Robot Interaction
