@@ -1,3 +1,22 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/Robotics Research/Paper Reading Notes/LIO-SAM/LIO-SAM.md"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "british",
+                "domain": "academic",
+                "emotions": [
+                    "neutral"
+                ],
+                "goals": [
+                    "describe",
+                    "convince"
+                ]
+            }
+        }
+    ]
 }

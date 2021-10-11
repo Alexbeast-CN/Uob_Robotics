@@ -19,6 +19,24 @@
 
 > 本周将需要阅读发布在 IROS2020 会议上的论文。
 
-### Dynamic Object Tracking for Self-Driving Cars Using Monocular Camera and LIDAR
+### My readings
 
->The url of the paper is [here](https://ieeexplore.ieee.org/document/9341179)
+**Paper Name:**
+
+Dynamic Object Tracking for Self-Driving Cars Using Monocular Camera and LIDAR
+
+>The URL of the paper is [here](https://ieeexplore.ieee.org/document/9341179)
+
+**Authors:**
+
+- Lin Zhao
+- Meiling Wang
+- Sheng Su
+- Tong Liu
+- Yi Yang
+
+>They are all in Integrated Navigation and Intelligent Navigation laboratory, School of Automation, Beijing Institute of Technology, China
+
+**Summary:**
+
+> [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)

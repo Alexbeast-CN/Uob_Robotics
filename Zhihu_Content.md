@@ -11,7 +11,8 @@
 - [Lec3. Finite State Machine (Updating)](https://zhuanlan.zhihu.com/p/419237739)
 ## Roboics Research Technology and Methods
 
-- [Week2. 机器人学研究的技能和方法 (updating)](https://zhuanlan.zhihu.com/p/419711214)
+- [Week2. 机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
+- [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
 ## Robotic Fundamentals
 
 ## Machine Vision
