@@ -19,6 +19,8 @@
 
 > 本周将需要阅读发布在 IROS2020 会议上的论文。
 
+[如何做个精彩学术报告](https://www.wiley.com/network/researchers/researcher-blogs/%E5%AE%8C%E6%88%90%E7%B2%BE%E5%BD%A9%E5%AD%A6%E6%9C%AF%E6%8A%A5%E5%91%8A%E7%9A%84%E5%85%AD%E5%A4%A7%E8%AF%80%E7%AA%8D-6-tips-for-giving-a-fabulous-academic-presentation)
+
 ### My readings
 
 **Paper Name:**

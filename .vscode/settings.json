@@ -17,6 +17,22 @@
                     "convince"
                 ]
             }
+        },
+        {
+            "files": [
+                "**/Robotics Research/Summary.md"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "british",
+                "domain": "academic",
+                "emotions": [
+                    "neutral"
+                ],
+                "goals": [
+                    "describe"
+                ]
+            }
         }
     ]
 }
