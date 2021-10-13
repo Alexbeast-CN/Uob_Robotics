@@ -18,6 +18,7 @@
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
 ## Machine Vision
 
+- [Week1. An intro to Machine vision](https://zhuanlan.zhihu.com/p/421190397)
 ## Human-Robot Interaction
 
 ## Introduction to Artificial Intelligence
