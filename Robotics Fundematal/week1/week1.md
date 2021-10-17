@@ -4,19 +4,19 @@
 > 本课程主要介绍了机器人运动学。使用DH矩阵计算运动学的正逆解，以及使用 Matlab 来做机器人末端执行器的运动仿真。课程相关内容可在[此处查看](链接：https://pan.baidu.com/s/1ZJyGgTrQg-uERRLKwN2W3g) - 提取码：hq65 
 
 
-> 本来想认真学这门课的，但这课真的让人一言难尽。超烂的中东英语以及让我看到就难受的本科机械知识。我的本科学的让我很不爽，因为我觉得机械本是一个重实践的课程，然而学校居然让学生以课本上的知识为主，上课听讲 + 做题 + 考试。这样的授课模式到了 布里斯托 机器人专业 的硕士阶段 居然还要再来一次。我可真是谢谢了。
+> 本来想认真学这门课的，但这课真的让人一言难尽。超烂的中东英语以及让我看到就难受的本科机械知识。我的本科学的让我很不爽，因为我觉得机械本是一个重实践的课程，然而学校居然让学生以课本上的知识为主，上课听讲 + 做题 + 考试。这样的授课模式到了 布里斯托 机器人专业 的硕士阶段 居然还要再来一次。我可真是谢谢了。与其看这个老师讲的内容，还不如看[台大的课程](https://www.bilibili.com/video/BV1v4411H7ez?from=search&seid=13776551530433787877&spm_id_from=333.337.0.0)
 
 
 > 哎，气归气。分还是要拿的，多少做了一些笔记。以及我大概若真的对于这门课程感兴趣的同学，请直接查看课程资料。想偷懒的同学，看看笔记就好了。
 
 **本门课程需要解决的关键问题：**
 
-- When each joint is moved this much where would the end effector be?
+- When each joint is moved this much, where would the end effector be?
 - How do I move each joint to place the end effector there?
-- How do I move each joint so the end effector is moving at a given velocity?
+- How do I move each joint, so the end effector is moving at a given velocity?
 - How to generate a trajectory of the arm?
-- How to control end effector’s force?
-- How to control the end effector’s position, velocity and acceleration/force?
+- How to control the end effector’s force?
+- How to control the end effector’s position, velocity, and acceleration/force?
 
 **一个机械臂的组成：**
 
