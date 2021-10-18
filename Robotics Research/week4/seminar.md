@@ -18,7 +18,7 @@ E.g., Carbon fiber inspection
 
 #### 2.1 Polarisation of light
 
-3 parameters of light polarisation state, these parameters contains a lot information
+Three parameters of light polarisation state, these parameters contains a lot of information
 
 - Intensity, I
 - Phase, $\phi$
