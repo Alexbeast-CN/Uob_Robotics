@@ -2,7 +2,7 @@
 
 > Student Name: Daoming Chen     Student number: 2132643
 
-## Week 3
+## Week 1
 
 ### Seminars: Mon 11th Oct 2021. Robotics challenges and opportunities in the nuclear sector -- Prof. Tom B Scott
 
@@ -27,3 +27,13 @@ This paper proposed a small-scale quadruped robot -- MIT Mini Cheetah Vision. A 
 
 ![ ](week3/dudzi3-p8-dudzi-large.png)
 <center>High-Level System Architecture</center>
+
+
+## Week 2
+
+### Paper: ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial, and Multi-Map SLAM -- Carlos Campos
+
+ORB-SLAM3 is an open-sourced visual-inertial SLAM framework. ORB-SALM3's mapping accuracy is 2-5 times better than the old ORB-SLAM2, and it's proved to be the best visual SLAM framework. They novelty proposed a multiple map system that can start a new map when features are lost. The new map can be seamlessly merged with the previous map, which makes this ORB-SLAM3 more robust. The graph below shows all data from camera and IMU will go throught the tracking thread to decide a keyframe, which forms the local map. Then after palce recognition and loop correction and map merging, they become part of the full map. 
+
+![ ](week3/3.png)
+<center> Main system components of ORB-SLAM3</center>

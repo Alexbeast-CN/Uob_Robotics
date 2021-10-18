@@ -3,12 +3,16 @@
         {
             "name": "Win32",
             "includePath": [
-                "${default}",
-                "C:\\Softwares\\Webots\\include\\**"
+                "${workspaceFolder}/**"
             ],
-            "windowsSdkVersion": "10.0.19041.0",
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            //此处是编译器路径，以后可直接在此修改
             "compilerPath": "C:/Program Files/mingw64/bin/g++.exe",
-            "cStandard": "c17",
+            "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
         }
