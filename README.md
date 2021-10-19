@@ -17,7 +17,8 @@
 ## Robotic Fundamentals
 
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
-- [Week1. Machine Vision Tutorial from Stanford](https://zhuanlan.zhihu.com/p/422599653)
+- [Lec2. Homogeneous Transformations](https://zhuanlan.zhihu.com/p/423386635)
+
 
 ## Machine 
 
@@ -31,6 +32,7 @@
 
 
 - [Week1. An intro to Machine vision](https://zhuanlan.zhihu.com/p/421190397)
+- [Week1. Machine Vision Tutorial from Stanford](https://zhuanlan.zhihu.com/p/422599653)
 
 ## Human-Robot Interaction
 
