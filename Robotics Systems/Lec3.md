@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/419237739
-# Lec3. Finite State Machine (Updating)
+# Lec3. Finite State Machine
 
 ## Lab
 

@@ -9,6 +9,7 @@
 - [Lec1. Introduction to robotic systems](https://zhuanlan.zhihu.com/p/414973593)
 - [Lec2. Line following](https://zhuanlan.zhihu.com/p/416903088)
 - [Lec3. Finite State Machine (Updating)](https://zhuanlan.zhihu.com/p/419237739)
+- [Lec4. Obstacle Avoidance(updating)](https://zhuanlan.zhihu.com/p/423815444)
 ## Roboics Research Technology and Methods
 
 - [Week2. 机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
