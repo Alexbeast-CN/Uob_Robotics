@@ -1,8 +1,13 @@
 # Week2 Tutorial 
 
 > 关于此 tutorial 的编程使用的是 Matlab online 中的 live script 完成
+
+## Walk Through Week2
+
+> 感觉题目都比较基础，就拿一道例题做吧。
+### 
  
-## Q1
+### Q1
 
 > 利用旋转矩阵的性质来做此题：
 > - 正交性 $RR^T = I$ 
@@ -24,5 +29,5 @@ a = solve(eq(1,3))
 
 ![ ](pics/1.png)
 
-## Q2
+### Q2
 

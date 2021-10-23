@@ -111,7 +111,7 @@ void get_value()
 }
 ```
 
-然后在测试的时候可以看到，当机器人周围没有东西的时候，传感器的值也会受到干扰而出现一个随机的范围值 （64 - 70）。而当机器人贴近墙面的时候这个值会变大，我测得的最大值为 `1700`。实际上根据老师提供的表，数据应该符合下图（一个非线性的曲线）：
+然后在测试的时候可以看到，当机器人周围没有东西的时候，传感器的值也会受到干扰而出现一个随机的范围值 （64 - 70）。而当机器人贴近墙面的时候这个值会变大，我测得的最大值为 `1700`。实际上根据老师提供的表，数据应该符合下图（一个非线性的曲线）。但这样的非线性是不好的，尤其是从0.02 到 0.04 之间的突变。所以为了简化模型，我只取 0.04 到 0.07的这一段。
 
 ![ ](pics/Webots_EpuckProxResponse.png)
 
@@ -164,16 +164,16 @@ float dis_error()
 ```c
 void avoid_obs(float e_obs)
 {
-        // Use Weight Measurement to follow line
-        // Determine a proportional rotation speed
-        float turn_velocity;
-        turn_velocity = 0.1;  // What is a sensible maximum speed?
-        turn_velocity = turn_velocity * e_obs;
-        printf("%2f",turn_velocity);
+  // Use Weight Measurement to follow line
+  // Determine a proportional rotation speed
+  float turn_velocity;
+  turn_velocity = 0.1;  // What is a sensible maximum speed?
+  turn_velocity = turn_velocity * e_obs;
+  printf("%2f",turn_velocity);
 
-        // Set motor values.
-        wb_motor_set_velocity(right_motor, Max_speed + turn_velocity);
-        wb_motor_set_velocity(left_motor, Max_speed - turn_velocity);
+  // Set motor values.
+  wb_motor_set_velocity(right_motor, Max_speed + turn_velocity);
+  wb_motor_set_velocity(left_motor, Max_speed - turn_velocity);
 }
 ```
 
@@ -184,8 +184,57 @@ void avoid_obs(float e_obs)
 - 机器人似乎有点敏感，一点干扰就会让他左右摇头。
 - 在快遇到墙壁的时候，`e_obs`太大了，以至于超过了机器人的速度上限，而报错
 
-### 3. 算法优化
+### 3. 实际应用
 
 > 首先要清楚的一点是，这个算法最终的效果。我们需要让机器人遇到线上障碍物的时候可以贴着障碍物前进，直到机器人再次回到线上。对于整个系统而言，避障算法是独立于巡线之外的另外一个 `STATE`，本章的任务就是把这个 `STATE` 写好。
 
-#### 3.1 
+
+#### 3-1 算法逻辑
+
+>此部分内容全当抛砖引玉，虽然达成了功能，但使用的方法实在不优雅。若读者有更好的方法欢迎与我讨论。
+
+机器人进入障碍物模式时存在 3 种情况：
+- 障碍物在左边
+- 障碍物在右边
+- 与障碍物垂直
+
+在开始讨论之前，我们需要确定一个障碍物阈值 `OBS`，即机器人 `ps` 超过多少算遇到障碍物。这需要自己测试，调参。
+
+首先讨论最特殊的，与障碍物垂直的情况。如果垂直于障碍物，即 `ps0 = ps1 > OBS` ，则机器人直接右转。此后便进入障碍物在右侧模式。
+
+若障碍物在右侧，即 `e_obs > OBS`，则利用 `Weight Measurement` 来保证 `e_obs` 在阈值 `OBS_E` 附近，即保证机器人始终贴着障碍物前进。
+
+若障碍物在左侧，即 `e_obs < -OBS`，则利用 `Weight Measurement` 来保证 `e_obs` 在阈值 `-OBS_E` 附近，即保证机器人始终贴着障碍物前进。
+
+在避障模式下，状态一直返回至避障模式，直到遇到黑线，退出避障模式，进入巡线模式。
+
+#### 3-2 算法测试思路
+
+> 个人认为这个算法中最关键的参数，是对每个传感器权重的设计。
+
+各个传感器所提供的功能如下：
+
+![ ](./pics/8.png)
+
+
+1. 不添加前进速度，保证机器人无论什么角度（锐角）遇到障碍物都要转到与障碍物面平行的方向。
+2. 当达到障碍物转角后还没有遇到黑线，则需要绕过障碍物，需要用到小车后方的传感器提供转向力。这部分的测试需要达到的状态是：小车可以绕某个障碍物一直绕圈。
+
+![ ](pics/6.gif)
+
+最后只需要将刚刚写好的函数接口插入主程序就可以了。
+
+![ ](pics/7.gif)
+
+### 4. 算法优化
+
+> 优化的目的是为了使机器人变得更加鲁棒（Robust)，虽然我的机器人已经可以实现上面的算法了，但是依然存在不鲁棒的地方。但是优化是无止尽的，对于我来说，达成功能就可以了。
+
+优化思路：
+
+- 调参
+- 算法中变量形式的修改
+
+### 5. 巡线补充
+
+> 在巡线部分，老师的算法去除了中间传感器对于计算的影响，这样会倒是机器人在黑线上，却读不到黑线的数值。而出现以下奇奇怪怪的问题。那么如何修改代码，从而使用到中间的 `gs[1]` 传感器是一个需要解决问题。

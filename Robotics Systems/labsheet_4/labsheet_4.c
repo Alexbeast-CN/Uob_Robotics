@@ -25,8 +25,27 @@
 #define GS_LEFT 0
 #define GS_CENTER 1
 #define GS_RIGHT 2
+
+// robot speed
+#define Max_speed 1.5
+
+// Robot state 
+#define STATE_INITIAL        0
+#define STATE_FIND_LINE      1
+#define STATE_FOUND_LINE     2
+#define STATE_OBS_R          3
+#define STATE_OBS_L          4
+
+
+// geometry value
+#define R_pi_2 1900/Max_speed
+#define R_pi 3800/Max_speed
+#define half_rob 800/Max_speed
+#define OBS 120
+#define OBS_E 30
+
 WbDeviceTag gs[NB_GROUND_SENS]; /* ground sensors */
-unsigned short gs_value[NB_GROUND_SENS] = {0, 0, 0};
+float gs_value[NB_GROUND_SENS] = {0, 0, 0};
 
 // Motors
 WbDeviceTag left_motor, right_motor;
@@ -37,10 +56,14 @@ WbDeviceTag led[NB_LEDS];
 
 // Proximity Sensors
 #define NB_PS 8
-WbDeviceTag distance_sensor[NB_PS];
+WbDeviceTag ps[NB_PS];
+float ps_value[NB_PS] = {0, 0, 0, 0, 0, 0, 0, 0};
+
 
 // Position Sensors (encoders)
 WbDeviceTag left_position_sensor, right_position_sensor;
+
+int state; // Use to track current FSM state.
 
 
 /*********************************************
@@ -58,7 +81,24 @@ void loop( );
 // An example function to cause a delay
 void delay_ms( float ms );
 
-float dis_error()
+// movement functions
+void moving_forwards();
+void stop_moving();
+void rotate_right(float time);
+void rotate_left(float time);
+
+
+// A function to return an error signal representative
+// of the line placement under the ground sensor.
+float getLineError();
+float dis_error();
+
+// Robot mode functions
+int init_state();
+int join_line();
+int follow_line(float e_line);
+int obs_onr(float e_obs);
+int obs_onl(float e_obs);
 
 
 /*********************************************
@@ -135,14 +175,13 @@ void setup() {
     
     // get distance sensors 
     sprintf(name, "ps%d", i);
-    distance_sensor[i] = wb_robot_get_device(name);
-    wb_distance_sensor_enable(distance_sensor[i], TIME_STEP);
+    ps[i] = wb_robot_get_device(name);
+    wb_distance_sensor_enable(ps[i], TIME_STEP);
   }
 
-  
+  state = STATE_INITIAL;
   
   // You can add your own initialisation code here:
-  // ...
 }
 
 
@@ -155,27 +194,41 @@ void setup() {
 **********************************************/
 void loop() {
   
+  extern int follow_line(float e_line);
+
   // Report current time.
   printf("Loop at %.2f (secs)\n", wb_robot_get_time() );
-  
+
   // Get latest ground sensor readings
   gs_value[0] = wb_distance_sensor_get_value(gs[0]);
   gs_value[1] = wb_distance_sensor_get_value(gs[1]);  
   gs_value[2] = wb_distance_sensor_get_value(gs[2]);
-  
-  // Report ground sensor values
-  printf("Ground sensor values: \n");
-  printf(" 0: %d\n", gs_value[0] );
-  printf(" 0: %d\n", gs_value[1] );
-  printf(" 0: %d\n\n", gs_value[2] );
 
-    // Loop through all proximity sensors [0:7]
+  //printf("%.2f\n%.2f\n%.2f\n",gs_value[0],gs_value[1],gs_value[2]);
 
-  float e_obs = dis_error();
-  printf("e_obs = %f",e_obs);
+  // Get latest distance sensor readings
+  for(int i = 0; i < NB_PS; i++ ) 
+  {
+    // read value from sensor
+    ps_value[i] =  wb_distance_sensor_get_value(ps[i]);
+  }
+
+    printf("state = %d\n",state);
+    // global state determination
+    if(state == 0)
+        state = init_state();
+    else if(state == 1)
+        state = join_line();
+    else if(state == 2)
+        state = follow_line(getLineError());
+    else if(state == 3)
+        state = obs_onr(dis_error());
+    else if (state == 4)
+        state = obs_onl(dis_error());
+          
 
   // Call a delay function
-  delay_ms( 500 );
+  delay_ms( 50 );
 }
 
 
@@ -204,22 +257,212 @@ void delay_ms( float ms ) {
   return;
 }
 
+
+// movement functions
+void moving_forwards()
+{
+    wb_motor_set_velocity(left_motor, Max_speed);
+    wb_motor_set_velocity(right_motor, Max_speed);
+}
+
+void stop_moving()
+{
+    wb_motor_set_velocity(left_motor, 0);
+    wb_motor_set_velocity(right_motor, 0);
+}
+
+void rotate_right(float time)
+{
+    wb_motor_set_velocity(left_motor, Max_speed);
+    wb_motor_set_velocity(right_motor, -Max_speed);
+    delay_ms(time);
+}
+
+void rotate_left(float time )
+{
+    wb_motor_set_velocity(left_motor, -Max_speed);
+    wb_motor_set_velocity(right_motor, Max_speed);
+    delay_ms(time);
+}
+
+
+// A function to return an error signal representative
+// of the line placement under the ground sensor.
+float getLineError() 
+{
+  float e_line;
+
+  // Sum ground sensor activation
+  float sum_gs ;
+  sum_gs = gs_value[0] + gs_value[1] + gs_value[2];
+
+  // Calculated error signal
+  float w_left;
+  w_left = gs_value[0] + (gs_value[1] * 0.5);
+  float w_right;
+  w_right = (gs_value[1]*0.5) + gs_value[2];
+  e_line = (w_left - w_right)/sum_gs;
+
+  // Return result
+  printf("e_line = %f\n",e_line);
+  return e_line;
+}
+
+
+
+
+// join line mode
+
+int join_line()
+{
+    if(gs_value[0] + gs_value[1] + gs_value[2] > 2400)
+    {
+        moving_forwards();
+        return STATE_FIND_LINE;
+    }
+    else
+        return STATE_FOUND_LINE;
+
+}
+
+int init_state()
+{
+    stop_moving();
+    delay_ms(5000);
+    return STATE_FIND_LINE;
+}
+
 float dis_error()
 {
-  int i;
   // Same number of weigths as sensors
-  float weights[NB_PS] = { 0.1, 0.2, 0.4, 0.5, -0.5, -0.4, -0.2, -0.1 };
+  float weights[NB_PS] = {0.3, 0.2, 0.1, -0.5, 0.5, -0.1, -0.2, -0.3};
   float e_obs;
 
   // Set initial value.
   e_obs = 0.0;
-  for( i = 0; i < NB_PS; i++ ) {
-
-      // read value from sensor
-      ps_value[i] =  wb_distance_sensor_get_value(ps[i]);
-
+  for( int i = 0; i < NB_PS; i++ )
+   {
       // Simple summation of weighted sensor values.
-      e_obs = e_obs + ( ps_value[i] * weights[i] );
+      e_obs = e_obs + ( ps_value[i] * weights[i]);
   }
+  printf("e_obs = %.2f\n",e_obs);
   return e_obs;
+}
+
+
+// follow line mode
+int follow_line(float e_line)
+{
+    if (ps_value[0]>OBS)
+    {
+        rotate_left(R_pi_2/2);
+        return STATE_OBS_R;
+    }
+    else if (ps_value[7]>OBS)
+    {
+        rotate_right(R_pi_2/2);
+        return STATE_OBS_L;
+    }
+
+    static int j = 0;
+    if (gs_value[0] + gs_value[1] + gs_value[2] < 1000)
+    {
+        j = 0;
+        moving_forwards();
+        delay_ms(half_rob);
+        rotate_left(R_pi_2);
+    }
+    else if(gs_value[0] + gs_value[1] + gs_value[2] > 2500)
+    {
+        if (j/10)
+        {
+            rotate_left(R_pi);
+            j = 0;
+        }
+        else
+        {
+            moving_forwards();
+            j++;
+        }
+    }
+    else
+    {
+        j = 0;
+        // Use Weight Measurement to follow line
+        // Determine a proportional rotation speed
+        float turn_velocity;
+        turn_velocity = 9;  // What is a sensible maximum speed?
+        turn_velocity = turn_velocity * e_line;
+
+        // Set motor values.
+        wb_motor_set_velocity(right_motor, Max_speed - turn_velocity);
+        wb_motor_set_velocity(left_motor, Max_speed + turn_velocity);
+    }
+    return STATE_FOUND_LINE;
+}
+
+
+// When the obstacle is on the right
+int obs_onr(float e_obs)
+{
+  static int count_r = 0;
+  if (count_r > 8)
+  {
+    if (gs_value[0]<500||gs_value[2]<500)
+      {
+        count_r = 0;
+        return STATE_FOUND_LINE;
+      }
+  }
+
+  // Determine a proportional rotation speed
+  float turn_velocity;
+  turn_velocity = 0.1;  // What is a sensible maximum speed?
+  turn_velocity = turn_velocity * (e_obs - OBS_E);
+
+  if (turn_velocity > 6.2 - Max_speed)
+    turn_velocity = 6.2 - Max_speed;
+  else if (turn_velocity < -6.2 - Max_speed)
+    turn_velocity = -6.2 - Max_speed;
+
+  printf("vr = %.2f\n",turn_velocity);
+
+  // Set motor values.
+  wb_motor_set_velocity(right_motor, Max_speed + turn_velocity);
+  wb_motor_set_velocity(left_motor, Max_speed - turn_velocity);
+  count_r++;
+  return STATE_OBS_R;
+}
+
+
+// Whent the obstacle is on the left
+int obs_onl(float e_obs)
+{
+  static int count_l = 0;
+  if (count_l > 8)
+  {
+    if (gs_value[0]<500||gs_value[2]<500)
+    {
+      count_l = 0;
+      return STATE_FOUND_LINE;
+    }
+  }
+
+  // Determine a proportional rotation speed
+  float turn_velocity;
+  turn_velocity = 0.1;  // What is a sensible maximum speed?
+  turn_velocity = turn_velocity * (e_obs + OBS_E);
+
+  if (turn_velocity > 6.2 -Max_speed)
+    turn_velocity = 6.2 - Max_speed;
+  else if (turn_velocity < -6.2 - Max_speed)
+    turn_velocity = -6.2 - Max_speed;
+
+  printf("vl = %2f\n",turn_velocity);
+
+  // Set motor values.
+  wb_motor_set_velocity(right_motor, Max_speed + turn_velocity);
+  wb_motor_set_velocity(left_motor, Max_speed - turn_velocity);
+  count_l++;
+  return STATE_OBS_L;
 }
