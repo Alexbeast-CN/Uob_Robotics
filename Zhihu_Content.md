@@ -30,6 +30,7 @@
 
 - [Week1. An intro to Machine vision](https://zhuanlan.zhihu.com/p/421190397)
 - [Week1. Machine Vision Tutorial from Stanford](https://zhuanlan.zhihu.com/p/422599653)
+- [Opencv-python-tutorial -- 1](https://zhuanlan.zhihu.com/p/425297752)
 ## Human-Robot Interaction
 
 ## Introduction to Artificial Intelligence
