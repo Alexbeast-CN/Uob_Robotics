@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/423815444
-# Lec4. Obstacle Avoidance(updating)
+# Lec4. Obstacle Avoidance
 
 > 很抱歉这部分的内容我将不再知乎内提供代码文件的链接了。由于吸取`Lec3`文章失败的经验，我发现直接放代码有背于 `Document` 的本质，所以本篇文章更多的我会以文字的形式描述功能的实现，以及我在实现过程中做的尝试。
 

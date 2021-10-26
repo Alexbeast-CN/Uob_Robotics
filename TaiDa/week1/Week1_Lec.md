@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/423386635
-# Lec2. Homogeneous Transformations
+# Lec2. Homogeneous Transformations - 1
 
 > 还是大致的看了一下Aghil Jafari教授的课程，真的让人受不了啊，这英语真的让人难以理解。所以还是弃暗投明，选择coursera上台大林沛群老师的[机器人学课程](https://www.coursera.org/learn/robotics1/home/welcome)
 
@@ -295,3 +295,5 @@ ZYZ = rad2deg(rotm2eul(R,"ZYZ"))
 
 >一般来说，两个方法算出来的值是应该不同的。但其中 `ZYX` 的值与 `Fixed Angles` 的值相同。
 
+
+下篇：[Homogeneous Transformations - 2](https://zhuanlan.zhihu.com/p/426121325)
