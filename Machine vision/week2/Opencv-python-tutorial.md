@@ -333,3 +333,5 @@ cv.imshow('red',red)
 
 cv.waitKey(0)
 ```
+
+一下篇链接[Opencv-python-tutorial -- 2](https://zhuanlan.zhihu.com/p/426575079)
