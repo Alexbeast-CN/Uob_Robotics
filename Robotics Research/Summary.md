@@ -61,5 +61,29 @@ This paper proposed a low-cost COVID nasopharyngeal swab sampling(np) robot. The
 ![ ](week4/pics/8.png)
 <center> Fig6. 2-DOF Active End-effector </center>
 
+<br>
+
 ![ ](week4/pics/9.png)
 <center> Fig7. Implementation of the robot  </center>
+
+## Week3
+
+### Seminars: Robot learning for dexterous manipulation -- Dandan Zhang
+
+The seminar introduced reinforcement learning for building intelligent robots to complex tasks and adapting different scenes in a shorter time and with less data. The challenge is to overcome the current limitations like the black-box effect, large data requirements, lack of generalizability. The solution to this challenge is called an explainable learning algorithm. This method uses a hierarchy structure, as it is shown in Fig 8, to improve training procedures. What impressed me the most is robustly shown in Fig9. Except for the case study of pouring drink, the explainable learning algorithm can also be applied in other fields like a medical robot, industrial robot, etc.
+
+![ ](week5/pics/1.png)
+<center> Fig8. The hierarchy structure of explainable learning </center>
+
+<br>
+
+![ ](week5/pics/2.png)
+<center> Fig9. Task with human interfere </center>
+
+### Paper: A Survey of Motion Planning and Control Techniques for Self-Driving Urban Vehicles -- Brian Paden
+
+Simultaneous Localization and Mapping (SLAM) has a long history of development. Recent solutions are acceptable but still have some limitations. A critical limit is the drift of the map when SLAM is applied in long-term tests. The possible techniques for this challenge are decomposing the global map into a fusion of small-size maps and multi-sensor fusion. For single-vehicle SLAM, the challenges are 1. how to reduce drift by recognizing the same object in different views. 2. How to locate in the previously built map using object recognition. Centralized SLAM and decentralized SLAM are both possible approaches for multi-vehicle SLAM, but both are challenging. Future SLAM may use more Deep learning methods to build semantic maps.
+
+### Reading Group: Continuum Robots for Medical Applications: A Survey -- -- written by Jessica Burgner, presented by Zhengri Xu
+
+The precision and continuum make the robotic system an excellent solution to perform minimally invasive surgery. Compared to traditional rigid robots, Continuum robots have more flexibility and dexterity, which makes continuum robots essential in minimally invasive surgery. Nowadays, continuum medical robots usually are composed of many small discrete joints, and by applying standard Denavit–Hartenberg (D–H) parameter tables to simulate the kinetics model. However, the challenge kinemics model is the complexity, accuracy, and computational expense. Many medical areas like neurosurgery, otolaryngology, etc., are demanding continuum robots. However, there are still challenges like instrumentation, visualization, OR integration,  human-machine interactions, and force sensing requiring researchers to solve.

@@ -13,6 +13,10 @@
 - [Lec5. Odometry 里程计 (Updating)](https://zhuanlan.zhihu.com/p/425715294)
 ## Roboics Research Technology and Methods
 
+> 这部分的内容很少的原因是
+> - 大多是 saminar (研讨会)，基本都是老师讲自己的研究领域，然后我们来写一些总结作为 report。 由于比较怕老师在查重的时候查到我写的开源笔记，所以暂时不更新这部分的内容。
+> - 另外一部分关于培养技能的课程过于简单，比如如何 presentation, latex, git 这些都是我早已掌握并且经常使用的技能，就不做记载了。
+
 - [Week2. 机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
 - [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
 ## Robotic Fundamentals
