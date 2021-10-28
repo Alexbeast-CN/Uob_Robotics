@@ -24,6 +24,7 @@
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
 - [Lec2. Homogeneous Transformations -1](https://zhuanlan.zhihu.com/p/423386635)
 - [Lec2. Homogeneous Transformations - 2](https://zhuanlan.zhihu.com/p/426121325)
+- [Lec3. Forward Kinematics](https://zhuanlan.zhihu.com/p/426994048)
 ## Machine Vision
 
 > 老实说布大的计算机视觉课程是不错的，但在我查找资料的过程中发现了一个更好的课程，斯坦福大学开设的卷积神经网络的物体识别课程，所以以后的课程我和结合布大和斯坦福的内容做笔记和总结。下面列出关于斯坦福大学的课程的资料链接：

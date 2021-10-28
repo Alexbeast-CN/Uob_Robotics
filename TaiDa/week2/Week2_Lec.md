@@ -57,7 +57,7 @@ $$\left[
 \right]=
 ^{A}_{B}T$$
 
-## 1.5 Operators
+## 1.6 Operators
 
 有了 Transformation Matrix, T 后， 我们就可以使用一个矩阵来表示坐标轴之间的变换了。如下图，当我们知道向量 $P$ 对于 frame {A} 的向量为 $^{A}P$ 和{A} 到 {B} 的变换方式后，便可以求出 $P$ 再 frame {B} 中的向量 {^{B}P}。
 
@@ -209,9 +209,9 @@ $$P_2 =
 ![ ](../week2/pics/5.png)
 
 
-## 1.6 Transformation Matrix 运算
+## 1.7 Transformation Matrix 运算
 
-### 1.6.1 连续运算
+### 1.7.1 连续运算
 
 在之前的例子中，我们学会了 `frame` 从一个位置运动到另外一个位置的变换方程计算方法。那么利用齐次矩阵的性质，我们便可以简单的对于连续运动的 `frame` 进行追踪。方法就是简单的矩阵相乘（注意是左乘）。
 
@@ -223,7 +223,7 @@ $$^{A}_{C}T = ^{A}_{B}T\ ^{B}_{C}T$$
 
 > tips： 变换矩阵的上标为 base frame, 下标为 target frame。即 $^{A}_{B}T$ 表示为从 {A} 到 {B} 的变换。
 
-### 1.6.2 反矩阵
+### 1.7.2 反矩阵
 
 根据其次矩阵的性质：
 
@@ -256,3 +256,7 @@ $$\begin{aligned}
 > Tips: 
 > - T 左乘的时候，上下标可以相消。
 >   - $^{C}_{U}T\ ^{U}_{D}T = ^{C}_{D}T$
+
+上篇：[Homogeneous Transformations - 1](https://zhuanlan.zhihu.com/p/423386635)
+
+下篇：[Forward Kinematics]()
