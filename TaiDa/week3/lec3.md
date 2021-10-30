@@ -146,6 +146,50 @@ $$^{0}_{n}T = ^{0}_{1}T^{1}_{2}T^{2}_{3}T...^{n-2}_{n-1}T^{n-1}_{n}T$$
 
 > 两者之间的区别并不大，只是 standard 将下一段 link 长度变成了当前段的罢了。
 
+## 2.6 Matlab 实现
+
+> 首先关于列出一些 matlab robotics 常用的 documents 网站：
+> [Matlab Robotics toolbox 官方文档](https://uk.mathworks.com/help/robotics/ref/rigidbodytree.show.html)
+> [Peter Corke 大神的第三方 Robotics Toolbox](https://petercorke.com/toolboxes/robotics-toolbox/)
+> 怕国内的同学打不开网站,所以把网页上关键的内容克隆到我的百度云了： [Peter Corke](https://pan.baidu.com/s/1IiOa7CKpuZEsx8U3VV8cAQ)，提取码：0i9s
+
+
+对于一个 5 轴机器人来说，使用 `Matlab` 中的 `Livesript` 效果如下：
+
+Global variable
+```matlab
+pi = deg2rad(180);
+```
+
+Parameters ( in cm)
+```matlab
+link1_len = 15;
+link2_len = 15;
+link3_len = 10;
+d1 = 5;
+```
+
+Standard DH
+```matlab
+% Link([theta, d, a alpha])
+
+L1 = Link([0 d1 0 pi/2]);
+L2 = Link([0 0 link1_len 0]);
+L3 = Link([0 0 link2_len 0]);
+L4 = Link([0 0 0 pi/2]);
+L5 = Link([0 0 link3_len 0]);
+
+Lynx = SerialLink([L1,L2,L3,L4,L5])
+Lynx.plot([0,0,0,0,0])
+```
+![ ](pics/7.png)
+
+适当探索后，打个工作空间点云也不是问题：
+
+![ ](pics/1.gif)
+
 上篇：[Homogeneous Transformations - 2](https://zhuanlan.zhihu.com/p/426121325)
+
+下篇：[Inverse Kinematics]()
 
 
