@@ -149,38 +149,46 @@ $$^{0}_{n}T = ^{0}_{1}T^{1}_{2}T^{2}_{3}T...^{n-2}_{n-1}T^{n-1}_{n}T$$
 ## 2.6 Matlab 实现
 
 > 首先关于列出一些 matlab robotics 常用的 documents 网站：
-> [Matlab Robotics toolbox 官方文档](https://uk.mathworks.com/help/robotics/ref/rigidbodytree.show.html)
-> [Peter Corke 大神的第三方 Robotics Toolbox](https://petercorke.com/toolboxes/robotics-toolbox/)
-> 怕国内的同学打不开网站,所以把网页上关键的内容克隆到我的百度云了： [Peter Corke](https://pan.baidu.com/s/1IiOa7CKpuZEsx8U3VV8cAQ)，提取码：0i9s
+> - [Matlab Robotics toolbox 官方文档](https://uk.mathworks.com/help/robotics/ref/rigidbodytree.show.html)
+> - [Peter Corke 大神的第三方 Robotics Toolbox](https://petercorke.com/toolboxes/robotics-toolbox/)
+> - 怕国内的同学打不开网站,所以把网页上关键的内容克隆到我的百度云了： [Peter Corke](https://pan.baidu.com/s/1IiOa7CKpuZEsx8U3VV8cAQ)，提取码：0i9s
 
 
 对于一个 5 轴机器人来说，使用 `Matlab` 中的 `Livesript` 效果如下：
 
-Global variable
 ```matlab
+% variable
 pi = deg2rad(180);
-```
 
-Parameters ( in cm)
-```matlab
+%Parameters ( in cm)
+link0_len = 5;
 link1_len = 15;
 link2_len = 15;
 link3_len = 10;
-d1 = 5;
-```
 
-Standard DH
-```matlab
+% Join Limitation
+J1_min = -pi;
+J2_min = 0;
+J3_min = -pi/2;
+J4_min = -pi/2;
+J5_min = -pi/2;
+J1_max = pi;
+J2_max = pi/2;
+J3_max = 0;
+J4_max = 0;
+J5_max = pi/2;
+
+%Standard DH
 % Link([theta, d, a alpha])
 
-L1 = Link([0 d1 0 pi/2]);
-L2 = Link([0 0 link1_len 0]);
-L3 = Link([0 0 link2_len 0]);
-L4 = Link([0 0 0 pi/2]);
-L5 = Link([0 0 link3_len 0]);
+L(1) = Link([0 link0_len 0 pi/2]);
+L(2) = Link([0 link1_len 0 0]);
+L(3) = Link([0 link2_len 0 0]);
+L(4) = Link([0 0 0 pi/2]);
+L(5) = Link([0 link2_len 0 0]);
 
-Lynx = SerialLink([L1,L2,L3,L4,L5])
-Lynx.plot([0,0,0,0,0])
+Lynxmoiton = SerialLink(L,'name','Lynxmoiton');
+Lynxmoiton.plot([0,0,0,0,0])
 ```
 ![ ](pics/7.png)
 

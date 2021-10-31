@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/427681879
 # Opencv-python-tutorial -- 3
 
 ## 1. Face detection with haar cascades
@@ -73,5 +74,132 @@ faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.05,minNeighbors=6
 
 本节的内容是使用 `Opencv` 自带的 `Face Recognitor` 深度学习框架对于不同人的脸进行识别。
 
-这里我们准备了 Black Pink 组合成员每人个20张照片，作为训练集，
+这里我们准备了 Black Pink 组合成员每人个20张照片，作为训练集，以及另外每人10张作为测试集。
 
+首先写一个程序训练 AI 的识别功能：
+```py
+import os
+import cv2 as cv
+import numpy as np
+
+Black_pink = ['Jisoo','Jennie','Lisa','Rose']
+
+haar_cascade = cv.CascadeClassifier('Machine vision\week4/harr_face.xml')
+
+DIR = r'C:/Users/Daoming Chen/Documents/GitHub/Uob_Robotics/Machine vision/week4/Face Recognizor/train'
+
+features = []
+labels = []
+
+def create_train():
+    for person in Black_pink:
+        path = os.path.join(DIR, person)
+        label = Black_pink.index(person)
+
+        for img in os.listdir(path):
+            img_path = os.path.join(path,img)
+
+            img_array = cv.imread(img_path)
+            if img_array is None:
+                continue 
+                
+            gray = cv.cvtColor(img_array, cv.COLOR_BGR2GRAY)
+
+            faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
+
+            for (x,y,w,h) in faces_rect:
+                faces_roi = gray[y:y+h, x:x+w]
+                features.append(faces_roi)
+                labels.append(label)
+
+create_train()
+print('Training done ---------------')
+
+features = np.array(features, dtype='object')
+labels = np.array(labels)
+
+face_recognizer = cv.face.LBPHFaceRecognizer_create()
+
+# Train the Recognizer on the features list and the labels list
+face_recognizer.train(features,labels)
+
+face_recognizer.save('face_trained.yml')
+np.save('features.npy', features)
+np.save('labels.npy', labels)
+```
+
+然后测试训练结果：
+```py
+import numpy as np
+import cv2 as cv
+
+haar_cascade = cv.CascadeClassifier('Machine vision/week4/harr_face.xml')
+
+Black_pink = ['Jisoo','Jennie','Lisa','Rose']
+
+face_recognizer = cv.face.LBPHFaceRecognizer_create()
+face_recognizer.read('face_trained.yml')
+
+img = cv.imread('Machine vision/week4/Face Recognizor/test/Rose/1.jpg')
+
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+# Detect the face in the image
+faces_rect = haar_cascade.detectMultiScale(gray, 1.1, 4)
+
+for (x,y,w,h) in faces_rect:
+    faces_roi = gray[y:y+h,x:x+w]
+
+    label, confidence = face_recognizer.predict(faces_roi)
+    print(f'Label = {Black_pink[label]} with a confidence of {confidence}')
+
+    cv.putText(img, str(Black_pink[label]), (20,20), cv.FONT_HERSHEY_COMPLEX, 1.0, (0,255,0), thickness=2)
+    cv.rectangle(img, (x,y), (x+w,y+h), (0,255,0), thickness=2)
+
+cv.imshow('Detected Face', img)
+
+cv.waitKey(0)
+```
+
+结果还是能够接受的：
+
+![ ](./pics/Rose_Rec.jpg)
+```
+Label = Rose with a confidence of 77.41009254574078
+```
+
+![ ](./pics/Lisa_Rec.jpg)
+```
+Label = Lisa with a confidence of 121.3902802985011
+```
+
+![ ](./pics/Jennie_Rec.jpg)
+```
+Label = Jennie with a confidence of 51.10702824297346
+```
+
+![ ](./pics/Jisoo_Rec.jpg)
+```
+Label = Jisoo with a confidence of 69.63685142148553
+```
+
+也有失败的时候，而且还不少：
+
+![ ](./pics/Lisa_Rec_fall.jpg)
+```
+Label = Jennie with a confidence of 129.4630254307873
+```
+
+最后给了 AI 一个终极挑战：
+
+![ ](./pics/Black_pink_rec.jpg)
+```
+Label = Rose with a confidence of 67.03205529303399
+Label = Jisoo with a confidence of 80.29899824875896
+Label = Jennie with a confidence of 79.41507069872958
+Label = Jennie with a confidence of 63.28132174720105
+```
+
+这里没有认出来 Lisa，感觉是我的训练集的图片质量问题导致的。
+
+> 一点小总结，对于训练集的图片来说，图片大小是非常关键的因素，本次训练中并没有保证所有图片的大小一致所有在测试环节出现了不少问题。不过总体结果我还是很满意的。
