@@ -4,7 +4,7 @@
 > 课程资料：
 > - [视频资料 Lec2 on youtube](https://www.youtube.com/watch?v=OoUX-nOEjG0&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=2)
 > - [ppt](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture2.pdf)
-> -[中文笔记(上)](https://zhuanlan.zhihu.com/p/20894041?refer=intelligentunit)
+> - [中文笔记(上)](https://zhuanlan.zhihu.com/p/20894041?refer=intelligentunit)
 > - [中文笔记(下)](https://zhuanlan.zhihu.com/p/20900216?refer=intelligentunit)
 > - [官方笔记](https://cs231n.github.io/classification/)
 
