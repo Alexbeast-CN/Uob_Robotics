@@ -199,6 +199,6 @@ Lynxmoiton.plot([0,0,0,0,0])
 
 上篇：[Homogeneous Transformations - 2](https://zhuanlan.zhihu.com/p/426121325)
 
-下篇：[Inverse Kinematics]()
+下篇：[Inverse Kinematics in Matlab](https://zhuanlan.zhihu.com/p/430060490)
 
 
