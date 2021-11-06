@@ -114,6 +114,8 @@ $$^{0}_{n}T = ^{0}_{1}T^{1}_{2}T^{2}_{3}T...^{n-2}_{n-1}T^{n-1}_{n}T$$
 |2  |90°           |0        |$d_2$|0         |
 |3  |0             |0        |$L_2$|$\theta_3$|
 
+![ ](pics/10.png)
+
 > 这里对于也可以将 {2} 的 $d_i$ 写成 0，{3} 的 $d_i$ 写成 $d_2-L_2$
 
 对于坐标轴方向的选着其实可以有很多种：
@@ -123,7 +125,18 @@ $$^{0}_{n}T = ^{0}_{1}T^{1}_{2}T^{2}_{3}T...^{n-2}_{n-1}T^{n-1}_{n}T$$
 
 ## 2.5 DH standard
 
-除了我们上面介绍的 DH Craig 法之外，还有很多种 DH 法，其中另外一种常见的方法是 DH standard。依然使用了类似之前的 4 个元素，但是改变了对于这些元素的取法。
+除了我们上面介绍的 DH Craig 法之外，还有很多种 DH 法，其中另外一种常见的方法是 DH standard。依然使用了类似之前的 4 个元素，但是改变了对于这些元素的取法。其相邻两个 Joint 之间的齐次变换矩阵为：
+
+$$^{n - 1}T_n=
+\left[
+\begin{array}{ccc|c}
+    \cos\theta_n & -\sin\theta_n \cos\alpha_n & \sin\theta_n \sin\alpha_n & r_n \cos\theta_n \\
+    \sin\theta_n & \cos\theta_n \cos\alpha_n & -\cos\theta_n \sin\alpha_n & r_n \sin\theta_n \\
+    0 & \sin\alpha_n & \cos\alpha_n & d_n \\
+    \hline
+    0 & 0 & 0 & 1
+  \end{array}
+\right]$$
 
 这里偷个懒，就不讲具体每个参数是怎么定义的，之间用例和经验法来描述：
 
@@ -135,6 +148,8 @@ $$^{0}_{n}T = ^{0}_{1}T^{1}_{2}T^{2}_{3}T...^{n-2}_{n-1}T^{n-1}_{n}T$$
 |2  |0             |$L_1$    |0    |$\theta_2$|
 |3  |0             |$L_2$    |0    |$\theta_3$|
 
+![ ](pics/8.png)
+
 ![ ](pics/4.png)
 
 而使用 DH standard 写出来的表为：
@@ -144,6 +159,8 @@ $$^{0}_{n}T = ^{0}_{1}T^{1}_{2}T^{2}_{3}T...^{n-2}_{n-1}T^{n-1}_{n}T$$
 |1  |0             |$L_1$    |0    |$\theta_1$|
 |2  |0             |$L_2$    |0    |$\theta_2$|
 |3  |0             |$L_3$    |0    |$\theta_3$|
+
+![ ](pics/9.png)
 
 > 两者之间的区别并不大，只是 standard 将下一段 link 长度变成了当前段的罢了。
 
