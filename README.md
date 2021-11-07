@@ -7,21 +7,41 @@
 同时会在[知乎](https://zhuanlan.zhihu.com/p/414973930)上更新笔记文章。
 ## Robotics Systems
 
+> 这是一门褒贬不一的课程。很多同学吐槽老师发完讲义啥也不讲，老师太好当了。但我却非常感激 Prof. Paul，原因如下：
+> - 这门课程的讲义质量非常的高。讲义里有知识的传授，设置各种难度引导学生思考，最后完成实践性 Robotic Lab。
+> - 这是一门研究生等级的课程，之所以叫研究生，是因为我们要掌握基础的研究能力，其中当然包括自行跟着讲义完成 Lab 的能力，以及自行上网查阅资料的能力。
+> - 此外，本课程每周有一节 QA 课程，帮助同学们解决自学过程中的难题。以及一节实践课，帮助同学解决实操过程的问题。
+> - Paul 对于我 As2 的帮助很大，在我提出 As2 的想法（做扫地机）后，老师第二天就给出一本算法书资料，内容精良，直击本项目的痛点。
+
+### Assessment 1
+
 - [Lec1. Introduction to robotic systems](https://zhuanlan.zhihu.com/p/414973593)
 - [Lec2. Line following](https://zhuanlan.zhihu.com/p/416903088)
 - [Lec3. Finite State Machine ](https://zhuanlan.zhihu.com/p/419237739)
-- [Lec4. Obstacle Avoidance(updating)](https://zhuanlan.zhihu.com/p/423815444)
-- [Lec5. Odometry 里程计 (Updating)](https://zhuanlan.zhihu.com/p/425715294)
-## Roboics Research Technology and Methods
+- [Lec4. Obstacle Avoidance](https://zhuanlan.zhihu.com/p/423815444)
+- [Lec5. Odometry 里程计](https://zhuanlan.zhihu.com/p/425715294)
 
-- [Week2.机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
+### Assessment 2
+
+There will be another rep to host this part. [Robot Navigation](https://github.com/Alexbeast-CN/Robot_navigation_webots)
+
+- [覆盖规划算法 （Updating)](https://zhuanlan.zhihu.com/p/430612058)
+
+## Robotics Research Technology and Methods
+
+> 这部分的内容很少的原因是
+> - 大多是 saminar (研讨会)，基本都是老师讲自己的研究领域，然后我们来写一些总结作为 report。 由于比较怕老师在查重的时候查到我写的开源笔记，所以暂时不更新这部分的内容。
+> - 另外一部分关于培养技能的课程过于简单，比如如何 presentation, latex, git 这些都是我早已掌握并且经常使用的技能，就不做记载了。
+
+- [Week2. 机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
 - [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
 ## Robotic Fundamentals
 
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
-- [Lec2. Homogeneous Transformations](https://zhuanlan.zhihu.com/p/423386635)
+- [Lec2. Homogeneous Transformations -1](https://zhuanlan.zhihu.com/p/423386635)
 - [Lec2. Homogeneous Transformations - 2](https://zhuanlan.zhihu.com/p/426121325)
 - [Lec3. Forward Kinematics](https://zhuanlan.zhihu.com/p/426994048)
+- [Lec4. Inverse Kinematics in Matlab (Updating)](https://zhuanlan.zhihu.com/p/430060490)
 ## Machine Vision
 
 > 老实说布大的计算机视觉课程~~是不错的~~（只有第一节课还不错，随后教学质量就不行了），但在我查找资料的过程中发现了一个更好的课程，斯坦福大学开设的卷积神经网络的物体识别课程，所以以后的课程我和结合布大和斯坦福的内容做笔记和总结。下面列出关于斯坦福大学的课程的资料链接：
@@ -38,7 +58,6 @@
 - [Opencv-python-tutorial -- 2](https://zhuanlan.zhihu.com/p/426575079)
 - [Opencv-python-tutorial -- 3](https://zhuanlan.zhihu.com/p/427681879)
 - [Lec2. Image Classification](https://zhuanlan.zhihu.com/p/428291683)
-
 ## Human-Robot Interaction
 
 ## Introduction to Artificial Intelligence
