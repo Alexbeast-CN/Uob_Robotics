@@ -30,3 +30,5 @@ cv.imwrite('Machine vision\week3\pics/bitwise_xor.jpg',bitwise_xor)
 bitwise_not = cv.bitwise_not(rectangle)
 cv.imshow('bitwise_not',bitwise_not)
 cv.imwrite('Machine vision\week3\pics/bitwise_not.jpg',bitwise_not)
+
+cv.waitKey(0)

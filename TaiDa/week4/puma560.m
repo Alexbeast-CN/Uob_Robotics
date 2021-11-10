@@ -1,4 +1,4 @@
-%MDL_PUMA560 Create model of Puma 560 manipulator
+% MDL_PUMA560 Create model of Puma 560 manipulator
 %
 % MDL_PUMA560 is a script that creates the workspace variable p560 which
 % describes the kinematic and dynamic characteristics of a Unimation Puma
