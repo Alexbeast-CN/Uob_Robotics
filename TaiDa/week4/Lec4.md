@@ -3,8 +3,10 @@
 
 
 > 资料推荐：
-> - 推荐课程：[曹博士的课程：ENGR486 【A link to Youtube】](https://www.youtube.com/watch?v=3whQFs0-9Qg&t=747s)
-> - [ENGR486 全集](https://www.youtube.com/watch?v=h0WsQ_N-Uyg&list=PLJzZfbLAMTelwaLxFXteeblbY2ytU2AxX&index=8)
+> - 推荐课程：
+>   - [Intro2Robotics Course Lectures - Lec8](https://www.youtube.com/watch?v=TPjclVs4RIY&list=PLYZT24lofrjXcuu1iBNWu-NprW2wZD3zu&index=18&ab_channel=AaronBecker)
+>   - [Intro2Robotics Course Lectures - Lec9a](https://www.youtube.com/watch?v=9HfcMkfLh6k&list=PLYZT24lofrjXcuu1iBNWu-NprW2wZD3zu&index=19&ab_channel=AaronBecker)
+>   - [Intro2Robotics Course Lectures - Lec9b](https://www.youtube.com/watch?v=vUwd-PHuYfQ&list=PLYZT24lofrjXcuu1iBNWu-NprW2wZD3zu&index=20&ab_channel=AaronBecker)
 > - [Text book for Inverse Kinematics](http://motion.pratt.duke.edu/RoboticSystems/InverseKinematics.html)
 > - 推荐资料：[Jafari 的讲义 【百度云】](链接：https://pan.baidu.com/s/1bEuDzKkVnRlyPHvSoTIgWw)提取码：zybg  
 > - 优质博客: 
@@ -71,6 +73,8 @@ Pieper solution 是一种特殊的逆向运动学计算方法。只在特定情�
 
 ### 3.1 数学思想
 
+> 请务必跟着手算一遍
+
 首先，Pieper Solution 使用的是 Modified DH。
 
 对于这个系统而言，输入量是机械臂夹爪相对于世界坐标系位姿：
@@ -83,11 +87,11 @@ $$^{0}P_{5\ OGR}= ^{0}P_{4\ OGR}$$
 
 P 为向量。
 
-$$^{0}_{5}T = 
+$$^{0}_{e}T = 
 \left[
 \begin{array}{ccc|c}
      &   &  &  |\\
-     & R &  &  ^{0}P_{5\ OGR}\\
+     & R &  &  ^{0}P_{e}\\
      &   &  &  |\\
     \hline
     0 & 0 & 0 & 1
@@ -96,7 +100,15 @@ $$^{0}_{5}T =
 
 对于本例而言：
 
-$$^{0}_{5}T = ^{0}_{e}T ^{5}_{e}T^{-1}$$
+$$^{0}_{5}T = ^{0}_{e}T\ ^{e}_{5}T^{-1}$$
+
+或者：
+
+$$^{0}P_5 = ^{0}P_e - l3*R*\left[
+    \begin{matrix}
+        0\\0\\1
+    \end{matrix}
+\right]$$
 
 
 对于前三段来说，先通过正向运动学：
@@ -127,7 +139,34 @@ $$\left[
 
 之后，在由对于点 Pw 的通过 Z-Y-Z 欧拉角解出 $\theta_4$, $\theta_5$：
 
-$$^{3}_{5}R = ^{0}_{3}R^{-1}\ ^{0}_{5}R$$
+$$^{3}_{5}R = ^{0}_{3}R^{T}\  ^{0}_{5}R$$
+
+$$^{A}_{B}R_{X,Y,Z}(\alpha,\beta,\gamma) = 
+\left[
+    \begin{matrix}
+    c\alpha c\beta&c\alpha s\beta s\gamma - s\alpha c\gamma&
+    c\alpha s\beta c\gamma + s\alpha s \gamma\\
+    s\alpha c\beta&s\alpha s\beta s\gamma+c\alpha c\gamma&s\alpha s\beta c\gamma - c\alpha s\gamma\\
+    -s\beta&c\beta s\gamma&c\beta c\gamma
+    \end{matrix}
+\right] = 
+\left[
+    \begin{matrix}
+    r_{11}&r_{12}&r_{13}\\
+    r_{21}&r_{22}&r_{33}\\
+    r_{31}&r_{32}&r_{33}\\
+    \end{matrix}
+\right]$$
+
+ZYZ 欧拉角的反算公式是：
+
+$$\beta = Atan2(\sqrt{r_{31}^2 + r_{32}^2},r_{33})$$
+
+$$\alpha = Atan2(\frac{r_{23}}{sin\beta},\frac{r_{13}}{sin\beta})$$
+
+$$\gamma = Atan2(\frac{r_{32}}{sin\beta},\frac{-r_{31}}{sin\beta})$$
+
+其中，$\alpha=\theta_4$，$\beta=0$，$\gamma=\theta5$
 
 ### 3.2 Matlab 实现
 
@@ -135,7 +174,7 @@ $$^{3}_{5}R = ^{0}_{3}R^{-1}\ ^{0}_{5}R$$
 > 
 > 值得借鉴的代码仓库：
 >  - [robotics toolbox matlab](https://github.com/petercorke/robotics-toolbox-matlab/blob/master/%40SerialLink)
-
+>  - [analyticalInverseKinematics](https://uk.mathworks.com/help/robotics/ref/analyticalinversekinematics.html)
 
 
 ## 4. Jacobian Matrix 
