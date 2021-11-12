@@ -7,7 +7,7 @@
 
 ### Seminars: Robotics challenges and opportunities in the nuclear sector -- Prof. Tom B Scott
 
-Robots that work in the nuclear field is called a hot robot. The reason for letting robots work in the nuclear field is less cost, more output, reduced risk for humans, and saving time. Many types of robots are employed here to do tasks like nuclear waste store scanning, hot spot detect and 3D mapping the hazard area. Lidar SLAM technology is significantly used in hot robots. Many of the projects are to use robots to provide 3D point cloud maps about a hazard area. Then find where the hot spot region is based on the radiation map. 
+Robots that work in the nuclear field is called hot robot. The reason for letting robots work in the nuclear field is less cost, more output, reduced risk for humans, and saving time. Many types of robots are employed here to do tasks like nuclear waste store scanning, hot spot detect and 3D mapping the hazard area. Lidar SLAM technology is significantly used in hot robots. Many of the projects are to use robots to provide 3D point cloud maps about a hazard area. Then find where the hot spot region is based on the radiation map. 
 
 ### Seminars: Robots with simulation-based internal models -- Alan Winfield
 
@@ -48,7 +48,7 @@ Although computer vision is widely used in industrial detection, it is still str
 
 ### Seminars: Morphological Computation: the hidden superpower of soft bodies -- Helmut Hauser
 
-Morphology which gets inspired by nature, can be a crucial principle to build intelligent machines. Even if there is no controller, sensor, or brain, things can only react intelligently to the changing environment by morphology. The challenge is how to build a body that can improve interaction with the environment and facilitate learning and control. A few projects based on the theory, like spider's web, sensing skin, and jellyfish robot. The next level of this theory is to figure out logical function in morphology. This area will engage with chemical and biological knowledge to build robots that can perform locomotion logically.
+Morphology which gets inspired by nature can be a crucial principle to build intelligent machines. Even if there is no controller, sensor, or brain, things can only react intelligently to the changing environment by morphology. The challenge is how to build a body that can improve interaction with the environment and facilitate learning and control. A few projects based on the theory, like spider's web, sensing skin, and jellyfish robot. The next level of this theory is to figure out logical function in morphology. This area will engage with chemical and biological knowledge to build robots that can perform locomotion logically.
 
 <div  align="center"> 
 <img src="week4/pics/6.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
@@ -85,7 +85,7 @@ This paper proposed a low-cost COVID nasopharyngeal swab sampling(np) robot. The
 
 ### Seminars: Robot learning for dexterous manipulation -- Dandan Zhang
 
-The seminar introduced reinforcement learning for building intelligent robots to complex tasks and adapting different scenes in a shorter time and with less data. The challenge is to overcome the current limitations like the black-box effect, large data requirements, lack of generalizability. The solution to this challenge is called an explainable learning algorithm. This method uses a hierarchy structure, as it is shown in Fig 8, to improve training procedures. What impressed me the most is robustly shown in Fig9. Except for the case study of pouring drink, the explainable learning algorithm can also be applied in other fields like a medical robot, industrial robot, etc.
+The seminar introduced reinforcement learning for building intelligent robots to complex tasks and adapting different scenes in a shorter time and with fewer data. The challenge is to overcome the current limitations like the black-box effect, large data requirements, lack of generalizability. The solution to this challenge is called an explainable learning algorithm. This method uses a hierarchy structure, as it is shown in Fig 8, to improve training procedures. What impressed me the most is robustly shown in Fig9. Except for the case study of pouring drink, the explainable learning algorithm can also be applied in other fields like a medical robot, industrial robot, etc.
 
 
 <div  align="center"> 
@@ -111,4 +111,42 @@ Simultaneous Localization and Mapping (SLAM) has a long history of development. 
 ### Reading Group: Continuum Robots for Medical Applications: A Survey -- -- written by Jessica Burgner, presented by Zhengri Xu
 
 The precision and continuum make the robotic system an excellent solution to perform minimally invasive surgery. Compared to traditional rigid robots, Continuum robots have more flexibility and agility, which makes continuum robots essential in minimally invasive surgery. Nowadays, continuum medical robots usually are composed of many small discrete joints, and by applying standard Denavit–Hartenberg (D–H) parameter tables to simulate the kinetics model. However, the challenge kinemics model is the complexity, accuracy, and computational expense. Many medical areas like neurosurgery, otolaryngology, etc., are demanding continuum robots. However, there are still challenges like instrumentation, visualization, OR integration,  human-machine interactions, and force sensing requiring researchers to solve.
+
+# Week 4
+
+## Seminars: Evolutionary Swarm Robotics -- Matt Studley
+
+Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. However, the challenge is how to build a rule for robots to interact with each other and finish the project. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a smaller number of neighbors can speed up the evolution without a global controller. 
+
+## Seminars: Evolutionary Swarm Robotics -- Matt Studley
+
+## Paper: Algorithm and hardware implementation for visual perception system in autonomous vehicle: A survey -- WeijingShi
+
+Autonomous vehicles norally need hardwares like, LIDAR, camera, GPS, GPU, FPGA, radar, ultra-sonic combined with machine learning algorithms for process data to achieve SLAM and navigation. 
+
+https://www.sciencedirect.com/science/article/pii/S0167926017303218#s0035
+
+## Reading Group: The SPIR: An Autonomous Underwater Robot for Bridge Pile Cleaning and Condition Assessment -- written by Khoa Le, presented by Yuehang YU
+
+This paper proposed an autonomous underwater robot called SPIR that can navigate and do SLAM. This robot can do divers' tasks like inspecting and removing marine from wharf piles. The challenge for the robot is to keep stable while working in a turbulent underwater environment. To overcome this problem, the robot has four grasping arms to keep itself stick on the pile, as illustrated in figure 10. As fig 11 shows, the robot's power and jet generator are onshore to reduce its weight. The results in figure 12 show that navigation and grasping pile performance is good, but it struggled with finding the target. 
+
+<div  align="center"> 
+<img src="./week7/pics/1.png" width = "500"  alt="Fig10. SPIR and the main components" align=center />
+</div>
+
+<center> Fig10. SPIR and the main components </center>
+
+<br>
+
+<div  align="center"> 
+<img src="./week7/pics/2.png" width = "500"  alt="Fig11. An overview of the SPIR system" align=center />
+</div>
+
+<center> Fig11. An overview of the SPIR system </center>
+
+<div  align="center"> 
+<img src="./week7/pics/3.png" width = "500"  alt="Fig12. An overview of the SPIR system" align=center />
+</div>
+
+<center> Fig12. Navigation towards the target pile </center>
 
