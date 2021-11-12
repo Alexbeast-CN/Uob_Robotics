@@ -22,7 +22,7 @@
 
 ### Assessment 2
 
-There will be another rep to host this part. [Robot Navigation](https://github.com/Alexbeast-CN/Robot_navigation_webots)
+第二部分的项目仓库： [Robot Navigation](https://github.com/Alexbeast-CN/Robot_navigation_webots)
 
 - [覆盖规划算法 （Updating)](https://zhuanlan.zhihu.com/p/430612058)
 
@@ -50,13 +50,21 @@ There will be another rep to host this part. [Robot Navigation](https://github.c
 > - [其他中国同学开源的作业代码](https://github.com/Halfish/cs231n)
 > - [知乎上的中文笔记]( https://zhuanlan.zhihu.com/p/21930884)
 
-
 - [Week1. An intro to Machine vision](https://zhuanlan.zhihu.com/p/421190397)
 - [Week1. Machine Vision Tutorial from Stanford](https://zhuanlan.zhihu.com/p/422599653)
 - [Opencv-python-tutorial -- 1](https://zhuanlan.zhihu.com/p/425297752)
 - [Opencv-python-tutorial -- 2](https://zhuanlan.zhihu.com/p/426575079)
 - [Opencv-python-tutorial -- 3](https://zhuanlan.zhihu.com/p/427681879)
 - [Lec2. Image Classification](https://zhuanlan.zhihu.com/p/428291683)
+
+> 在学习了一段时间后，发现 UWE 的 MV 与 cs231n 的内容并不一致，为了通过考试，只能换一个与学校内容相同的课程 cs131。可惜的是本课程并没有视频资料，但他们公开了课程笔记：
+> - [课程教程](http://vision.stanford.edu/teaching/cs131_fall1920/syllabus.html)
+> - [官方课程笔记](https://github.com/StanfordVL/CS131_notes)
+> - [课程作业及答案](https://github.com/StanfordVL/CS131_release)
+> - [课程中文笔记](https://github.com/zhaoxiongjun/CS131_notes_zh-CN)
+
+- []()
+
 ## Human-Robot Interaction
 
 ## Introduction to Artificial Intelligence
