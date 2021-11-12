@@ -116,15 +116,14 @@ The precision and continuum make the robotic system an excellent solution to per
 
 ## Seminars: Evolutionary Swarm Robotics -- Matt Studley
 
-Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. However, the challenge is how to build a rule for robots to interact with each other and finish the project. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a smaller number of neighbors can speed up the evolution without a global controller. 
+Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. However, the challenge is how to build a rule for robots to interact with each other and finish the project. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a few neighbors can speed up the evolution without a global controller. 
 
 ## Seminars: Evolutionary Swarm Robotics -- Matt Studley
 
-## Paper: Algorithm and hardware implementation for visual perception system in autonomous vehicle: A survey -- WeijingShi
+## Paper: Algorithm and hardware implementation for visual perception system in autonomous vehicles: A survey -- WeijingShi
 
-Autonomous vehicles norally need hardwares like, LIDAR, camera, GPS, GPU, FPGA, radar, ultra-sonic combined with machine learning algorithms for process data to achieve SLAM and navigation. 
+Autonomous vehicles' hardware can typically be divided into preception systems and computing systems. In preception systems, cameras can capture important objects as videos in real-time. LIDAR can measure the environment's depth preciser than cameras. Radar and ultrasonic act as fail-safe and prevent an accident from happening. To process the massive data from sensors, a powerful computing system is required. CPUs are no doubt needed, and GPUs are required to speed up image process algorithms, sometimes CNN. FPGAs can enhance computation efficiency and minimize energy consumption over CPU and GPU. All those hardware combined with software,  algorithms, and AI formed the fundamentals of autonomous vehicles.
 
-https://www.sciencedirect.com/science/article/pii/S0167926017303218#s0035
 
 ## Reading Group: The SPIR: An Autonomous Underwater Robot for Bridge Pile Cleaning and Condition Assessment -- written by Khoa Le, presented by Yuehang YU
 
