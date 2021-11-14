@@ -44,6 +44,8 @@ Boustrophedon 意思是牛耕地的方式，是利用平行线覆盖区域。 �
 
 > ref: [A phd dissertation of Coverage Planning Problem and Traveling Salesman Problems](https://etd.auburn.edu/bitstream/handle/10415/4599/Optimization%20Approaches%20for%20a%20Dubins%20Vehicle%20in%20Coverage%20Planning%20Problem%20and%20Traveling%20Salesman%20Problems.pdf?sequence=2)
 
+
+
 ### 1.4 代码
 
 > ref: [RicheyHuang/CoveragePlanner](https://github.com/RicheyHuang/CoveragePlanner)

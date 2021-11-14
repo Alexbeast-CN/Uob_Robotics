@@ -136,6 +136,13 @@ $$\left[
 
 因此可以由 $^{0}P_{4\ OGR}$ 构成 3 个方程。由已知数 $x$, $y$, $z$，便可以求解出前三段机械臂的转动角度: $\theta_1$, $\theta_2$, $\theta_3$。但其中可能存在多个解。
 
+
+> - Hint: 
+>   - 对于本例来说只有两个解： Elbow Up 和 Elbow Down
+>   - $\theta_1$ 用几何的方法会比较好解出，从 Top View 可以直接看出来
+>   - 在已知 $\theta_1$ 的情况下，$\theta_2$ 和 $\theta_3$ 变成了一个两轴问题，也可以轻松解出。
+
+
 之后，在由对于点 Pw 的通过 Z-Y-Z 欧拉角解出 $\theta_4$, $\theta_5$：
 
 $$^{3}_{5}R = ^{0}_{3}R^{T}\  ^{0}_{5}R$$
@@ -174,6 +181,7 @@ $$\gamma = Atan2(\frac{r_{32}}{sin\beta},\frac{-r_{31}}{sin\beta})$$
 > 值得借鉴的代码仓库：
 >  - [robotics toolbox matlab](https://github.com/petercorke/robotics-toolbox-matlab/blob/master/%40SerialLink)
 >  - [analyticalInverseKinematics](https://uk.mathworks.com/help/robotics/ref/analyticalinversekinematics.html)
+>  - [我的 GitHub 仓库](https://github.com/Alexbeast-CN/RF_Course_Work)
 
 
 ## 4. Jacobian Matrix 
