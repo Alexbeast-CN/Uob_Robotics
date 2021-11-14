@@ -5,8 +5,7 @@
 > 资料推荐：
 > - 推荐课程：
 >   - [Intro2Robotics Course Lectures - Lec8](https://www.youtube.com/watch?v=TPjclVs4RIY&list=PLYZT24lofrjXcuu1iBNWu-NprW2wZD3zu&index=18&ab_channel=AaronBecker)
->   - [Intro2Robotics Course Lectures - Lec9a](https://www.youtube.com/watch?v=9HfcMkfLh6k&list=PLYZT24lofrjXcuu1iBNWu-NprW2wZD3zu&index=19&ab_channel=AaronBecker)
->   - [Intro2Robotics Course Lectures - Lec9b](https://www.youtube.com/watch?v=vUwd-PHuYfQ&list=PLYZT24lofrjXcuu1iBNWu-NprW2wZD3zu&index=20&ab_channel=AaronBecker)
+>   - [2014W ENGR486 Lecture09 Inverse Kinematics, Part I](https://www.youtube.com/watch?v=h0WsQ_N-Uyg&list=PLJzZfbLAMTelwaLxFXteeblbY2ytU2AxX&index=8&ab_channel=YangCao)
 > - [Text book for Inverse Kinematics](http://motion.pratt.duke.edu/RoboticSystems/InverseKinematics.html)
 > - 推荐资料：[Jafari 的讲义 【百度云】](链接：https://pan.baidu.com/s/1bEuDzKkVnRlyPHvSoTIgWw)提取码：zybg  
 > - 优质博客: 
@@ -117,7 +116,7 @@ $$\begin{aligned}
     ^{i-1}_{i}T &=\left[
             \begin{matrix}
                     𝑐\theta _𝑖&−𝑠\theta _𝑖&0&𝑎_{𝑖−1}\\
-                    𝑠\theta _𝑖𝑐\alpha _{𝑖−1}&𝑐\theta _𝑖𝑐\theta _{𝑖−1}&−𝑠\alpha _{𝑖−1}&−𝑠\alpha _{𝑖−1}𝑑_𝑖\\
+                    𝑠\theta _𝑖𝑐\alpha _{𝑖−1}&𝑐\theta _𝑖𝑐\alpha _{𝑖−1}&−𝑠\alpha _{𝑖−1}&−𝑠\alpha _{𝑖−1}𝑑_𝑖\\
                     𝑠\theta _𝑖𝑠\alpha _{𝑖−1}&𝑐\theta _𝑖𝑠\alpha _{𝑖−1}&𝑐\alpha _{𝑖−1}&𝑐\alpha _{𝑖−1}𝑑_𝑖\\
                     0&0&0&1\\
             \end{matrix}
