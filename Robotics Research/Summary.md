@@ -116,10 +116,11 @@ The precision and continuum make the robotic system an excellent solution to per
 
 ## Seminars: Evolutionary Swarm Robotics -- Matt Studley
 
-Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. However, the challenge is how to build a rule for robots to interact with each other and finish the project. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a few neighbors can speed up the evolution without a global controller. 
+Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. But, setting a rule for robots to interact with each other and finish the project is a big challenge. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a few neighbors can speed up the evolution without a global controller. 
 
-## Seminars: Evolutionary Swarm Robotics -- Matt Studley
+## Seminars: Robotics Ethical, Legal, Societal -- Matt Studley
 
+Technology is neutral with no ethics. But when humans apply technology to the world, there are feedbacks on ourselves. Because the world we are living in is a dynamic system. As for robots, before creating, the roboticists should think of the effect the robot might have on humans. Ethical, legal, and societal are three types of problems. From an ethical view, We expect robots should promote human wellbeing without harming humans and ruining anyone's rights. From a societal aspect, robots may cause layoffs in the industry, and that will cause significant problems in our society. The further problem is that we have no legal system set for now. 
 ## Paper: Algorithm and hardware implementation for visual perception system in autonomous vehicles: A survey -- WeijingShi
 
 Autonomous vehicles' hardware can typically be divided into preception systems and computing systems. In preception systems, cameras can capture important objects as videos in real-time. LIDAR can measure the environment's depth preciser than cameras. Radar and ultrasonic act as fail-safe and prevent an accident from happening. To process the massive data from sensors, a powerful computing system is required. CPUs are no doubt needed, and GPUs are required to speed up image process algorithms, sometimes CNN. FPGAs can enhance computation efficiency and minimize energy consumption over CPU and GPU. All those hardware combined with software,  algorithms, and AI formed the fundamentals of autonomous vehicles.
@@ -127,7 +128,7 @@ Autonomous vehicles' hardware can typically be divided into preception systems a
 
 ## Reading Group: The SPIR: An Autonomous Underwater Robot for Bridge Pile Cleaning and Condition Assessment -- written by Khoa Le, presented by Yuehang YU
 
-This paper proposed an autonomous underwater robot called SPIR that can navigate and do SLAM. This robot can do divers' tasks like inspecting and removing marine from wharf piles. The challenge for the robot is to keep stable while working in a turbulent underwater environment. To overcome this problem, the robot has four grasping arms to keep itself stick on the pile, as illustrated in figure 10. As fig 11 shows, the robot's power and jet generator are onshore to reduce its weight. The results in figure 12 show that navigation and grasping pile performance is good, but it struggled with finding the target. 
+This paper proposed an autonomous underwater robot called SPIR that can navigate and do SLAM. This robot can do divers' tasks like inspecting and removing marine from wharf piles. The challenge for the robot is to keep stable while working in a turbulent underwater environment. As for that, the robot is designed to have four grasping arms to keep itself stick on the pile, as illustrated in figure 10. As fig 11 shows, the robot's power and jet generator are onshore to reduce its weight. The results in figure 12 show that navigation and grasping pile performance is good, but it struggled with finding the target. 
 
 <div  align="center"> 
 <img src="./week7/pics/1.png" width = "500"  alt="Fig10. SPIR and the main components" align=center />
@@ -149,3 +150,6 @@ This paper proposed an autonomous underwater robot called SPIR that can navigate
 
 <center> Fig12. Navigation towards the target pile </center>
 
+# Week5 
+
+## 
