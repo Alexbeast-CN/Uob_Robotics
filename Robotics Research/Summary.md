@@ -152,4 +152,35 @@ This paper proposed an autonomous underwater robot called SPIR that can navigate
 
 # Week5 
 
-## 
+## Seminars: Robot Skill Learning and Human Robot Share Control -- Prof. Chenguang Yang
+
+This seminar introduced how robots can co-work with humans and take advantage of human's intelligence and robot strength.
+By applying reinforcement learning, robots can imitate human motion and force from teaching. The teaching method can be either by hand or through a joystick, and the force loaded on the manipulator can be feedback as an impedance to the operator. The challenge in this field is to give better sensory feedback to human operators, be more adaptable to different human operators, and be more general to different performing environments. That requires the system to have better sensor fusion ability, more advanced reinforcement learning method. 
+
+## Seminars: Two Case Study of Aerial Robotics -- Tom Richardson
+
+The professors' research mainly focused on novel sensing and novel control system for aerial robotics. The first case study is giraffe conservation in Cameroon. The challenge, in this case, is using drones to cover a 1600 square km area and fully automated discovery and identification of individual animals. The second case is sampling volcanic ash in Guatemala. The challenge is to let UAVs collect samples within the eruptions. The team has achieved 3D mapping of the volcano's geography by a single flight. The problem for now is that the pre-planned missions can't reacte to dynamic envirnoment in real time, which requires human intervention. 
+
+## Group Reading: Software Architecture for Humanoid Robots with Versatile Task Performing Capabilities -- written by Hyeong-Seok Jeon, presented by Lin Yuan
+
+> I don't think this paper is worth reading.
+
+## Paper: ORB-SLAM: A Versatile and Accurate Monocular SLAM System -- Raúl Mur-Artal
+
+ORB-SLAM is a visual SLAM system developed from Parallel Tracking and Mapping (PTAM) SLAM. The challenge is to solve real-time SLAM with loop closure and occlusion processing at limited computational speed. However, ORB-SLAM uses ORB feature points and keyframes selection and delete method to keep the mapping procedure stable. When tracking is failed, a recovery mechanism allows the SLAM procedure back on track. Fig13 illustrates the structure of the ORB-SLAM system, which can be divided into tracking, mapping, loopback, partial mapping, location recognition modules. In conclusion, it solved the loop closure, processing occlusion, relocation, and keyframe management problems that PTAM suffers. In addition, it increased the accuracy.
+
+<div  align="center"> 
+<img src="./week8/ORB_SLAM.png" width = "500"  alt="Fig12. An overview of the SPIR system" align=center />
+</div>
+
+<center> Fig13. ORB-SLAM system overview </center>
+
+## Paper: ORB-SLAM2: An Open-Source SLAM System for Monocular, Stereo, and RGB-D Cameras -- Raúl Mur-Artal
+
+ORB-SLAM2 is an improved SLAM system based on ORB-SLAM. The monocular ORB-SLAM has the problem of scale, so the author thought of using the stereo camera to solve the problem of monocular scale estimation. As Fig14 illustrated, the system is mainly divided into three parts, tracking, mapping, looping. The tracking part will unify the sensors so that regardless of whether the input is RGB-D or stereo image, it is finally converted into a monocular point for processing. From code view, the system has changed a lot in their program, like using pangolin instead of ROS to display results which saves time for compiling.
+
+<div  align="center"> 
+<img src="./week8/ORB-SLAM2.png" width = "500"  alt="Fig12. An overview of the SPIR system" align=center />
+</div>
+
+<center> Fig14. ORB-SLAM2 system overview </center>
