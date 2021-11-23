@@ -3,27 +3,29 @@
 > Student Name: Daoming Chen
 > Student number: 2132643
 
-## Week 1
+## Week 3
 
-### Seminars: Robotics challenges and opportunities in the nuclear sector -- Prof. Tom B Scott
+### Seminars:
 
-Robots that work in the nuclear field is called hot robot. The reason for letting robots work in the nuclear field is less cost, more output, reduced risk for humans, and saving time. Many types of robots are employed here to do tasks like nuclear waste store scanning, hot spot detect and 3D mapping the hazard area. Lidar SLAM technology is significantly used in hot robots. Many of the projects are to use robots to provide 3D point cloud maps about a hazard area. Then find where the hot spot region is based on the radiation map. 
+#### Mon 11th October 2021. Robotics challenges and opportunities in the nuclear sector -- Prof. Tom B Scott
 
-### Seminars: Robots with simulation-based internal models -- Alan Winfield
+Robots that work in the nuclear field is called hot robot. The reason for letting robots work in the nuclear field is less cost, more output, reduced risk for humans, and saving time. Many types of robots are employed here to do tasks like nuclear waste store scanning, hot spot detect and 3D mapping the hazard area.
 
-An internal model is a centralized or distributed mechanism for a robot to simulate itself and the environment inside itself. The internal model is used for a robot to control itself accurately and precisely. The picture below shows the flowchart of the consequence engine. Experiments like avoiding collision in the dynamic environment can be done by using the consequence engine. It can achieve ethical tasks like preventing people from encountering danger. Another application of the consequence engine is a chatbot. It let robots tell stories to each other and explain themselves.
+One challenge in this area is the automation and robustness of the robots. Since the robots are working in hazardous areas, engineers can't fix them when they lose control. Another challenge is the mapping accuracy. If the robot can't provide an accurate environment map, it's hard to complete its tasks without human assistance.
 
-<div  align="center"> 
-<img src="week3/1.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center> Fig1. Flowchart of consequence engine</center>
+#### Mon 11th October 2021. Robots with simulation-based internal models -- Alan Winfield
 
+An internal model is a centralized or distributed mechanism for a robot to simulate itself and its surroundings using a simulator inside a robot. The internal model is used for a robot to control itself accurately and precisely. It can train robots to do tasks like avoiding collision in a dynamic environment. 
 
-### Paper: LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping -- Tixiao Shan
+One challenge of this field is to simulate the dynamic environment and make decisions in real-time. In the real world, the robot may have planed a path, but it needs to change its move very quickly due to the changing environment. But if the robot can change its mind, then when it faces many tasks simultaneously, the robot may keep changing its mind and fail all the missions.
+
+### Group Reading:
+
+#### Tues 12th Oct 2021. Paper: LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping -- Tixiao Shan
 
 This paper proposed a Lidar SLAM framework called LIO-SAM based on Lidar Odometry and Mapping (LOAM) framework. Using factor map as its core system structure, LIO-SAM makes the fusion of absolute measurement available to seamlessly adjust the robot's trajectory. The keyframe selection method helped reduce computation, which makes the framework faster than others. LIO-SAM can provide more accurate maps during the tests with the sliding window method and the scan match method used during Lidar scanning. When comparing LIO-SAM with other SLAM frameworks by testing them in 5 datasets, LIO-SAM can always prove itself to be the best, and that makes it stand out.
 
-### Group Reading: Robust Autonomous Navigation of a Small-Scale Quadruped Robot in Real-World Environments -- Thomas Dudzik
+#### Tues 12th Oct 2021. Robust Autonomous Navigation of a Small-Scale Quadruped Robot in Real-World Environments -- Thomas Dudzik
 
 > I'm the only one presented in my group this week, so here is another paper I read.
 
@@ -35,9 +37,11 @@ This paper proposed a small-scale quadruped robot -- MIT Mini Cheetah Vision. A 
 <center>Fig2. High-Level System Architecture</center>
 
 
-## Week 2
+## Week 4
 
-### Seminars: Machine Vision in the composites industry: Polarised light or deep learning -- Gary Atkinson
+### Seminars:
+
+#### Mon 18th Oct 2021. Machine Vision in the composites industry: Polarised light or deep learning -- Gary Atkinson
 
 Although computer vision is widely used in industrial detection, it is still struggling with carbon fiber detection. The challenge is that the surface of carbon fiber is black and shiny, which makes defect detection hard. However, the polarisation of light could be a solution to this problem. Because carbon fiber structure has two phases, we can use polarised light to separate these two phases in a picture, making global defect detection feasible. We can detect and even classify local defects from an angle graph by applying the deep learning method. 
 
@@ -46,7 +50,7 @@ Although computer vision is widely used in industrial detection, it is still str
 <center>Fig3. The graph of polarised light</center>
 </div>
 
-### Seminars: Morphological Computation: the hidden superpower of soft bodies -- Helmut Hauser
+####  Mon 18th Oct 2021. Morphological Computation: the hidden superpower of soft bodies -- Helmut Hauser
 
 Morphology which gets inspired by nature can be a crucial principle to build intelligent machines. Even if there is no controller, sensor, or brain, things can only react intelligently to the changing environment by morphology. The challenge is how to build a body that can improve interaction with the environment and facilitate learning and control. A few projects based on the theory, like spider's web, sensing skin, and jellyfish robot. The next level of this theory is to figure out logical function in morphology. This area will engage with chemical and biological knowledge to build robots that can perform locomotion logically.
 
@@ -55,7 +59,9 @@ Morphology which gets inspired by nature can be a crucial principle to build int
 </div>
 <center>Fig4. The key structure of morphological robot</center>
 
-### Paper: ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial, and Multi-Map SLAM -- Carlos Campos
+### Group Reading: 
+
+#### Tues 19th Oct 2021. ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial, and Multi-Map SLAM -- Carlos Campos
 
 ORB-SLAM3 is an open-sourced visual-inertial SLAM framework. ORB-SALM3's mapping accuracy is 2-5 times better than the old ORB-SLAM2, and it's proved to be the best visual SLAM framework. They novelty proposed a multiple map system that can start a new map when features are lost. The new map can be seamlessly merged with the previous map, which makes this ORB-SLAM3 more robust. The graph below shows all data from the camera, and IMU will go through the tracking thread to decide a keyframe, which forms the local map. Then after place recognition, loop correction, and map merging, they become part of the entire map. 
 
@@ -64,7 +70,7 @@ ORB-SLAM3 is an open-sourced visual-inertial SLAM framework. ORB-SALM3's mapping
 </div>
 <center> Fig5. Main system components of ORB-SLAM3</center>
 
-### Group Reading: Design of a Low-Cost Miniature Robot to Assist the COVID-19 Nasopharyngeal Swab Sampling -- written by Shuangyi Wang, presented by Shiqi Gao
+#### Tues 19th Oct 2021. Design of a Low-Cost Miniature Robot to Assist the COVID-19 Nasopharyngeal Swab Sampling -- written by Shuangyi Wang, presented by Shiqi Gao
 
 
 This paper proposed a low-cost COVID nasopharyngeal swab sampling(np) robot. The robot has a 2-DOF gripper with an integrated force sensor and a 6-DOF arm with an inertial measurement unit(IMU). By limiting the motor's current and using variable-monitor software, the robot can work safely. The robot cost 55USD and weighed 0.25Kg making it stand out. The robot was tested on a commercial nasopharynx phantom and three pig noses, and the results proved the implementation safety. But I think something is missing from this paper. They didn't address how the robot finds a nostril, which I think might be hard for the robot. 
@@ -81,9 +87,11 @@ This paper proposed a low-cost COVID nasopharyngeal swab sampling(np) robot. The
 </div>
 <center> Fig7. Implementation of the robot  </center>
 
-## Week3
+## Week 5
 
-### Seminars: Robot learning for dexterous manipulation -- Dandan Zhang
+### Seminars:
+
+#### Mon 25th Oct 2021. Robot learning for dexterous manipulation -- Dandan Zhang
 
 The seminar introduced reinforcement learning for building intelligent robots to complex tasks and adapting different scenes in a shorter time and with fewer data. The challenge is to overcome the current limitations like the black-box effect, large data requirements, lack of generalizability. The solution to this challenge is called an explainable learning algorithm. This method uses a hierarchy structure, as it is shown in Fig 8, to improve training procedures. What impressed me the most is robustly shown in Fig9. Except for the case study of pouring drink, the explainable learning algorithm can also be applied in other fields like a medical robot, industrial robot, etc.
 
@@ -100,33 +108,39 @@ The seminar introduced reinforcement learning for building intelligent robots to
 </div>
 <center> Fig9. Task with human interfere </center>
 
-### Seminars: From AI to Robot Dexterity: A Revolution Happening Now -- Prof. Nathan Lepora
+#### Thur 28th Oct 2021. From AI to Robot Dexterity: A Revolution Happening Now -- Prof. Nathan Lepora
 
 Robot dexterity with AI is a valuable field that may level up the entire robotic industry. A group led by Prof. Lepora is now working on tactile robotics in BRL. Prof. Lepora is working on soft biomimetic touch with AI, which is an excellent approach to robot dexterity. Another project called skin-like touch sensors can provide accurate force feedback when the sensor is touched. A 3D-printed tactile hand can pinch irregular fragile objects without breaking them. A sim-to-real deep reinforcement learning for tactile robots can cut down the training effort for robots. 
 
-### Paper: Simultaneous Localization and Mapping: A Survey of Current Trends in Autonomous Driving -- Guillaume Bresson
+### Group Reading: 
+
+#### Tues 26th Oct 2021. Simultaneous Localization and Mapping: A Survey of Current Trends in Autonomous Driving -- Guillaume Bresson
 
 Simultaneous Localization and Mapping (SLAM) has a long history of development. Recent solutions are acceptable but still have some limitations. A critical limit is the drift of the map when SLAM is applied in long-term tests. The possible techniques for this challenge are decomposing the global map into a fusion of small-size maps and multi-sensor fusion. For single-vehicle SLAM, the challenges are 1. how to reduce drift by recognizing the same object in different views. 2. How to locate in the previously built map using object recognition. Centralized SLAM and decentralized SLAM are both possible approaches for multi-vehicle SLAM, but both are challenging. Future SLAM may use more Deep learning methods to build semantic maps.
 
-### Reading Group: Continuum Robots for Medical Applications: A Survey -- -- written by Jessica Burgner, presented by Zhengri Xu
+#### Tues 26th Oct 2021. Continuum Robots for Medical Applications: A Survey -- -- written by Jessica Burgner, presented by Zhengri Xu
 
 The precision and continuum make the robotic system an excellent solution to perform minimally invasive surgery. Compared to traditional rigid robots, Continuum robots have more flexibility and agility, which makes continuum robots essential in minimally invasive surgery. Nowadays, continuum medical robots usually are composed of many small discrete joints, and by applying standard Denavit–Hartenberg (D–H) parameter tables to simulate the kinetics model. However, the challenge kinemics model is the complexity, accuracy, and computational expense. Many medical areas like neurosurgery, otolaryngology, etc., are demanding continuum robots. However, there are still challenges like instrumentation, visualization, OR integration,  human-machine interactions, and force sensing requiring researchers to solve.
 
-# Week 4
+## Week 7
 
-## Seminars: Evolutionary Swarm Robotics -- Matt Studley
+### Seminars: 
+#### Mon 8th Nov 2021. Evolutionary Swarm Robotics -- Matt Studley
 
 Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. But, setting a rule for robots to interact with each other and finish the project is a big challenge. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a few neighbors can speed up the evolution without a global controller. 
 
-## Seminars: Robotics Ethical, Legal, Societal -- Matt Studley
+#### Mon 8th Nov 2021. Robotics Ethical, Legal, Societal -- Matt Studley
 
 Technology is neutral with no ethics. But when humans apply technology to the world, there are feedbacks on ourselves. Because the world we are living in is a dynamic system. As for robots, before creating, the roboticists should think of the effect the robot might have on humans. Ethical, legal, and societal are three types of problems. From an ethical view, We expect robots should promote human wellbeing without harming humans and ruining anyone's rights. From a societal aspect, robots may cause layoffs in the industry, and that will cause significant problems in our society. The further problem is that we have no legal system set for now. 
-## Paper: Algorithm and hardware implementation for visual perception system in autonomous vehicles: A survey -- WeijingShi
+
+### Group Reading: 
+
+####  Tues 9th Nov 2021. Algorithm and hardware implementation for visual perception system in autonomous vehicles: A survey -- WeijingShi
 
 Autonomous vehicles' hardware can typically be divided into preception systems and computing systems. In preception systems, cameras can capture important objects as videos in real-time. LIDAR can measure the environment's depth preciser than cameras. Radar and ultrasonic act as fail-safe and prevent an accident from happening. To process the massive data from sensors, a powerful computing system is required. CPUs are no doubt needed, and GPUs are required to speed up image process algorithms, sometimes CNN. FPGAs can enhance computation efficiency and minimize energy consumption over CPU and GPU. All those hardware combined with software,  algorithms, and AI formed the fundamentals of autonomous vehicles.
 
 
-## Reading Group: The SPIR: An Autonomous Underwater Robot for Bridge Pile Cleaning and Condition Assessment -- written by Khoa Le, presented by Yuehang YU
+#### Tues 9th Nov 2021. The SPIR: An Autonomous Underwater Robot for Bridge Pile Cleaning and Condition Assessment -- written by Khoa Le, presented by Yuehang YU
 
 This paper proposed an autonomous underwater robot called SPIR that can navigate and do SLAM. This robot can do divers' tasks like inspecting and removing marine from wharf piles. The challenge for the robot is to keep stable while working in a turbulent underwater environment. As for that, the robot is designed to have four grasping arms to keep itself stick on the pile, as illustrated in figure 10. As fig 11 shows, the robot's power and jet generator are onshore to reduce its weight. The results in figure 12 show that navigation and grasping pile performance is good, but it struggled with finding the target. 
 
@@ -150,22 +164,26 @@ This paper proposed an autonomous underwater robot called SPIR that can navigate
 
 <center> Fig12. Navigation towards the target pile </center>
 
-# Week5 
+## Week 8
 
-## Seminars: Robot Skill Learning and Human Robot Share Control -- Prof. Chenguang Yang
+### Seminars:
+
+#### Mon 15th Nov 2021. Robot Skill Learning and Human Robot Share Control -- Prof. Chenguang Yang
 
 This seminar introduced how robots can co-work with humans and take advantage of human's intelligence and robot strength.
 By applying reinforcement learning, robots can imitate human motion and force from teaching. The teaching method can be either by hand or through a joystick, and the force loaded on the manipulator can be feedback as an impedance to the operator. The challenge in this field is to give better sensory feedback to human operators, be more adaptable to different human operators, and be more general to different performing environments. That requires the system to have better sensor fusion ability, more advanced reinforcement learning method. 
 
-## Seminars: Two Case Study of Aerial Robotics -- Tom Richardson
+#### Thur 18th Nov 2021. Two Case Study of Aerial Robotics -- Tom Richardson
 
 The professors' research mainly focused on novel sensing and novel control system for aerial robotics. The first case study is giraffe conservation in Cameroon. The challenge, in this case, is using drones to cover a 1600 square km area and fully automated discovery and identification of individual animals. The second case is sampling volcanic ash in Guatemala. The challenge is to let UAVs collect samples within the eruptions. The team has achieved 3D mapping of the volcano's geography by a single flight. The problem for now is that the pre-planned missions can't reacte to dynamic envirnoment in real time, which requires human intervention. 
 
-## Group Reading: Software Architecture for Humanoid Robots with Versatile Task Performing Capabilities -- written by Hyeong-Seok Jeon, presented by Lin Yuan
+## Group Reading:
+
+#### Tues 16th Nov 2021. Software Architecture for Humanoid Robots with Versatile Task Performing Capabilities -- written by Hyeong-Seok Jeon, presented by Lin Yuan
 
 > I don't think this paper is worth reading.
 
-## Paper: ORB-SLAM: A Versatile and Accurate Monocular SLAM System -- Raúl Mur-Artal
+#### Tues 16th Nov 2021. ORB-SLAM: A Versatile and Accurate Monocular SLAM System -- Raúl Mur-Artal
 
 ORB-SLAM is a visual SLAM system developed from Parallel Tracking and Mapping (PTAM) SLAM. The challenge is to solve real-time SLAM with loop closure and occlusion processing at limited computational speed. However, ORB-SLAM uses ORB feature points and keyframes selection and delete method to keep the mapping procedure stable. When tracking is failed, a recovery mechanism allows the SLAM procedure back on track. Fig13 illustrates the structure of the ORB-SLAM system, which can be divided into tracking, mapping, loopback, partial mapping, location recognition modules. In conclusion, it solved the loop closure, processing occlusion, relocation, and keyframe management problems that PTAM suffers. In addition, it increased the accuracy.
 
