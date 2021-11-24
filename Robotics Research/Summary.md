@@ -23,7 +23,7 @@ One challenge of this field is to simulate the dynamic environment and make deci
 
 #### Tues 12th Oct 2021. Paper: LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping -- Tixiao Shan
 
-LIO-SAM is a Lidar SLAM framework using factor map as its system structure. The paper discovered that when tightly-coupled lidar with IMU, the accuracy of SLAM is increased. The factory map and keyframe selection method can help reduce the redundant data processing volume, which allows the framework to run in real-time.
+LIO-SAM is a Lidar SLAM framework using factor map as its system structure. The paper discovered that when tightly-coupled Lidar with IMU, the accuracy of SLAM is increased. The factory map and keyframe selection method can help reduce the redundant data processing volume, which allows the framework to run in real-time.
 
 I think LIO-SAM is an excellent framework because it allows GPS to be an optional trajectory-adjust device. It's closer to real-world situations where vehicles can rely on GPS and Lidar to obtain their location and mapping the environment. However, it's still hard to handle a highly dynamic environment like a city road.
 
@@ -41,49 +41,28 @@ It's essential but challenging engineering to equip the previous blind Mini Chee
 
 #### Mon 18th Oct 2021. Machine Vision in the composites industry: Polarised light or deep learning -- Gary Atkinson
 
-Although computer vision is widely used in industrial detection, it is still struggling with carbon fiber detection. The challenge is that the surface of carbon fiber is black and shiny, which makes defect detection hard. However, the polarisation of light could be a solution to this problem. Because carbon fiber structure has two phases, we can use polarised light to separate these two phases in a picture, making global defect detection feasible. We can detect and even classify local defects from an angle graph by applying the deep learning method. 
+Machine vision and deep learning are widely used in industrial defect detection. To detect composites like carbon fiber is difficult because regular cameras can only get black and shiny pictures. A new technology using a rotating polarizer or special sensors can effectively collect detection data in the composites industry. 
 
-<div  align="center"> 
-<img src="week4/pics/7.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-<center>Fig3. The graph of polarised light</center>
-</div>
-
+One challenge is that researchers need to train the convolutional neural network (CNN) based on a large amount of good quality data. However, it's not easy to collect data that could cover all possible defects in real life. Another challenge is finding the algorithm to interpret the data. That's difficult because there are many patterns for composites' pictures.
 ####  Mon 18th Oct 2021. Morphological Computation: the hidden superpower of soft bodies -- Helmut Hauser
 
-Morphology which gets inspired by nature can be a crucial principle to build intelligent machines. Even if there is no controller, sensor, or brain, things can only react intelligently to the changing environment by morphology. The challenge is how to build a body that can improve interaction with the environment and facilitate learning and control. A few projects based on the theory, like spider's web, sensing skin, and jellyfish robot. The next level of this theory is to figure out logical function in morphology. This area will engage with chemical and biological knowledge to build robots that can perform locomotion logically.
+Morphological Computation studies the shape of a robot that can react intelligently to the changing environment without controllers, sensors, or brain. This subject is inspired by nature. It aims to build a robot body more like a living creature that can perform intelligently even grow and heal itself. 
 
-<div  align="center"> 
-<img src="week4/pics/6.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center>Fig4. The key structure of morphological robot</center>
+One challenge is how to make those soft bodies function logically. One possible approach is to use chemical and biological elements, which can be activated in certain situations, to build the body. Another challenge is how to make the robot function in a universal environment, which is still waiting to be solved.
 
 ### Group Reading: 
 
 #### Tues 19th Oct 2021. ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial, and Multi-Map SLAM -- Carlos Campos
 
-ORB-SLAM3 is an open-sourced visual-inertial SLAM framework. ORB-SALM3's mapping accuracy is 2-5 times better than the old ORB-SLAM2, and it's proved to be the best visual SLAM framework. They novelty proposed a multiple map system that can start a new map when features are lost. The new map can be seamlessly merged with the previous map, which makes this ORB-SLAM3 more robust. The graph below shows all data from the camera, and IMU will go through the tracking thread to decide a keyframe, which forms the local map. Then after place recognition, loop correction, and map merging, they become part of the entire map. 
+ORB-SLAM3 is an open-sourced visual-inertial SLAM framework. The first discovery in the paper is that using Maximum-a-Posteriori(MAP) in a tightly-integrated SLAM system can improve the accuracy. The second one is a multiple map system that can merge local maps with a global map. That allows to generate and merge a new map with the previous map after losing track of features. 
 
-<div  align="center"> 
-<img src="week3/3.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center> Fig5. Main system components of ORB-SLAM3</center>
+It's impressive how ORB-SLAM3 can provide such accurate trajectories results. However, they didn't show the 3D map produced during SLAM.  Because visual data is more complex than the Lidar point cloud, visual SLAM only capture feature point from pictures. Therefore, I suppose their map is not so good as Lidar SLAM can offer.
 
 #### Tues 19th Oct 2021. Design of a Low-Cost Miniature Robot to Assist the COVID-19 Nasopharyngeal Swab Sampling -- written by Shuangyi Wang, presented by Shiqi Gao
 
+This paper proposed a low-cost COVID nasopharyngeal swab sampling(np) robot. The robot has a 2-DOF gripper with an integrated force sensor and a 6-DOF arm with an inertial measurement unit(IMU). By limiting the motor's current and using variable-monitor software, the robot can perform gently during sampling.
 
-This paper proposed a low-cost COVID nasopharyngeal swab sampling(np) robot. The robot has a 2-DOF gripper with an integrated force sensor and a 6-DOF arm with an inertial measurement unit(IMU). By limiting the motor's current and using variable-monitor software, the robot can work safely. The robot cost 55USD and weighed 0.25Kg making it stand out. The robot was tested on a commercial nasopharynx phantom and three pig noses, and the results proved the implementation safety. But I think something is missing from this paper. They didn't address how the robot finds a nostril, which I think might be hard for the robot. 
-
-<div  align="center"> 
-<img src="week4/pics/8.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center> Fig6. 2-DOF Active End-effector </center>
-
-<br>
-
-<div  align="center"> 
-<img src="week4/pics/9.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center> Fig7. Implementation of the robot  </center>
+I think this low-cost robot could be a solution for reducing COVID sampling risk. However, the robot has no visual sensor to help it find a nostril. Therefore, it requires human-assisted pre-aligned before it can perform sampling. I think this is a drawback that needs to be overcome in the following generation product. 
 
 ## Week 5
 
