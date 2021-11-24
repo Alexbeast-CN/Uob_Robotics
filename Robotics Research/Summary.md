@@ -23,19 +23,17 @@ One challenge of this field is to simulate the dynamic environment and make deci
 
 #### Tues 12th Oct 2021. Paper: LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping -- Tixiao Shan
 
-This paper proposed a Lidar SLAM framework called LIO-SAM based on Lidar Odometry and Mapping (LOAM) framework. Using factor map as its core system structure, LIO-SAM makes the fusion of absolute measurement available to seamlessly adjust the robot's trajectory. The keyframe selection method helped reduce computation, which makes the framework faster than others. LIO-SAM can provide more accurate maps during the tests with the sliding window method and the scan match method used during Lidar scanning. When comparing LIO-SAM with other SLAM frameworks by testing them in 5 datasets, LIO-SAM can always prove itself to be the best, and that makes it stand out.
+LIO-SAM is a Lidar SLAM framework using factor map as its system structure. The paper discovered that when tightly-coupled lidar with IMU, the accuracy of SLAM is increased. The factory map and keyframe selection method can help reduce the redundant data processing volume, which allows the framework to run in real-time.
+
+I think LIO-SAM is an excellent framework because it allows GPS to be an optional trajectory-adjust device. It's closer to real-world situations where vehicles can rely on GPS and Lidar to obtain their location and mapping the environment. However, it's still hard to handle a highly dynamic environment like a city road.
 
 #### Tues 12th Oct 2021. Robust Autonomous Navigation of a Small-Scale Quadruped Robot in Real-World Environments -- Thomas Dudzik
 
 > I'm the only one presented in my group this week, so here is another paper I read.
 
-This paper proposed a small-scale quadruped robot -- MIT Mini Cheetah Vision. A motion and path plan system that is built for small robots with limited computing power. The robot can autonomously plan a path in the real world and run with a speed of 1m/s. The figure below shows that the framework for state estimation is a two-tiered hierarchical structure. The two highers are high-level planning and low-level locomotion control. As for motion control, methods like Regularized Predictive Control (RPC) to find reaction forces, Whole-Body Impulse Control (WBIC) to control the joints, A* to plan path. 
+This paper proposed a small-scale quadruped robot -- MIT Mini Cheetah Vision. The challenge for this project is to build a motion and path plan system based on visual perception for low computing power small robots. But the team devised a 2-hierarchy control structure to achieve path plan and locomotion control tasks.
 
-<div  align="center"> 
-<img src="week3/dudzi3-p8-dudzi-large.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center>Fig2. High-Level System Architecture</center>
-
+It's essential but challenging engineering to equip the previous blind Mini Cheetah robot with vision. Now, the robot can make higher-level path plan decisions to increase the success of Mini Cheetah running in complex real-world terrain. However, I think the robot can perform better if a pre-train neural network is applied to the robot.
 
 ## Week 4
 
