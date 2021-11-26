@@ -1,4 +1,4 @@
-# Daoming Chen's report
+# RRTM Assessment 1
 
 > Student Name: Daoming Chen
 > Student number: 2132643
