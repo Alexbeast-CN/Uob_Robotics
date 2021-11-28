@@ -1,9 +1,11 @@
 #! https://zhuanlan.zhihu.com/p/438616510
-# Basic Knowlege of Machine Vision (计算机视觉基础)
+#  计算机视觉基础 (Basic Knowlege of Machine Vision) -- 1
 
 > 本篇笔记基于 CS131 课程笔记。课程的笔记仓库位于 [Github](https://github.com/StanfordVL/CS131_notes)
 
-## 1. Color Space (色域)
+## 1. 色域 (Color Space)
+
+> 一个有趣可交互的颜色模型网站：[Color models and color spaces](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html)
 
 ### 1.1 定义
 
@@ -44,3 +46,32 @@
 
 ### 1.3 非线性色域
 
+非线性色域，即色域中两种颜色的连线中点并不是那两种颜色混合后的实际颜色。比较常用的非线性色域有 HSV 颜色模型 (H: Hue 色调， S: saturation 饱和度， V: Value 值) 和 HSL 颜色模型 (H: Hue 色调， S: saturation 饱和度，L: Lightness 亮度)
+
+![ ](pics/The-HSV-colour-model-mapped-to-a-cylinder-and-The-HSL-colour-model-mapped-to-a-cylinder.png)
+
+这两种模型都是比较直观的，人类对于颜色的理解。其中色轮就是非线性模型圆柱的其中一层。
+
+![ ](pics/08a00b637b94b64c2df9f067fc27b118.jpg)
+
+## 2. 白平衡 (White Balancing)
+
+### 2.1 定义
+
+白平衡是调整传感器接收到的图像数据以正确渲染中性颜色（白色、灰色等）的处理。 这种调整是由数码相机自动进行的（针对不同光线的自定义设置），胶片相机为不同的拍摄条件提供了多种滤镜和胶片类型。
+
+### 2.2 白平衡的重要性
+
+由于一些原因，未经调整的图像具有不自然的“色偏”，这使得白平衡非常重要：
+- 相机或胶卷中的传感器与我们眼睛中的传感器不同
+- 不同的显示媒体渲染图像的方式不同，这需要考虑
+- 拍摄图像时的观看条件通常与图像观看条件不同图
+
+![ ](pics/Color_bias.png)
+
+只有在获得正确白平衡的照片后，再继续进行图像处理才是有效的。
+
+> 拓展阅读：
+> - [Cambrige in Color](https://www.cambridgeincolour.com/)
+
+下篇：[计算机视觉基础 (Basic Knowlege of Machine Vision) -- 2]()
