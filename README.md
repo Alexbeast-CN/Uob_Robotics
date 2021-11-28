@@ -35,6 +35,9 @@
 
 - [Week2. 机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
 - [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
+- [如何开始学术研究（学期中的总结）](https://zhuanlan.zhihu.com/p/435485456)
+
+
 ## Robotic Fundamentals
 
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
@@ -64,7 +67,7 @@
 > - [课程作业及答案](https://github.com/StanfordVL/CS131_release)
 > - [课程中文笔记](https://github.com/zhaoxiongjun/CS131_notes_zh-CN)
 
-- []()
+- [Basic Knowlege of Machine Vision (计算机视觉基础)](https://zhuanlan.zhihu.com/p/438616510)
 
 ## Human-Robot Interaction
 

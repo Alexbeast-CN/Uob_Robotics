@@ -70,20 +70,9 @@ I think this low-cost robot could be a solution for reducing COVID sampling risk
 
 #### Mon 25th Oct 2021. Robot learning for dexterous manipulation -- Dandan Zhang
 
-The seminar introduced reinforcement learning for building intelligent robots to complex tasks and adapting different scenes in a shorter time and with fewer data. The challenge is to overcome the current limitations like the black-box effect, large data requirements, lack of generalizability. The solution to this challenge is called an explainable learning algorithm. This method uses a hierarchy structure, as it is shown in Fig 8, to improve training procedures. What impressed me the most is robustly shown in Fig9. Except for the case study of pouring drink, the explainable learning algorithm can also be applied in other fields like a medical robot, industrial robot, etc.
+This seminar introduced some applications of reinforcement learning (RL) in robotics. RL is an explainable AI with fast learning speed. Explainable means the researchers can understand what causes the failure cases, therefore, reduce the training time. Another technology called deep imitation learning can make robots learn from humans' operations in real life and simulation. 
 
-
-<div  align="center"> 
- <img src="week5/pics/1.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center> Fig8. The hierarchy structure of explainable learning </center>
-
-<br>
-
-<div  align="center"> 
-<img src="week5/pics/2.png" width = "500"  alt="Fig8. The hierarchy structure of explainable learning" align=center />
-</div>
-<center> Fig9. Task with human interfere </center>
+The challenge is the difficulty of setting a proper rewarding mechanism for an RL model. Because distinct from machine learning, there is no label on the data in RL. Therefore, the researchers need to learn from trial and error before their model can get a rewarding system that can lead the robot in the right way.
 
 #### Thur 28th Oct 2021. From AI to Robot Dexterity: A Revolution Happening Now -- Prof. Nathan Lepora
 
