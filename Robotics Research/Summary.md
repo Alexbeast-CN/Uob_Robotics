@@ -33,7 +33,7 @@ I think LIO-SAM is an excellent framework because it allows GPS to be an optiona
 
 This paper proposed a small-scale quadruped robot -- MIT Mini Cheetah Vision. The challenge for this project is to build a motion and path plan system based on visual perception for low computing power small robots. But the team devised a 2-hierarchy control structure to achieve path plan and locomotion control tasks.
 
-It's essential but challenging engineering to equip the previous blind Mini Cheetah robot with vision. Now, the robot can make higher-level path plan decisions to increase the success of Mini Cheetah running in complex real-world terrain. However, I think the robot can perform better if a pre-train neural network is applied to the robot.
+It's essential but challenging to equip the previous blind Mini Cheetah robot with vision. Now, the robot can make higher-level path plan decisions to increase the success of Mini Cheetah running in complex real-world terrain. However, I think the robot can perform better if a pre-train neural network is applied to the robot.
 
 ## Week 4
 
@@ -147,27 +147,13 @@ The professors' research mainly focused on novel sensing and novel control syste
 
 #### Tues 16th Nov 2021. Software Architecture for Humanoid Robots with Versatile Task Performing Capabilities -- written by Hyeong-Seok Jeon, presented by Lin Yuan
 
-> I don't think this paper is worth reading.
+This paper proposed a software architecture with a clearly defined structure and function set for a humanoid robot. It has been tested on a THORMANG robot both in simulation and real-world to rotate valves. This Architecture uses nodes to break down complex processes and use packages to encapsulate functions.
+
+I don't think it's a good paper because the proposed software architecture shares the same function with Robot Operation System (ROS). However, They didn't compare it with ROS in the experiments.  They only tested if the robot could achieve the rotating valve task in their architecture. Therefore readers don't know how good it is.
 
 #### Tues 16th Nov 2021. ORB-SLAM: A Versatile and Accurate Monocular SLAM System -- Raúl Mur-Artal
 
 ORB-SLAM is a visual SLAM system developed from Parallel Tracking and Mapping (PTAM) SLAM. The challenge is to solve real-time SLAM with loop closure and occlusion processing at limited computational speed. However, ORB-SLAM uses ORB feature points and keyframes selection and delete method to keep the mapping procedure stable. When tracking is failed, a recovery mechanism allows the SLAM procedure back on track. Fig13 illustrates the structure of the ORB-SLAM system, which can be divided into tracking, mapping, loopback, partial mapping, location recognition modules. In conclusion, it solved the loop closure, processing occlusion, relocation, and keyframe management problems that PTAM suffers. In addition, it increased the accuracy.
-
-<div  align="center"> 
-<img src="./week8/ORB_SLAM.png" width = "500"  alt="Fig12. An overview of the SPIR system" align=center />
-</div>
-
-<center> Fig13. ORB-SLAM system overview </center>
-
-## Paper: ORB-SLAM2: An Open-Source SLAM System for Monocular, Stereo, and RGB-D Cameras -- Raúl Mur-Artal
-
-ORB-SLAM2 is an improved SLAM system based on ORB-SLAM. The monocular ORB-SLAM has the problem of scale, so the author thought of using the stereo camera to solve the problem of monocular scale estimation. As Fig14 illustrated, the system is mainly divided into three parts, tracking, mapping, looping. The tracking part will unify the sensors so that regardless of whether the input is RGB-D or stereo image, it is finally converted into a monocular point for processing. From code view, the system has changed a lot in their program, like using pangolin instead of ROS to display results which saves time for compiling.
-
-<div  align="center"> 
-<img src="./week8/ORB-SLAM2.png" width = "500"  alt="Fig12. An overview of the SPIR system" align=center />
-</div>
-
-<center> Fig14. ORB-SLAM2 system overview </center>
 
 ## Week 9
 
@@ -177,8 +163,25 @@ ORB-SLAM2 is an improved SLAM system based on ORB-SLAM. The monocular ORB-SLAM h
 
 In nature, birds or ants can achieve remarkable things as a group. Inspired by that, swarm robots aim to discover organizing individual robots without a central computer. So far, machine learning and behavior tree are tools that researchers are using. The applications for swarm robots are warehouses, agriculture, etc.
 
-The challenge is how to achieve group behavior. I think the key is to let robots actively communicate with each other. When one of the robots receives a command, it will inform other nearby robots of the command. Then they will do it together. However, the precondition that robots can do as commanded is that all robots know how to follow commands. 
+The challenge is how to achieve group behavior for robots without central control. It isn't easy because we wish swarm robots intelligent enough to find a way themselves to follow commands. I think the key points are the reward mechanism and communication system. If we can teach how human is organized for projects, we may solve this problem.
 
 #### Mon 22th Nov 2021. Computer Vision, Machine Learning -- Chollette Olisah
 
 
+### Group Reading:
+
+#### Tues 23th Nov 2021. Context Dependant Iterative Parameter Optimisation for Robust RobotNavigation -- Adam Binch, presented by Fengrui Zhang
+
+This paper proposed a framework for robotic navigation in agriculture with the genetic algorithm. This framework can find the suitable parameters for different navigation algorithms on different robots. The tuning process uses an iterative method with a reward mechanism depending on spatial context. The results showed robots using this framework can perform better than those with manually tuned parameters.
+
+I think it's an improvement in agricultural robots to have the parameter optimization framework. 
+
+#### Tues 23th Nov 2021. ORB-SLAM2: An Open-Source SLAM System for Monocular, Stereo, and RGB-D Cameras -- Raúl Mur-Artal
+
+ORB-SLAM2 is an improved SLAM system based on ORB-SLAM. The monocular ORB-SLAM has the problem of scale, so the author thought of using the stereo camera to solve the problem of monocular scale estimation. As Fig14 illustrated, the system is mainly divided into three parts, tracking, mapping, looping. The tracking part will unify the sensors so that regardless of whether the input is RGB-D or stereo image, it is finally converted into a monocular point for processing. From code view, the system has changed a lot in their program, like using pangolin instead of ROS to display results which saves time for compiling.
+
+## Week 10
+
+### Seminars:
+
+#### Mon 29th Nov 2021. 
