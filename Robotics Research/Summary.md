@@ -76,7 +76,9 @@ The challenge is the difficulty of setting a proper rewarding mechanism for an R
 
 #### Thur 28th Oct 2021. From AI to Robot Dexterity: A Revolution Happening Now -- Prof. Nathan Lepora
 
-Robot dexterity with AI is a valuable field that may level up the entire robotic industry. A group led by Prof. Lepora is now working on tactile robotics in BRL. Prof. Lepora is working on soft biomimetic touch with AI, which is an excellent approach to robot dexterity. Another project called skin-like touch sensors can provide accurate force feedback when the sensor is touched. A 3D-printed tactile hand can pinch irregular fragile objects without breaking them. A sim-to-real deep reinforcement learning for tactile robots can cut down the training effort for robots. 
+The key for tactile robots is a sensor using a camera to measure the displacement of the little lamps inside the sensor to simulate tactile force. The strategy to increase robot dexterity is equipping this sensor on intelligent robots. Then the tactile robot can easily pick up fragile objects and recognize objects' shapes.
+
+The challenge for the tactile sensor is how to model the non-linear displacement's relationship with the sense of touch. AI and lots of experimental data are used to improve the model. The challenge for robot dexterity is how to handle the tactile data. Again AI is a good tool to decide grasping force and posture.
 
 ### Group Reading: 
 
@@ -84,9 +86,11 @@ Robot dexterity with AI is a valuable field that may level up the entire robotic
 
 Simultaneous Localization and Mapping (SLAM) has a long history of development. Recent solutions are acceptable but still have some limitations. A critical limit is the drift of the map when SLAM is applied in long-term tests. The possible techniques for this challenge are decomposing the global map into a fusion of small-size maps and multi-sensor fusion. For single-vehicle SLAM, the challenges are 1. how to reduce drift by recognizing the same object in different views. 2. How to locate in the previously built map using object recognition. Centralized SLAM and decentralized SLAM are both possible approaches for multi-vehicle SLAM, but both are challenging. Future SLAM may use more Deep learning methods to build semantic maps.
 
-#### Tues 26th Oct 2021. Continuum Robots for Medical Applications: A Survey -- -- written by Jessica Burgner, presented by Zhengri Xu
+#### Tues 26th Oct 2021. Continuum Robots for Medical Applications: A Survey -- written by Jessica Burgner, presented by Zhengri Xu
 
-The precision and continuum make the robotic system an excellent solution to perform minimally invasive surgery. Compared to traditional rigid robots, Continuum robots have more flexibility and agility, which makes continuum robots essential in minimally invasive surgery. Nowadays, continuum medical robots usually are composed of many small discrete joints, and by applying standard Denavit–Hartenberg (D–H) parameter tables to simulate the kinetics model. However, the challenge kinemics model is the complexity, accuracy, and computational expense. Many medical areas like neurosurgery, otolaryngology, etc., are demanding continuum robots. However, there are still challenges like instrumentation, visualization, OR integration,  human-machine interactions, and force sensing requiring researchers to solve.
+The precision and continuum make the robotic system an excellent solution to perform minimally invasive surgery. Compared to traditional rigid robots, Continuum robots have more flexibility and agility, which makes continuum robots essential in minimally invasive surgery. Many medical areas like neurosurgery, otolaryngology, etc., are demanding continuum robots. 
+
+From my point, the challenge for continuum robots is the complexity, accuracy, and computational expense of its kinemics model. Therefore, many continuum robots today are not truly continuum. To simulate the continuum kinetics model, "continuum robots" are composed of many small discrete joints. How make continuum robot more precise and small requires future research.
 
 ## Week 7
 
@@ -170,11 +174,11 @@ The challenge is how to achieve group behavior for robots without central contro
 
 ### Group Reading:
 
-#### Tues 23th Nov 2021. Context Dependant Iterative Parameter Optimisation for Robust RobotNavigation -- Adam Binch, presented by Fengrui Zhang
+#### Tues 23th Nov 2021. Context Dependant Iterative Parameter Optimisation for Robust RobotNavigation -- written by Adam Binch, presented by Fengrui Zhang
 
 This paper proposed a framework for robotic navigation in agriculture with the genetic algorithm. This framework can find the suitable parameters for different navigation algorithms on different robots. The tuning process uses an iterative method with a reward mechanism depending on spatial context. The results showed robots using this framework can perform better than those with manually tuned parameters.
 
-I think it's an improvement in agricultural robots to have the parameter optimization framework. 
+I think it's an improvement in agricultural robots to have this parameter optimization framework. It can save time when setting up new robots in a new environment. However, the downside is this framework keeps running simulations during tasks, which will reduce the efficiency of robots. 
 
 #### Tues 23th Nov 2021. ORB-SLAM2: An Open-Source SLAM System for Monocular, Stereo, and RGB-D Cameras -- Raúl Mur-Artal
 
