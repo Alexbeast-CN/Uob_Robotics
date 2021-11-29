@@ -168,3 +168,17 @@ ORB-SLAM2 is an improved SLAM system based on ORB-SLAM. The monocular ORB-SLAM h
 </div>
 
 <center> Fig14. ORB-SLAM2 system overview </center>
+
+## Week 9
+
+### Seminars:
+
+#### Mon 22th Nov 2021. Swarm Engineering Across Scale -- Sabine Hauert
+
+In nature, birds or ants can achieve remarkable things as a group. Inspired by that, swarm robots aim to discover organizing individual robots without a central computer. So far, machine learning and behavior tree are tools that researchers are using. The applications for swarm robots are warehouses, agriculture, etc.
+
+The challenge is how to achieve group behavior. I think the key is to let robots actively communicate with each other. When one of the robots receives a command, it will inform other nearby robots of the command. Then they will do it together. However, the precondition that robots can do as commanded is that all robots know how to follow commands. 
+
+#### Mon 22th Nov 2021. Computer Vision, Machine Learning -- Chollette Olisah
+
+
