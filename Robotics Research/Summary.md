@@ -70,7 +70,7 @@ I think this low-cost robot could be a solution for reducing COVID sampling risk
 
 #### Mon 25th Oct 2021. Robot learning for dexterous manipulation -- Dandan Zhang
 
-This seminar introduced some applications of reinforcement learning (RL) in robotics. RL is an explainable AI with fast learning speed. Explainable means the researchers can understand what causes the failure cases, therefore, reduce the training time. Another technology called deep imitation learning can make robots learn from humans' operations in real life and simulation. 
+This Seminar introduced some applications of reinforcement learning (RL) in robotics. RL is an explainable AI with fast learning speed. Explainable means the researchers can understand what causes the failure cases, therefore, reduce the training time. Another technology called deep imitation learning can make robots learn from humans' operations in real life and simulation. 
 
 The challenge is the difficulty of setting a proper rewarding mechanism for an RL model. Because distinct from machine learning, there is no label on the data in RL. Therefore, the researchers need to learn from trial and error before their model can get a rewarding system that can lead the robot in the right way.
 
@@ -84,55 +84,44 @@ The challenge for the tactile sensor is how to model the non-linear displacement
 
 #### Tues 26th Oct 2021. Simultaneous Localization and Mapping: A Survey of Current Trends in Autonomous Driving -- Guillaume Bresson
 
-Simultaneous Localization and Mapping (SLAM) has a long history of development. Recent solutions are acceptable but still have some limitations. A critical limit is the drift of the map when SLAM is applied in long-term tests. The possible techniques for this challenge are decomposing the global map into a fusion of small-size maps and multi-sensor fusion. For single-vehicle SLAM, the challenges are 1. how to reduce drift by recognizing the same object in different views. 2. How to locate in the previously built map using object recognition. Centralized SLAM and decentralized SLAM are both possible approaches for multi-vehicle SLAM, but both are challenging. Future SLAM may use more Deep learning methods to build semantic maps.
+Simultaneous Localization and Mapping (SLAM) has a long history of development. Recent solutions can achieve high accuracy and low drift, but there are still challenges unsolved, like real-time 3D map reconstruction, high-speed SLAM. Multi-vehicle SLAM is an excellent method for the urban driving scene. Centralized SLAM and decentralized SLAM are both possible approaches for this idea.
+
+This SLAM review does not mention artificial intelligence (AI). However, AI can do better than humans in computer vision (CV). Therefore it's probably also better than humans in visual-SLAM. I think it could be a solution to building a semantic labeled map and help with autonomous driving decisions.
 
 #### Tues 26th Oct 2021. Continuum Robots for Medical Applications: A Survey -- written by Jessica Burgner, presented by Zhengri Xu
 
 The precision and continuum make the robotic system an excellent solution to perform minimally invasive surgery. Compared to traditional rigid robots, Continuum robots have more flexibility and agility, which makes continuum robots essential in minimally invasive surgery. Many medical areas like neurosurgery, otolaryngology, etc., are demanding continuum robots. 
 
-From my point, the challenge for continuum robots is the complexity, accuracy, and computational expense of its kinemics model. Therefore, many continuum robots today are not truly continuum. To simulate the continuum kinetics model, "continuum robots" are composed of many small discrete joints. How make continuum robot more precise and small requires future research.
+From my point, the challenge for continuum robots is the complexity, accuracy, and computational expense of its kinemics model. Therefore, many continuum robots today are not truly continuum. To simulate the continuum kinetics model, "continuum robots" are composed of many small discrete joints. How to make continuum robots more precise and small requires future research.
 
 ## Week 7
 
 ### Seminars: 
 #### Mon 8th Nov 2021. Evolutionary Swarm Robotics -- Matt Studley
 
-Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. This strategy can provide lower cost and fault tolerance in mass production. But, setting a rule for robots to interact with each other and finish the project is a big challenge. One approach for this problem is to use machine learning to simulate evolution, which means deriving a better robot behavior by machine learning iterating. Running simulations on many individual robots in a swarm and allowing them to share an optimal controller with a few neighbors can speed up the evolution without a global controller. 
+Swarm robots are a group of robots working on a big project without a global controller. Robots can work distributively and parallel to each other. To achieve that, each robot has a simulator that can simulate its behavior and the dynamic environment. This strategy can provide lower cost and fault tolerance in mass production. 
+
+The challenge is how to create a rule for robots to interact with each other and complete the project. One approach for this challenge is to simulate swarm evolution. Researchers use machine learning with a positive award mechanism to let the swarm inherit the optimal controller to achieve the evolution.
 
 #### Mon 8th Nov 2021. Robotics Ethical, Legal, Societal -- Matt Studley
 
-Technology is neutral with no ethics. But when humans apply technology to the world, there are feedbacks on ourselves. Because the world we are living in is a dynamic system. As for robots, before creating, the roboticists should think of the effect the robot might have on humans. Ethical, legal, and societal are three types of problems. From an ethical view, We expect robots should promote human wellbeing without harming humans and ruining anyone's rights. From a societal aspect, robots may cause layoffs in the industry, and that will cause significant problems in our society. The further problem is that we have no legal system set for now. 
+Ethical, legal, and societal are three aspects roboticists need to think of before making a robot. From an ethical view, robots should promote human wellbeing and do no harm to humans. From a legal perspective, robots should respect humans' rights. From a societal aspect, will robots cause some negative effects on the society?
+
+Technology is neutral with no ethics. But when humans apply technology to the world, there are feedbacks on ourselves. Because the world we are living in is a dynamic system. Therefore, as a roboticist, while pursuing advanced technology, we must constantly reflect on ourselves. Can our technology cause any ethical, legal, or societal problem?
 
 ### Group Reading: 
 
 ####  Tues 9th Nov 2021. Algorithm and hardware implementation for visual perception system in autonomous vehicles: A survey -- WeijingShi
 
-Autonomous vehicles' hardware can typically be divided into preception systems and computing systems. In preception systems, cameras can capture important objects as videos in real-time. LIDAR can measure the environment's depth preciser than cameras. Radar and ultrasonic act as fail-safe and prevent an accident from happening. To process the massive data from sensors, a powerful computing system is required. CPUs are no doubt needed, and GPUs are required to speed up image process algorithms, sometimes CNN. FPGAs can enhance computation efficiency and minimize energy consumption over CPU and GPU. All those hardware combined with software,  algorithms, and AI formed the fundamentals of autonomous vehicles.
+The unique hardware of self-driving cars can usually be divided into: perception system and computing system. Perception system uses camera, Lidar, radar, and sonar to capture real-world information. A computing system, including CPU, GPU, FPGA, provides a stable controlling and operating system and data processing capabilities for the vehicles. 
 
+Although modern autonomous vehicles hardware has achieved significant technological progress, there are still many urgent problems in this field. For example, we still don't have a senor to provide 3D images. Some algorithms cannot run in real time due to the limitation of on-board chip calculation. 
 
 #### Tues 9th Nov 2021. The SPIR: An Autonomous Underwater Robot for Bridge Pile Cleaning and Condition Assessment -- written by Khoa Le, presented by Yuehang YU
 
-This paper proposed an autonomous underwater robot called SPIR that can navigate and do SLAM. This robot can do divers' tasks like inspecting and removing marine from wharf piles. The challenge for the robot is to keep stable while working in a turbulent underwater environment. As for that, the robot is designed to have four grasping arms to keep itself stick on the pile, as illustrated in figure 10. As fig 11 shows, the robot's power and jet generator are onshore to reduce its weight. The results in figure 12 show that navigation and grasping pile performance is good, but it struggled with finding the target. 
+SPIR is an autonomous underwater robot that can navigate and do divers' tasks like inspecting and removing marine from wharf piles. The challenge for the robot is to keep stable while working in a turbulent underwater environment. Therefore the robot is designed to have four grasping arms to keep itself stick on the pile.
 
-<div  align="center"> 
-<img src="./week7/pics/1.png" width = "500"  alt="Fig10. SPIR and the main components" align=center />
-</div>
-
-<center> Fig10. SPIR and the main components </center>
-
-<br>
-
-<div  align="center"> 
-<img src="./week7/pics/2.png" width = "500"  alt="Fig11. An overview of the SPIR system" align=center />
-</div>
-
-<center> Fig11. An overview of the SPIR system </center>
-
-<div  align="center"> 
-<img src="./week7/pics/3.png" width = "500"  alt="Fig12. An overview of the SPIR system" align=center />
-</div>
-
-<center> Fig12. Navigation towards the target pile </center>
+The design of the robot in the paper makes it stable when removing marine on piles. However, how can the robot move steadily to the target in turbulent water? This, I suppose, could be a big challenge to this robot, as all heavy equipment of SPIR, like the battery, is placed onshore.
 
 ## Week 8
 
@@ -140,12 +129,15 @@ This paper proposed an autonomous underwater robot called SPIR that can navigate
 
 #### Mon 15th Nov 2021. Robot Skill Learning and Human Robot Share Control -- Prof. Chenguang Yang
 
-This seminar introduced how robots can co-work with humans and take advantage of human's intelligence and robot strength.
-By applying reinforcement learning, robots can imitate human motion and force from teaching. The teaching method can be either by hand or through a joystick, and the force loaded on the manipulator can be feedback as an impedance to the operator. The challenge in this field is to give better sensory feedback to human operators, be more adaptable to different human operators, and be more general to different performing environments. That requires the system to have better sensor fusion ability, more advanced reinforcement learning method. 
+This Seminar introduced how robots can co-work with humans and take advantage of human's intelligence and robot strength. By applying reinforcement learning, robots can imitate human motion and force from teaching. The teaching method can be either by hand or through a joystick, and the force loaded on the manipulator can be feedback as an impedance to the operator.
+
+The challenge in this field is to give better sensory feedback to human operators, be more adaptable to different human operators, and be more general to different performing environments. That requires the system to have better sensor fusion ability and a more advanced reinforcement learning method. 
 
 #### Thur 18th Nov 2021. Two Case Study of Aerial Robotics -- Tom Richardson
 
-The professors' research mainly focused on novel sensing and novel control system for aerial robotics. The first case study is giraffe conservation in Cameroon. The challenge, in this case, is using drones to cover a 1600 square km area and fully automated discovery and identification of individual animals. The second case is sampling volcanic ash in Guatemala. The challenge is to let UAVs collect samples within the eruptions. The team has achieved 3D mapping of the volcano's geography by a single flight. The problem for now is that the pre-planned missions can't reacte to dynamic envirnoment in real time, which requires human intervention. 
+The first case study is giraffe conservation in Cameroon. It requires drones to detect giraffes in a vast nature reserve. The second case is sampling volcanic ash in Guatemala and providing a 3D mountain map. The research of Prof Richardson focused on novel sensing and novel control system for aerial robotics.
+
+The overall challenge is how to achieve a high degree of automation, high-precision perception, and robust recognition of drones. For the first case, identifying animals with camouflage colors requires powerful object recognition capability. For the second case, drones need to perceive high-speed dynamic environments and react quickly to fly autonomously around a volcano.
 
 ## Group Reading:
 
@@ -157,7 +149,9 @@ I don't think it's a good paper because the proposed software architecture share
 
 #### Tues 16th Nov 2021. ORB-SLAM: A Versatile and Accurate Monocular SLAM System -- Raúl Mur-Artal
 
-ORB-SLAM is a visual SLAM system developed from Parallel Tracking and Mapping (PTAM) SLAM. The challenge is to solve real-time SLAM with loop closure and occlusion processing at limited computational speed. However, ORB-SLAM uses ORB feature points and keyframes selection and delete method to keep the mapping procedure stable. When tracking is failed, a recovery mechanism allows the SLAM procedure back on track. Fig13 illustrates the structure of the ORB-SLAM system, which can be divided into tracking, mapping, loopback, partial mapping, location recognition modules. In conclusion, it solved the loop closure, processing occlusion, relocation, and keyframe management problems that PTAM suffers. In addition, it increased the accuracy.
+ORB-SLAM is a visual SLAM system developed from Parallel Tracking and Mapping (PTAM). It uses ORB feature points and keyframes selection and deletes method to keep the mapping procedure stable. It's the first visual-SLAM framework with loop closure, processing occlusion function. It also has a recovery mechanism that allows the SLAM procedure back on track after failure. 
+
+The ORB-SLAM series has always maintained a high level of development. Focus on solving the pain points of SLAM. ORB-SLAM solved the problem of closed-loop detection and occlusion. ORB-SLAM2 solves the problems of real-time and large scenes. ORB-SLAM3 uses the IMU to solve the problem of trajectory drift in large scenes.
 
 ## Week 9
 
@@ -171,7 +165,9 @@ The challenge is how to achieve group behavior for robots without central contro
 
 #### Mon 22th Nov 2021. Computer Vision, Machine Learning -- Chollette Olisah
 
+This Seminar introduced two computer vision (CV) and machine learning application scenarios. In the medical area, CV can be used to detect and diagnose diseases from CT images. In the agriculture area, CV is often used to help pick up the fruit in the orchard and identify species in the wild.
 
+The challenge of CV with machine learning is the reliance on large amounts of data. For CV, low-quality pictures will pollute the data set and cause training failure. Another challenge is to design a convolutional neural network (CNN). it's like an art of math that needs trial and error.
 ### Group Reading:
 
 #### Tues 23th Nov 2021. Context Dependant Iterative Parameter Optimisation for Robust RobotNavigation -- written by Adam Binch, presented by Fengrui Zhang
@@ -180,13 +176,38 @@ This paper proposed a framework for robotic navigation in agriculture with the g
 
 I think it's an improvement in agricultural robots to have this parameter optimization framework. It can save time when setting up new robots in a new environment. However, the downside is this framework keeps running simulations during tasks, which will reduce the efficiency of robots. 
 
-#### Tues 23th Nov 2021. ORB-SLAM2: An Open-Source SLAM System for Monocular, Stereo, and RGB-D Cameras -- Raúl Mur-Artal
+#### Tues 23th Nov 2021. Autonomous Driving System based on Deep Q Learning -- Takafumi Okuyama
 
-ORB-SLAM2 is an improved SLAM system based on ORB-SLAM. The monocular ORB-SLAM has the problem of scale, so the author thought of using the stereo camera to solve the problem of monocular scale estimation. As Fig14 illustrated, the system is mainly divided into three parts, tracking, mapping, looping. The tracking part will unify the sensors so that regardless of whether the input is RGB-D or stereo image, it is finally converted into a monocular point for processing. From code view, the system has changed a lot in their program, like using pangolin instead of ROS to display results which saves time for compiling.
+This paper uses deep Q learning to train autonomous vehicles driving in the lane and bypassing obstacles in a simulation environment. The car only uses one monocular camera to obtain scenes and respond to the scene with the highest Q value action. The results show Deep Q learning has high accuracy in autonomous driving.
+
+I'm looking forward to seeing more machine learning experiments in the autonomous driving area. The complexity and dynamics of autonomous driving scenarios make it difficult for traditional methods to make decisions close to human level. Therefore, I think using CNN with a state machine could be a solution. 
 
 ## Week 10
 
 ### Seminars:
 
-#### Mon 29th Nov 2021. 
-s
+#### Mon 29th Nov 2021. Embedded Cognition for Human-Robot Interaction -- Manuel Giuliani
+
+### Group Reading:
+
+#### Tues 30th Nov 2021. A New Approach to Linear Filtering  and Prediction Problems -- written by R.E. Kalman, presented by Bofang Zheng
+
+The original aim of the Kalman filter is to solve Wiener's problem of separating the interest signal from random noise in a dynamic model. To achieve that Kalman filter uses a linear dynamic model to get an estimated result. Then subtract the estimated result from the measured result to get an estimated error. Then use the error to modify the estimated result.
+
+Now, the Kalman filter has become an algorithm that can obtain optimal estimated results from measurements that contain noise. The applications of the Kalman filter exist in aerospace, signal processing, and navigation field. It's good at estimating variables when only indirection measurement is available and fuse measurements from different sensors.
+
+#### Tues 30th Nov 2021. Uncertain Geometry in  Robotics -- HUGH F. DURRANT-WHYTE
+
+
+
+#### 
+
+## Week 11
+
+### Seminars:
+
+#### Mon 6th Dec 2021.
+
+### Group Reading:
+
+#### Tues 7th Dec 2021.
