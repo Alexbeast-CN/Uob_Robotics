@@ -74,4 +74,4 @@
 > 拓展阅读：
 > - [Cambrige in Color](https://www.cambridgeincolour.com/)
 
-下篇：[计算机视觉基础 (Basic Knowlege of Machine Vision) -- 2]()
+下篇：[计算机视觉基础 (Basic Knowlege of Machine Vision) -- 2](https://zhuanlan.zhihu.com/p/444536065)

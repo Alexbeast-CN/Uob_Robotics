@@ -67,8 +67,8 @@
 > - [课程作业及答案](https://github.com/StanfordVL/CS131_release)
 > - [课程中文笔记](https://github.com/zhaoxiongjun/CS131_notes_zh-CN)
 
-- [Basic Knowlege of Machine Vision (计算机视觉基础)](https://zhuanlan.zhihu.com/p/438616510)
-
+- [计算机视觉基础 (Basic Knowlege of Machine Vision) -- 1](https://zhuanlan.zhihu.com/p/438616510)
+- [计算机视觉基础 (Basic Knowlege of Machine Vision) -- 2](https://zhuanlan.zhihu.com/p/444536065)
 ## Human-Robot Interaction
 
 ## Introduction to Artificial Intelligence
