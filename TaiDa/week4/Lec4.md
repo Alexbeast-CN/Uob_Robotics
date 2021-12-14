@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/430060490
-# Lec4. 逆向运动学 (Inverse Kinematics) - 1  
+# Lec4. 逆向运动学 (Inverse Kinematics)
 
 
 > 资料推荐：
@@ -185,4 +185,4 @@ $$\gamma = Atan2(\frac{r_{32}}{sin\beta},\frac{-r_{31}}{sin\beta})$$
 
 
 - 上篇：[正向运动学(Forward Kinematics)](https://zhuanlan.zhihu.com/p/426994048)
-- 下篇：[逆向运动学(Inverse Kinematics)-2]()
+- 下篇：[速度运动学(Velocity Kinematics)-2](https://zhuanlan.zhihu.com/p/445449208)

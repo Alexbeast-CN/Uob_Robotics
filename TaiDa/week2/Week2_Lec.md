@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/426121325
-# Lec2. Homogeneous Transformations - 2
+# Lec2. 齐次矩阵(Homogeneous Transformations) - 2
 
 ## 1.5 Mapping
 
