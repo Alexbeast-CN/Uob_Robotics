@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/430060490
-# Lec4. Inverse Kinematics in Matlab (Updating)
+# Lec4. 逆向运动学 (Inverse Kinematics) - 1  
 
 
 > 资料推荐：
@@ -51,13 +51,13 @@ $$ _{e}^{0}T(x_e,y_e,z_e,\phi,\theta,\psi)
 
 其 modified D-H 表为：
 
-|i  |$\alpha_{i-1}$|$a_{i-1}$|$d_i$|$\theta_i$|
+<!-- |i  |$\alpha_{i-1}$|$a_{i-1}$|$d_i$|$\theta_i$|
 |-  |-             |-        |-    |-         |
 |0  |0             |0        |$d_1$|$\theta_1$|
 |1  |$-\pi /2$     |0        |0    |$\theta_2$|
 |2  |0             |$L_1$    |0    |$\theta_3$|
 |3  |0             |$L_2$    |0    |$\theta_4$|
-|4  |$-\pi /2$     |0        |0    |$\theta_5$|
+|4  |$-\pi /2$     |0        |0    |$\theta_5$| -->
 
 ![ ](pics/DH.png)
 
@@ -184,57 +184,5 @@ $$\gamma = Atan2(\frac{r_{32}}{sin\beta},\frac{-r_{31}}{sin\beta})$$
 >  - [我的 GitHub 仓库](https://github.com/Alexbeast-CN/RF_Course_Work)
 
 
-## 4. Jacobian Matrix 
-
-> 建议拿起纸和笔一起推算
-
-### 4.1 雅各比矩阵简述
-
-我们在使用 Forward Kinematics 的时候会计算出末端执行器在世界坐标中的位置。
-
-$$\left[
-    \begin{matrix}
-        x\\y\\z
-    \end{matrix}
-\right]=
-\left[
-    \begin{matrix}
-        f_x(\theta_1,\theta_2...\theta_n)\\
-        f_y(\theta_1,\theta_2...\theta_n)\\
-        f_z(\theta_1,\theta_2...\theta_n)\\
-    \end{matrix}
-\right]$$
-
-上面的矩阵式可以简化为：
-
-$$X = f(\theta_s)$$
-
-![ ](./pics/Jacobian.png)
-
-要解决末端到达目标点问题：
-
-$$\Delta X = J\Delta q$$
-
-其中:
-- $\Delta X$ 为末端执行器坐标移动的向量
-- $J$ 为雅各比矩阵
-- $\Delta q$ 为各个关节移动的角度
-
-$$J = 
-\left[
-    \begin{matrix}
-        \partial x/\partial \theta_1 & \partial x / \partial \theta2 & ... & \partial x / \partial \theta_n \\
-        \partial y/\partial \theta_1 & \partial y / \partial \theta2 & ... & \partial y / \partial \theta_n \\
-        \partial z/\partial \theta_1 & \partial z / \partial \theta2 & ... & \partial z / \partial \theta_n \\
-    \end{matrix}
-\right]$$
-
-雅克比矩阵相当于函数 $f(\theta_s)$ 的一阶导数，即线性近似。
-
-![ ](./pics/J.png)
-
-### 4.2 雅各比矩阵的计算
-
-
-上篇：[Forward Kinematics](https://zhuanlan.zhihu.com/p/426994048)
-下篇：[]()
+- 上篇：[正向运动学(Forward Kinematics)](https://zhuanlan.zhihu.com/p/426994048)
+- 下篇：[逆向运动学(Inverse Kinematics)-2]()
