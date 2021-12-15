@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/445449208
-# Lec4. 速度运动学 (Velocity Kinematics)
+# Lec5. 速度运动学 (Velocity Kinematics)
 
 > 本章推荐课程（无法使用 youtube 但想看视的同学请留下评论）：
 > - [web | robogrok](http://www.robogrok.com/Robotics_2.php)
@@ -269,4 +269,4 @@ $$\Delta X = J\Delta q$$
 具体解法将在下一篇介绍。
 
 - 上篇：[逆向运动学(Inverse Kinematics)](https://zhuanlan.zhihu.com/p/426994048)
-- 下篇：[]()
+- 下篇：[轨迹规划 (Trajectory Plan)](https://zhuanlan.zhihu.com/p/445941991)
