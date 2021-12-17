@@ -209,4 +209,4 @@ $$S[f] = \sum_{n=-\infin}^{\infin}\sum_{m=-\infin}^{\infin} f[n,m]*h[n,m]$$
 
 
 上篇：[计算机视觉基础 (Basic Knowlege of Machine Vision) -- 1](https://zhuanlan.zhihu.com/p/438616510)
-下篇：[]()
+下篇：[边缘检测 (Edge Detection)](https://zhuanlan.zhihu.com/p/446867045)
