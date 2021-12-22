@@ -79,3 +79,9 @@
 ## Bio-Inspire Artificial Intelligence
 
 ## Advanced Control & Dynamics
+
+## Reinforcement Learning
+
+> 此部分的内容是为了毕业论文打基础，课程来源为斯坦福大学的 [cs234](https://www.bilibili.com/video/BV1sb411s7eQ?from=search&seid=14467709922277911537&spm_id_from=333.337.0.0)。可惜的是课程的官方资料被关闭了，因此只找到了一些非官方的资料，以供参考。为了方便国内的同学查看，一部分资料已存入百度网盘。
+> - [PPT](https://pan.baidu.com/s/1h9YNIQ6QeAmLU8N4IOOt9g) 提取码：vmno
+> - [课程中文讲义](https://github.com/apachecn/stanford-cs234-notes-zh)
