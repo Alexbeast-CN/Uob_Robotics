@@ -265,4 +265,4 @@ $$r^2 = (x-a)^2 + (y-b)^2$$
 > 个人觉得这并不是一个非常好的方法，因为图像中圆的半径应该不太好找。
 
 - 上篇：[计算机视觉基础 (Basic Knowlege of Machine Vision) -- 2](https://zhuanlan.zhihu.com/p/444536065)
-- 下篇：[]()
+- 下篇：[CV4. 特征提取 (Features) -- 1](https://zhuanlan.zhihu.com/p/448798850)

@@ -72,6 +72,7 @@
 - [计算机视觉基础 (Basic Knowlege of Machine Vision) -- 1](https://zhuanlan.zhihu.com/p/438616510)
 - [计算机视觉基础 (Basic Knowlege of Machine Vision) -- 2](https://zhuanlan.zhihu.com/p/444536065)
 - [边缘检测 (Edge Detection)](https://zhuanlan.zhihu.com/p/446867045)
+- [CV4. 特征提取 (Features) -- 1](https://zhuanlan.zhihu.com/p/448798850)
 ## Human-Robot Interaction
 
 ## Introduction to Artificial Intelligence
