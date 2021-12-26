@@ -170,5 +170,5 @@ $$M = g(\sigma)*
 ![ ](pics/non-maximal_suppression.png)
 
 - 上篇：[CV3. 边缘检测 (Edge Detection)](https://zhuanlan.zhihu.com/p/446867045)
-- 下篇：[]()
+- 下篇：[CV5. 特征提取 (Features) -- 2](https://zhuanlan.zhihu.com/p/449929845)
 
