@@ -1,10 +1,10 @@
 #! https://zhuanlan.zhihu.com/p/414973930
-# 专栏目录
+# 机器人学课程目录
 
->这是来自布里斯托大学，机器人专业授课型硕士课程的开源笔记。此专栏从2021年9月开始更新，维持更新时间预计为1年。希望可以和大家共同学习和讨论机器人相关的知识和内容。
+>这是来自布里斯托大学，机器人专业授课型硕士课程的开源笔记，笔记内容包括但不限于布里斯托大学的课程，其中也有斯坦福和 MIT 公开课的笔记。此专栏从2021年9月开始更新，维持更新时间预计为1年。希望可以和大家共同学习和讨论机器人相关的知识和内容。
 
 >整个笔记文件由 Markdown 编写，笔记以及一些代码已有 github 托管，可以[由此链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
-## Robotics Systems
+## 1. Robotics Systems
 
 > 这是一门褒贬不一的课程。很多同学吐槽老师发完讲义啥也不讲，老师太好当了。但我却非常感激 Prof. Paul，原因如下：
 > - 这门课程的讲义质量非常的高。讲义里有知识的传授，设置各种难度引导学生思考，最后完成实践性 Robotic Lab。
@@ -26,7 +26,7 @@
 
 - [覆盖规划算法 （Updating)](https://zhuanlan.zhihu.com/p/430612058)
 
-## Robotics Research Technology and Methods
+## 2. Robotics Research Technology and Methods
 
 > 这部分的内容很少的原因是
 > - 大多是 saminar (研讨会)，基本都是老师讲自己的研究领域，然后我们来写一些总结作为 report。 由于比较怕老师在查重的时候查到我写的开源笔记，所以暂时不更新这部分的内容。
@@ -36,7 +36,7 @@
 - [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
 - [如何开始学术研究（学期中的总结）](https://zhuanlan.zhihu.com/p/435485456)
   
-## Robotic Fundamentals
+## 3. Robotic Fundamentals
 
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
 - [Lec2. Homogeneous Transformations -1](https://zhuanlan.zhihu.com/p/423386635)
@@ -46,7 +46,7 @@
 - [Lec5. 速度运动学(Velocity Kinematics)](https://zhuanlan.zhihu.com/p/445449208)
 - [Lec6. 轨迹规划 (Trajectory Plan)](https://zhuanlan.zhihu.com/p/445941991)
 
-## Machine Vision
+## 4. Machine Vision
 
 > 老实说布大的计算机视觉课程~~是不错的~~（只有第一节课还不错，随后教学质量就不行了），但在我查找资料的过程中发现了一个更好的课程，斯坦福大学开设的卷积神经网络的物体识别课程，所以以后的课程我和结合布大和斯坦福的内容做笔记和总结。下面列出关于斯坦福大学的课程的资料链接：
 > - [B站上的视频【熟肉】](https://www.bilibili.com/video/BV1nJ411z7fe?p=4)
@@ -74,16 +74,22 @@
 - [CV4. 特征提取 (Features) -- 1](https://zhuanlan.zhihu.com/p/448798850)
 - [CV5. 特征提取 (Features) -- 2](https://zhuanlan.zhihu.com/p/449929845)
 
-## Human-Robot Interaction
+## 5. Human-Robot Interaction
 
-## Introduction to Artificial Intelligence
+## 6. Introduction to Artificial Intelligence
 
-## Bio-Inspire Artificial Intelligence
+## 7. Bio-Inspire Artificial Intelligence
 
-## Advanced Control & Dynamics
+## 8. Advanced Control & Dynamics
 
-## Reinforcement Learning
+## 9. Machine Learning
+
+- [机器学习资料整理(Machine Learning Resources)](https://zhuanlan.zhihu.com/p/450609713)
+- [ML1. 线性回归(Linear Regression)](https://zhuanlan.zhihu.com/p/452328359)
+
+## 10. Reinforcement Learning
 
 > 此部分的内容是为了毕业论文打基础，课程来源为斯坦福大学的 [cs234](https://www.bilibili.com/video/BV1sb411s7eQ?from=search&seid=14467709922277911537&spm_id_from=333.337.0.0)。可惜的是课程的官方资料被关闭了，因此只找到了一些非官方的资料，以供参考。为了方便国内的同学查看，一部分资料已存入百度网盘。
 > - [PPT](https://pan.baidu.com/s/1h9YNIQ6QeAmLU8N4IOOt9g) 提取码：vmno
 > - [课程中文讲义](https://github.com/apachecn/stanford-cs234-notes-zh)
+
