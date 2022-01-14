@@ -87,6 +87,7 @@
 - [机器学习资料整理(Machine Learning Resources)](https://zhuanlan.zhihu.com/p/450609713)
 - [ML1. 线性回归(Linear Regression) -1](https://zhuanlan.zhihu.com/p/452328359)
 - [ML1. 线性回归(Linear Regression) -2](https://zhuanlan.zhihu.com/p/454983290)
+- [ML2. 分类器类与逻辑回归(Logistic Regression)](https://zhuanlan.zhihu.com/p/457618235)
 
 ## 10. Reinforcement Learning
 
