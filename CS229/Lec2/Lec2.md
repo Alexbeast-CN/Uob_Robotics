@@ -28,6 +28,8 @@ $$
 
 ![ ](pics/cs229note1f6.png)
 
+> 在此曲线中，大于 0.5 的值被认为是 1，小于 0.5 则是 0
+
 之所以选择 sigmoid function 作为逻辑回归函数是因为它有很多便于计算的性质，比如其导数 $g'$:
 
 $$
@@ -146,7 +148,19 @@ $$
 \theta := \theta - \frac {f(\theta)}{f'(\theta)}
 $$
 
-在 $n$ 很小的时候，牛顿法可以快速的找到极值点的位置，但在 $n$ 很大的时候，计算速度就不如使用梯度法了。
+逻辑回归背景中，$\theta$ 是一个有值的向量，所以我们要对牛顿法进行扩展来适应这个情况。牛顿法进行扩展到多维情况，也叫牛顿-拉普森法（Newton-Raphson method），如下所示：
+
+$$
+\theta := \theta - H^{-1}\nabla_\theta l(\theta)
+$$
+
+上面这个式子中的 $\nabla_\theta l(\theta)$和之前的样例中的类似，是关于 $\theta_i$ 的 $l(\theta)$ 的偏导数向量；而 $h$ 是一个 $n\times n$ 矩阵 ,实际上如果包含截距项的话，应该是, $(n + 1)\times (n + 1)$，也叫做 Hessian, 其详细定义是：
+
+$$
+H_{ij}= \frac {\partial^2 l(\theta)}{\partial \theta_i \partial \theta_j}
+$$
+
+牛顿法通常都能比（批量）梯度下降法收敛得更快，而且达到最小值所需要的迭代次数也低很多。然而，牛顿法中的单次迭代往往要比梯度下降法的单步耗费更多的性能开销，因为要查找和转换一个  $n\times n$的 Hessian 矩阵；不过只要这个 $n$ 不是太大，牛顿法通常就还是更快一些。当用牛顿法来在逻辑回归中求似然函数$l(\theta)$ 的最大值的时候，得到这一结果的方法也叫做**Fisher评分（Fisher scoring）。**
 
 - 上篇：[ML1. 线性回归(Linear Regression) -2](https://zhuanlan.zhihu.com/p/454983290)
-- 下篇：[]()
+- 下篇：[ML3. 广义线性模型(Generalized Linear Models)](https://zhuanlan.zhihu.com/p/457975520)
