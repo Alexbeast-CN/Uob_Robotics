@@ -319,4 +319,4 @@ $$
 要得到上面等式的第二行，要用到等式$(8)$中的设定 $p(y|x; \theta)$。现在就可以通过对 $l(\theta)$ 取最大值得到的 $\theta$ 而得到对参数的最大似然估计，使用的方法就可以用梯度上升法或者牛顿法了。
 
 - 上篇：[ML2. 分类器类与逻辑回归(Logistic Regression)](https://zhuanlan.zhihu.com/p/457618235)
-- 下篇：[]()
+- 下篇：[ML4. 生成学习算法(Generative Learning algorithms)](https://zhuanlan.zhihu.com/p/458285940)

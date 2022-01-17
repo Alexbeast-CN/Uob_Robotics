@@ -89,6 +89,7 @@
 - [ML1. 线性回归(Linear Regression) -2](https://zhuanlan.zhihu.com/p/454983290)
 - [ML2. 分类器类与逻辑回归(Logistic Regression)](https://zhuanlan.zhihu.com/p/457618235)
 - [ML3. 广义线性模型(Generalized Linear Models)](https://zhuanlan.zhihu.com/p/457975520)
+- [ML4. 生成学习算法(Generative Learning algorithms)](https://zhuanlan.zhihu.com/p/458285940)
 
 ## Reinforcement Learning
 
