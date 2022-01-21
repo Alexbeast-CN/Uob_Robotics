@@ -1,7 +1,7 @@
 #! https://zhuanlan.zhihu.com/p/450609713
 # 机器学习资料整理(Machine Learning Resources)
 
-> 目前打算跟着斯坦福大学的机器学习课程入门机器学习，课程代码 CS229，课程视频看的是 2018年 秋 吴恩达主讲的课程。
+> 目前打算跟着斯坦福大学的机器学习课程入门机器学习，课程代码 CS229，课程视频看的是 2018年 秋 吴恩达主讲的课程。学习了一段时间后，发现了温州大学黄海广老师的课程。老师给出了课程的 GitHub 仓库，精良。此后的学习以 CS229 的视频为主，结合黄老师的课件和代码同步学习。
 
 ## 教学视频链接：
 
@@ -14,6 +14,7 @@
 
 ## GitHub 仓库推荐：
 - [Afshine Amidi 大佬的Github仓库](https://github.com/afshinea?tab=overview&from=2017-12-01&to=2017-12-31)
+- [温州大学|机器学习资料](https://github.com/fengdu78/WZU-machine-learning-course)
 - [作业答案](https://github.com/zyxue/stanford-cs229)
 
 ## 官方给出的课程笔记：

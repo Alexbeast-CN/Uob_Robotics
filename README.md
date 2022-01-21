@@ -40,6 +40,8 @@
 
 ## Robotic Fundamentals
 
+> 该部分的课程结合了多个大学的课程，包括本校，以及台大的[机器人学（一）](https://www.coursera.org/learn/robotics1/home/welcome)，英属哥伦比亚大学的[ENGR486](https://www.youtube.com/playlist?list=PLJzZfbLAMTelwaLxFXteeblbY2ytU2AxX)，还有苏黎世联邦理工大学的[讲义](https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2017/RD_HS2017script.pdf)。此课程需要有一定的力学基础，有机械背景的学生学起来会相对轻松。
+
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
 - [Lec2. Homogeneous Transformations -1](https://zhuanlan.zhihu.com/p/423386635)
 - [Lec2. Homogeneous Transformations - 2](https://zhuanlan.zhihu.com/p/426121325)
