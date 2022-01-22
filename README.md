@@ -40,7 +40,7 @@
 
 ## Robotic Fundamentals
 
-> 该部分的课程结合了多个大学的课程，包括本校，以及台大的[机器人学（一）](https://www.coursera.org/learn/robotics1/home/welcome)，英属哥伦比亚大学的[ENGR486](https://www.youtube.com/playlist?list=PLJzZfbLAMTelwaLxFXteeblbY2ytU2AxX)，还有苏黎世联邦理工大学的[讲义](https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2017/RD_HS2017script.pdf)。此课程需要有一定的力学基础，有机械背景的学生学起来会相对轻松。
+> 该部分的课程结合了多个大学的课程，包括本校，以及台大的[机器人学（一）](https://www.coursera.org/learn/robotics1/home/welcome)，英属哥伦比亚大学的[ENGR486](https://www.youtube.com/playlist?list=PLJzZfbLAMTelwaLxFXteeblbY2ytU2AxX)，国立交通大学的[机器人学理论](https://www.bilibili.com/video/BV19z4y197cf?p=16)。还有苏黎世联邦理工大学的[讲义](https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2017/RD_HS2017script.pdf)。此课程需要有一定的力学基础，有机械背景的学生学起来会相对轻松。
 
 - [Lec1. Intro to the concept of kinematics](https://zhuanlan.zhihu.com/p/420409297)
 - [Lec2. Homogeneous Transformations -1](https://zhuanlan.zhihu.com/p/423386635)
@@ -49,6 +49,8 @@
 - [Lec4. Inverse Kinematics in Matlab](https://zhuanlan.zhihu.com/p/430060490)
 - [Lec5. 速度运动学(Velocity Kinematics)](https://zhuanlan.zhihu.com/p/445449208)
 - [Lec6. 轨迹规划 (Trajectory Plan)](https://zhuanlan.zhihu.com/p/445941991)
+- [机器人动力学(Dynamics) -1](https://zhuanlan.zhihu.com/p/460582634)
+
 ## Machine Vision
 
 > 老实说布大的计算机视觉课程~~是不错的~~（只有第一节课还不错，随后教学质量就不行了），但在我查找资料的过程中发现了一个更好的课程，斯坦福大学开设的卷积神经网络的物体识别课程，所以以后的课程我和结合布大和斯坦福的内容做笔记和总结。下面列出关于斯坦福大学的课程的资料链接：
