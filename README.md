@@ -50,6 +50,7 @@
 - [Lec5. 速度运动学(Velocity Kinematics)](https://zhuanlan.zhihu.com/p/445449208)
 - [Lec6. 轨迹规划 (Trajectory Plan)](https://zhuanlan.zhihu.com/p/445941991)
 - [机器人动力学(Dynamics) -1](https://zhuanlan.zhihu.com/p/460582634)
+- [机器人动力学 (Dynamics) -2](https://zhuanlan.zhihu.com/p/460840272)
 
 ## Machine Vision
 

@@ -7,19 +7,8 @@
 
 ![工业机器人](pics/v2-feacca79463c7c9835485139430bcd59_b.jpg)
 
-<center>
-
-工业机器人
-
-</center>
 
 ![协作机器人](./pics/Uni-of-Sheffield-robot.jpg)
-
-<center>
-
-协作机器人
-
-</center>
 
 由理论力学的基础可以得到，对于一个固定底座的多轴机器人，其动力学方程可以写成：
 
@@ -190,4 +179,4 @@ $$
 动力学比较烦就是其计算复杂，以及高度的耦合(Coupling)。
 
 - 上篇：[Lec6. 轨迹规划 (Trajectory Plan)](https://zhuanlan.zhihu.com/p/445941991)
-- 下篇：
+- 下篇：[机器人动力学 (Dynamics) -2](https://zhuanlan.zhihu.com/p/460840272)
