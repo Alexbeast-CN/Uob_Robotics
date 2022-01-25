@@ -82,7 +82,11 @@
 
 ## 6. Introduction to Artificial Intelligence
 
+> 该门课程的内容大约和 Stanford cs229 的内容一致。但是课程讲的比较浅，没有太多的数学推导。所以这部分的内容将被 cs229 以及 tensorflow 和 pytorch 的教程代替。
+
 ## 7. Bio-Inspire Artificial Intelligence
+
+- [BIONIC.1 神经系统(Neurla System)](https://zhuanlan.zhihu.com/p/461904298)
 
 ## 8. Advanced Control & Dynamics
 
