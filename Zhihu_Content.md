@@ -82,11 +82,12 @@
 
 ## 6. Introduction to Artificial Intelligence
 
-> 该门课程的内容大约和 Stanford cs229 的内容一致。但是课程讲的比较浅，没有太多的数学推导。所以这部分的内容将被 cs229 以及 tensorflow 和 pytorch 的教程代替。
+> 该门课程的内容大约和 Stanford cs221 的内容一致。该部分的笔记将由布大的课程以及 cs221 的课程结合完成笔记。此外还会添加 `Pytorch` 的入门笔记，方便日后课设。
 
 - [Pytorch 1. 介绍(Intro)](https://zhuanlan.zhihu.com/p/462272150) 
 - [Pytorch 2. 数据集(Dataset)](https://zhuanlan.zhihu.com/p/462272165)
 - [Pytorch 3. 创建一个神经网络](https://zhuanlan.zhihu.com/p/462359836)
+- [Pytorch 4. 训练神经网络 (Training our Neural Network)](https://zhuanlan.zhihu.com/p/462610796)
 
 ## 7. Bio-Inspire Artificial Intelligence
 
