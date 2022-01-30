@@ -218,4 +218,4 @@ print(biggest_index)
     tensor(7)
     
 - 上篇：[Pytorch 3. 创建一个神经网络](https://zhuanlan.zhihu.com/p/462359836)
-- 下篇：[]()
+- 下篇：[Pytorch 5. 卷积神经网络(Convolutional Neural Networks)](https://zhuanlan.zhihu.com/p/463301002)

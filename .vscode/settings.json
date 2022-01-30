@@ -35,5 +35,6 @@
             }
         }
     ],
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "local",
+    "azureML.defaultWorkspaceId": "/subscriptions/26b5ddad-90a9-42aa-89a0-d1f2f439af02/resourceGroups/Myserver/providers/Microsoft.MachineLearningServices/workspaces/Server1"
 }
