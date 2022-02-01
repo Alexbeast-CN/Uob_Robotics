@@ -152,7 +152,7 @@ training_data[1][1]
 
     array([0., 1.])
 
-
+## 3. 构建卷积神经网络
 
 下面我们来构建一个卷积神经网络(CNN)，这里我们创建的神经网络比较简单，是一个类似 `VGG16` 的结构，但是层数比 `VGG16` 要少很多。
 
@@ -234,6 +234,7 @@ print(net)
       (fc2): Linear(in_features=512, out_features=2, bias=True)
     )
     
+## 4. 模型训练
 
 接下来，我们已经准备好实际训练模型了，所以我们需要做一个训练循环。 为此，我们需要一个损失度量和优化器。 同样，我们将使用 Adam 优化器。 这一次，由于我们有 one_hot 向量，我们将使用 mse 作为我们的损失度量。 MSE 代表均方误差。
 
@@ -323,8 +324,7 @@ for epoch in range(EPOCHS):
     Epoch: 2. Loss: 0.22343675792217255
     
 
-    
-    
+## 5. 准确度 
 
 代码应该相当明显，但基本上我们只是迭代 `train_X` 的长度，步长为 `BATCH_SIZE` 的大小。从那里，我们可以知道我们的 “批处理切片” 将从当前的 `i` 到 `i+BATCH_SIZE`。
 
@@ -386,4 +386,4 @@ print(torch.argmax(net(test_X[2].view(-1, 1, 64, 64))[0]))
     tensor(0)
     
 - 上篇： [Pytorch 4. 训练神经网络 (Training our Neural Network)](https://zhuanlan.zhihu.com/p/462610796)
-- 下篇： []()
+- 下篇： [Pytorch 6. 使用GPU训练 (Training with GPU)](https://zhuanlan.zhihu.com/p/463450064)

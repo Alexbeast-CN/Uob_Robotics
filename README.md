@@ -91,6 +91,7 @@
 - [Pytorch 3. 创建一个神经网络](https://zhuanlan.zhihu.com/p/462359836)
 - [Pytorch 4. 训练神经网络 (Training our Neural Network)](https://zhuanlan.zhihu.com/p/462610796)
 - [Pytorch 5. 卷积神经网络(Convolutional Neural Networks)](https://zhuanlan.zhihu.com/p/463301002)
+- [Pytorch 6. 使用GPU训练 (Training with GPU)](https://zhuanlan.zhihu.com/p/463450064)
 
 ## Bio-Inspire Artificial Intelligence
 
