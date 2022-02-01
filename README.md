@@ -85,6 +85,8 @@
 ## Introduction to Artificial Intelligence
 
 > 该门课程的内容大约和 Stanford cs221 的内容一致。该部分的笔记将由布大的课程以及 cs221 的课程结合完成笔记。此外还会添加 `Pytorch` 的入门笔记，方便日后课设。
+>
+> 由于此部分的内容与 Machine Learning 部分有些重复，因此重复部分会被一笔带过。
 
 - [Pytorch 1. 介绍(Intro)](https://zhuanlan.zhihu.com/p/462272150) 
 - [Pytorch 2. 数据集(Dataset)](https://zhuanlan.zhihu.com/p/462272165)
