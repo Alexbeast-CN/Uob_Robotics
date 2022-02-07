@@ -422,4 +422,4 @@ $$
 当然了，这个并不见得就是一个最好的分类算法，不过朴素贝叶斯分选器通常用起来还都出乎意料地那么好。所以这个方法就是一个很好的"首发选择"，因为它很简单又很好实现。
 
 - 上篇：[ML3. 广义线性模型(Generalized Linear Models)](https://zhuanlan.zhihu.com/p/457975520)
-- 下篇：[]()
+- 下篇：[ML5. 支持向量机 (Support Vector Machine)](https://zhuanlan.zhihu.com/p/463908093)

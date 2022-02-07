@@ -97,6 +97,8 @@
 
 ## Bio-Inspire Artificial Intelligence
 
+> 由于这门课程为 100% 的项目考核，出于时间问题，该部分的笔记可能不全。
+
 - [BIONIC.1 神经系统(Neurla System)](https://zhuanlan.zhihu.com/p/461904298)
 
 ## Advanced Control & Dynamicscs
@@ -109,6 +111,7 @@
 - [ML2. 分类器类与逻辑回归(Logistic Regression)](https://zhuanlan.zhihu.com/p/457618235)
 - [ML3. 广义线性模型(Generalized Linear Models)](https://zhuanlan.zhihu.com/p/457975520)
 - [ML4. 生成学习算法(Generative Learning algorithms)](https://zhuanlan.zhihu.com/p/458285940)
+- [ML5. 支持向量机 (Support Vector Machine)](https://zhuanlan.zhihu.com/p/463908093)
 
 ## Reinforcement Learning
 
