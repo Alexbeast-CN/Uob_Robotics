@@ -82,6 +82,8 @@
 - [CV5. 特征提取 (Features) -- 2](https://zhuanlan.zhihu.com/p/449929845)
 ## Human-Robot Interaction
 
+> 人机交互部分与技术关系不是很大，大多数是实践与理念。因此该部分的笔记不多。
+
 ## Introduction to Artificial Intelligence
 
 > 该门课程的内容大约和 Stanford cs221 的内容一致。该部分的笔记将由布大的课程以及 cs221 的课程结合完成笔记。此外还会添加 `Pytorch` 的入门笔记，方便日后课设。
@@ -102,6 +104,8 @@
 - [BIONIC.1 神经系统(Neurla System)](https://zhuanlan.zhihu.com/p/461904298)
 
 ## Advanced Control & Dynamicscs
+
+> 此部分的笔记结合本校的课程以及[Matlab 课程](https://www.youtube.com/watch?v=hpeKrMG-WP0&t=44s&ab_channel=MATLAB) [B站 DR_CAN 的视频](https://space.bilibili.com/230105574/channel/series)
 
 ## Machine Learning
 

@@ -80,6 +80,8 @@
 
 ## 5. Human-Robot Interaction
 
+> 人机交互部分与技术关系不是很大，大多数是实践与理念。因此该部分的笔记不多。
+
 ## 6. Introduction to Artificial Intelligence
 
 > 该门课程的内容大约和 Stanford cs221 的内容一致。该部分的笔记将由布大的课程以及 cs221 的课程结合完成笔记。此外还会添加 `Pytorch` 的入门笔记，方便日后课设。
