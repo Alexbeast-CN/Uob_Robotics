@@ -100,6 +100,8 @@
 > 由于这门课程为 100% 的项目考核，出于时间问题，该部分的笔记可能不全。
 
 - [BIONIC.1 神经系统(Neurla System)](https://zhuanlan.zhihu.com/p/461904298)
+- [BIONIC.2 人工进化(Artificial evolution) -- 1](https://zhuanlan.zhihu.com/p/465160379)
+- [BIONIC.2 人工进化(Artificial evolution) -- 2](https://zhuanlan.zhihu.com/p/465160895)
 
 ## 8. Advanced Control & Dynamics
 

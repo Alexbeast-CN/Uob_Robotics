@@ -656,4 +656,4 @@ print(population)
 希望本节能让您更深入地了解 GA 的内部工作原理。 在本练习中检查的 GA 相当简单，因为我们已经知道我们想要发展的解决方案是什么。 但是，当我们不知道问题的解决方案是什么时，GA 会更加有用。
 
 - 上篇：[BIONIC.2 人工进化(Artificial evolution) -- 1](https://zhuanlan.zhihu.com/p/465160379)
-- 下篇：[BIONIC.2 人工进化(Artificial evolution) -- 3]()
+- 下篇：[]()
