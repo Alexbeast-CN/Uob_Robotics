@@ -97,6 +97,10 @@
 - [Pytorch 5. 卷积神经网络(Convolutional Neural Networks)](https://zhuanlan.zhihu.com/p/463301002)
 - [Pytorch 6. 使用GPU训练 (Training with GPU)](https://zhuanlan.zhihu.com/p/463450064)
 
+算法讲解：
+
+- [AI 1. K-means ](https://zhuanlan.zhihu.com/p/466029135)
+
 ## Bio-Inspire Artificial Intelligence
 
 > 由于这门课程为 100% 的项目考核，出于时间问题，该部分的笔记可能不全。
