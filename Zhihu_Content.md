@@ -109,6 +109,10 @@
 
 ## 8. Advanced Control & Dynamics
 
+> 此部分的笔记结合本校的课程以及[Matlab 课程](https://www.youtube.com/watch?v=hpeKrMG-WP0&t=44s&ab_channel=MATLAB) 和 [B站 DR_CAN 的视频](https://space.bilibili.com/230105574/channel/series)
+
+- [ACnD 1. 状态空间模型 (State Space Model)](https://zhuanlan.zhihu.com/p/466790657)
+
 ## 9. Machine Learning
 
 > 该部分的内容基于 Stanford cs229。 此部分的授课方式主要是数学推导，较为硬核。更加浅显一点的课程是 cs22 Introduction to Artificial Intelligence。
