@@ -112,6 +112,8 @@
 > 此部分的笔记结合本校的课程以及[Matlab 课程](https://www.youtube.com/watch?v=hpeKrMG-WP0&t=44s&ab_channel=MATLAB) 和 [B站 DR_CAN 的视频](https://space.bilibili.com/230105574/channel/series)
 
 - [ACnD 1. 状态空间模型 (State Space Model)](https://zhuanlan.zhihu.com/p/466790657)
+- [ACnD 1. 状态空间 -- 练习](https://zhuanlan.zhihu.com/p/467039497)
+- [ACnD 2. 稳定性 (Stability)](https://zhuanlan.zhihu.com/p/467088278)
 
 ## 9. Machine Learning
 

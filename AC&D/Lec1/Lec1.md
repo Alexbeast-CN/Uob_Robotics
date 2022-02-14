@@ -197,4 +197,4 @@ stepplot(dcm(1));
 
 ![ ](Lec1_images/figure_0.png)
 
-- 下篇：[ ]()
+- 下篇：[ACnD 1. 状态空间 -- 练习](https://zhuanlan.zhihu.com/p/467039497)
