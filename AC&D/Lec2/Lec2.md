@@ -228,4 +228,4 @@ grid on
 
 
 - 上篇：[ACnD 1. 状态空间 -- 练习](https://zhuanlan.zhihu.com/p/467039497)
-- 下篇：[]()
+- 下篇：[ACnD 3. 可控性与可观测性 (Controllablity and Obeservablity)](https://zhuanlan.zhihu.com/p/467542401)

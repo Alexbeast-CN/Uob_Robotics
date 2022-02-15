@@ -1,9 +1,9 @@
 #! https://zhuanlan.zhihu.com/p/414973930
 # 机器人学课程目录
 
->这是来自布里斯托大学，机器人专业授课型硕士课程的开源笔记，笔记内容包括但不限于布里斯托大学的课程，其中也有斯坦福和 MIT 公开课的笔记。此专栏从2021年9月开始更新，维持更新时间预计为1年。希望可以和大家共同学习和讨论机器人相关的知识和内容。
+>这是来自布里斯托大学，机器人专业授课型硕士课程的开源笔记，笔记内容包括但不限于布里斯托大学的课程，其中也有斯坦福和 MIT 公开课的笔记。此专栏从2021年9月开始更新，维持更新时间预计为1年。希望可以和大家共同学习和讨论机器人相关的知识和内容。随着对在线笔记的编辑，知乎 vscode 插件的逐渐熟悉，该专栏中的笔记质量在逐渐提升。文章的格式也从 Markdown 转移到了更加方便 添加代码并运行的 jupyter notebook。
 
->整个笔记文件由 Markdown 编写，笔记以及一些代码已有 github 托管，可以[由此链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
+>笔记以及一些代码已有 github 托管，可以[由此链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
 ## 1. Robotics Systems
 
 > 这是一门褒贬不一的课程。很多同学吐槽老师发完讲义啥也不讲，老师太好当了。但我却非常感激 Prof. Paul，原因如下：
@@ -114,6 +114,7 @@
 - [ACnD 1. 状态空间模型 (State Space Model)](https://zhuanlan.zhihu.com/p/466790657)
 - [ACnD 1. 状态空间 -- 练习](https://zhuanlan.zhihu.com/p/467039497)
 - [ACnD 2. 稳定性 (Stability)](https://zhuanlan.zhihu.com/p/467088278)
+- [ACnD 3. 可控性与可观测性 (Controllablity and Obeservablity)](https://zhuanlan.zhihu.com/p/467542401)
 
 ## 9. Machine Learning
 
