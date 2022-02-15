@@ -282,4 +282,4 @@ plt.tight_layout()
     
 ![png](Kmeans_files/Kmeans_17_0.png)
     
-- 下篇：[]()
+- 下篇：[AI 2. 搜索算法 (Search Algorithm)](https://zhuanlan.zhihu.com/p/467959715)

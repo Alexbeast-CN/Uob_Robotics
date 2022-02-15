@@ -98,6 +98,7 @@
 算法讲解：
 
 - [AI 1. K-means ](https://zhuanlan.zhihu.com/p/466029135)
+- [AI 2. 搜索算法 (Search Algorithm)](https://zhuanlan.zhihu.com/p/467959715)
 
 ## 7. Bio-Inspire Artificial Intelligence
 
