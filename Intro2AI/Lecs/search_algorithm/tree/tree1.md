@@ -280,4 +280,4 @@ printSolution(solution)
 由此可以选出最佳路径为 $a\rightarrow b \rightarrow d, totalcost = 8$
 
 - 上篇：[AI 1. K-means](https://zhuanlan.zhihu.com/p/466029135)
-- 下篇：[AI 3. A* 搜索 (A* Search)](https://zhuanlan.zhihu.com/p/469363011)
+- 下篇：[AI 3. A* 搜索 (A* Search)](https://zhuanlan.zhihu.com/p/469512859)

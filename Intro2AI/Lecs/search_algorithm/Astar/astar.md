@@ -1,4 +1,4 @@
-#! https://zhuanlan.zhihu.com/p/469363011
+#! https://zhuanlan.zhihu.com/p/469512859
 # AI 3. A* 搜索 (A* Search)
 
 > 参考：
