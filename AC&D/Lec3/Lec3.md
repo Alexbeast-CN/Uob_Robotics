@@ -251,4 +251,4 @@ end
     
 
 - 上篇：[ACnD 2. 稳定性 (Stability)](https://zhuanlan.zhihu.com/p/467088278)
-- 下篇：[]()
+- 下篇：[ACnD 4. 设计控制器 (Contorller Design)](https://zhuanlan.zhihu.com/p/470029508)

@@ -115,10 +115,14 @@
 
 > 此部分的笔记结合本校的课程以及[Matlab 课程](https://www.youtube.com/watch?v=hpeKrMG-WP0&t=44s&ab_channel=MATLAB) 和 [B站 DR_CAN 的视频](https://space.bilibili.com/230105574/channel/series)
 
+> 控制论是一个强实践的课程，本门课程的理论知识并不多，但可以应用的例子非常多，因此多做题对本课程的提升会很有帮助。
+
 - [ACnD 1. 状态空间模型 (State Space Model)](https://zhuanlan.zhihu.com/p/466790657)
 - [ACnD 1. 状态空间 -- 练习](https://zhuanlan.zhihu.com/p/467039497)
 - [ACnD 2. 稳定性 (Stability)](https://zhuanlan.zhihu.com/p/467088278)
 - [ACnD 3. 可控性与可观测性 (Controllablity and Obeservablity)](https://zhuanlan.zhihu.com/p/467542401)
+- [ACnD 4. 设计控制器 (Contorller Design)](https://zhuanlan.zhihu.com/p/470029508)
+
 
 ## Machine Learning
 
