@@ -122,6 +122,7 @@
 - [ACnD 2. 稳定性 (Stability)](https://zhuanlan.zhihu.com/p/467088278)
 - [ACnD 3. 可控性与可观测性 (Controllablity and Obeservablity)](https://zhuanlan.zhihu.com/p/467542401)
 - [ACnD 4. 设计控制器 (Contorller Design)](https://zhuanlan.zhihu.com/p/470029508)
+- [ACnD 5. 状态观测器 (State Observer)](https://zhuanlan.zhihu.com/p/476786539)
 
 
 ## Machine Learning

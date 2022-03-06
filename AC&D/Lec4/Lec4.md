@@ -405,4 +405,4 @@ eigs = eig(A-B*K)
 > 但 LQR 的计算量很大，其时间复杂度为 $O(n^3)$，其中 $n$ 是状态量 $x$ 的维度。所以，假如我们的系统有 1000 个状态量，那么计算这个值还是比较耗时的。
 
 - 上篇：[ACnD 3. 可控性与可观测性 (Controllablity and Obeservablity)](https://zhuanlan.zhihu.com/p/467542401)
-- 下篇：[]()
+- 下篇：[ACnD 5. 状态观测器 (State Observer)](https://zhuanlan.zhihu.com/p/476786539)
