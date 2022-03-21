@@ -86,9 +86,10 @@
 
 ## Introduction to Artificial Intelligence
 
-> 该门课程的内容大约和 Stanford cs221 的内容一致。该部分的笔记将由布大的课程以及 cs221 的课程结合完成笔记。此外还会添加 `Pytorch` 的入门笔记，方便日后课设。
->
-> 由于此部分的内容与 Machine Learning 部分有些重复，因此重复部分会被一笔带过。
+> 该门课程的内容分为 Machine Learning 部分和 Deep Learning 部分。教学的方向以数据科学为主。
+> 由于此部分的内容与 Stanford cs229 部分有些重复，因此重复部分会被一笔带过。
+
+Pytorch 深度学习（布大教的是 TensorFlow）：
 
 - [Pytorch 1. 介绍(Intro)](https://zhuanlan.zhihu.com/p/462272150) 
 - [Pytorch 2. 数据集(Dataset)](https://zhuanlan.zhihu.com/p/462272165)
@@ -96,6 +97,10 @@
 - [Pytorch 4. 训练神经网络 (Training our Neural Network)](https://zhuanlan.zhihu.com/p/462610796)
 - [Pytorch 5. 卷积神经网络(Convolutional Neural Networks)](https://zhuanlan.zhihu.com/p/463301002)
 - [Pytorch 6. 使用GPU训练 (Training with GPU)](https://zhuanlan.zhihu.com/p/463450064)
+
+数据科学：
+
+
 
 算法讲解：
 
