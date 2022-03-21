@@ -98,7 +98,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 
 数据科学：
 
-
+- [DS 1. Pandas 数据分析](https://zhuanlan.zhihu.com/p/485106322)
 
 算法讲解：
 
