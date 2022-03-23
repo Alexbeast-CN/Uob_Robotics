@@ -471,4 +471,4 @@ sales.loc[(sales['Age_Group'] == 'Adults (35-64)') & (sales['Country'] == 'Unite
 
 
 
-- 下篇：[]()
+- 下篇：[DS2. Kaggle 入门 (Titanic Project Example)](https://zhuanlan.zhihu.com/p/485780305)

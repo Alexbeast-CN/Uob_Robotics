@@ -99,6 +99,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 数据科学：
 
 - [DS 1. Pandas 数据分析](https://zhuanlan.zhihu.com/p/485106322)
+- [DS2. Kaggle 入门 (Titanic Project Example)](https://zhuanlan.zhihu.com/p/485780305)
 
 算法讲解：
 
