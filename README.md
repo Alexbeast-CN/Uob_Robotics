@@ -101,6 +101,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 
 - [DS 1. Pandas 数据分析](https://zhuanlan.zhihu.com/p/485106322)
 - [DS2. Kaggle 入门 (Titanic Project Example)](https://zhuanlan.zhihu.com/p/485780305)
+- [DS3. Kaggle 入门 (House Prices - Advanced Regression Techniques)](https://zhuanlan.zhihu.com/p/486448453)
 
 算法讲解：
 
