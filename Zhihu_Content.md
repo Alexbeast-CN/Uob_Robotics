@@ -145,7 +145,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 
 ## 10. Deep Reinforcement Learning
 
-> 此部分的内容是为了毕业论文打基础，并非布大课程。
+> 此部分的内容是为了毕业论文打基础，并非布大课程。由于前段时间为了赶 Proposal 一口气把 UCL 的 DRL 课全看完了，但没有怎么做笔记，所以先挖个坑，等有空了再慢慢把笔记都补起来。
 
 - [DRL0. 深度强化学习资料汇总](https://zhuanlan.zhihu.com/p/472689537)
 - [DRL1. 马尔可夫决策过程 (Markov Decision Processes, MDP)](https://zhuanlan.zhihu.com/p/471626124)
