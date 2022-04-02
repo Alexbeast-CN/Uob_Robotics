@@ -151,4 +151,5 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 
 > 使用 OpenAI 的 baselines 和 Gym 进行的代码练习， Play With Gym
 
+- [PWG0. 配置 Gym 的 Anaconda 环境](https://zhuanlan.zhihu.com/p/491871605)
 - [PWG 1. 初识强化学习代码](https://zhuanlan.zhihu.com/p/484023706)
