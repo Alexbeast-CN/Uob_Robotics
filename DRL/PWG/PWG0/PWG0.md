@@ -24,7 +24,7 @@ pip install --upgrade tensorflow
 
 ```python
 conda install ipython numpy scipy pandas matplotlib seaborn -y
-conda install pytest psutil joblib tqdm mpi4py -y
+conda install pytest psutil joblib tqdm mpi4py ipykernel -y
 ```
 
 安装 Jupyter Notebook
