@@ -153,3 +153,4 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 
 - [PWG0. 配置 Gym 的 Anaconda 环境](https://zhuanlan.zhihu.com/p/491871605)
 - [PWG 1. 初识强化学习代码](https://zhuanlan.zhihu.com/p/484023706)
+- [PWG2. Atari Space Invader | DQN](https://zhuanlan.zhihu.com/p/496321147)
