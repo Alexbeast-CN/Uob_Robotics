@@ -84,6 +84,7 @@
 > 人机交互部分与技术关系不是很大，大多数是实践与理念。因此该部分的笔记不多。
 
 - [HRI1. 人机交互简介 (Human-Robot-Interaction Intro)](https://zhuanlan.zhihu.com/p/511862004)
+- [HRI2. 人机交互的研究方法](https://zhuanlan.zhihu.com/p/511908732)
 
 ## Introduction to Artificial Intelligence
 
