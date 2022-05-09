@@ -6,12 +6,6 @@
 >笔记以及一些代码已有 github 托管，可以[由此链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
 ## 1. Robotics Systems
 
-> 这是一门褒贬不一的课程。很多同学吐槽老师发完讲义啥也不讲，老师太好当了。但我却非常感激 Prof. Paul，原因如下：
-> - 这门课程的讲义质量非常的高。讲义里有知识的传授，设置各种难度引导学生思考，最后完成实践性 Robotic Lab。
-> - 这是一门研究生等级的课程，之所以叫研究生，是因为我们要掌握基础的研究能力，其中当然包括自行跟着讲义完成 Lab 的能力，以及自行上网查阅资料的能力。
-> - 此外，本课程每周有一节 QA 课程，帮助同学们解决自学过程中的难题。以及一节实践课，帮助同学解决实操过程的问题。
-> - Paul 对于我 As2 的帮助很大，在我提出 As2 的想法（做扫地机）后，老师第二天就给出一本算法书资料，内容精良，直击本项目的痛点。
-
 ### Assessment 1
 
 - [Lec1. Introduction to robotic systems](https://zhuanlan.zhihu.com/p/414973593)
@@ -30,7 +24,7 @@
 
 > 这部分的内容很少的原因是
 > - 大多是 saminar (研讨会)，基本都是老师讲自己的研究领域，然后我们来写一些总结作为 report。 由于比较怕老师在查重的时候查到我写的开源笔记，所以暂时不更新这部分的内容。
-> - 另外一部分关于培养技能的课程过于简单，比如如何 presentation, latex, git 这些都是我早已掌握并且经常使用的技能，就不做记载了。
+> - 另外一部分关于培养技能的课程过于简单，比如 presentation, latex, git 这些都是我早已掌握并且经常使用的技能，就不做记载了。
 
 - [Week2. 机器人学研究的技能和方法](https://zhuanlan.zhihu.com/p/419711214)
 - [论文阅读【LIO-SAM】- ENG](https://zhuanlan.zhihu.com/p/420382484)
@@ -81,6 +75,8 @@
 ## 5. Human-Robot Interaction
 
 > 人机交互部分与技术关系不是很大，大多数是实践与理念。因此该部分的笔记不多。
+
+- [HRI1. 人机交互简介 (Human-Robot-Interaction Intro)](https://zhuanlan.zhihu.com/p/511862004)
 
 ## 6. Introduction to Artificial Intelligence
 
@@ -149,7 +145,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 
 - [DRL0. 深度强化学习资料汇总](https://zhuanlan.zhihu.com/p/472689537)
 - [DRL1. 马尔可夫决策过程 (Markov Decision Processes, MDP)](https://zhuanlan.zhihu.com/p/471626124)
-- [DRL 2. 动态编程 (Dynamic Programming)](https://zhuanlan.zhihu.com/p/476488801)
+- [DRL2. 动态编程 (Dynamic Programming)](https://zhuanlan.zhihu.com/p/476488801)
 
 > 使用 OpenAI 的 baselines 和 Gym 进行的代码练习， Play With Gym
 

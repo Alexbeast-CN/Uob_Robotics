@@ -83,6 +83,8 @@
 
 > 人机交互部分与技术关系不是很大，大多数是实践与理念。因此该部分的笔记不多。
 
+- [HRI1. 人机交互简介 (Human-Robot-Interaction Intro)](https://zhuanlan.zhihu.com/p/511862004)
+
 ## Introduction to Artificial Intelligence
 
 > 该门课程的内容分为 Machine Learning 部分和 Deep Learning 部分。教学的方向以数据科学为主。
