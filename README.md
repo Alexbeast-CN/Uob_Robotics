@@ -85,6 +85,8 @@
 
 - [HRI1. 人机交互简介 (Human-Robot-Interaction Intro)](https://zhuanlan.zhihu.com/p/511862004)
 - [HRI2. 人机交互的研究方法](https://zhuanlan.zhihu.com/p/511908732)
+- [HRI3. 机器人设计](https://zhuanlan.zhihu.com/p/512422142
+
 
 ## Introduction to Artificial Intelligence
 
