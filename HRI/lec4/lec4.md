@@ -83,4 +83,4 @@ user: Do you want red wine?
 之前生成语言的方法有连接型和参数型。连接型就是一个字一个字的发出来，但是在字与字之间使用平滑滤镜，让语音显的比较流畅。参数型则是从文本中产生声学语音参数。但现在基本都是用深度学习来训练AI由文字转变成语音，效果非常好。
 
 - 上篇：[HRI3. 机器人设计](https://zhuanlan.zhihu.com/p/512422142)
-- 下篇：
+- 下篇：[HRI5. 空间交互(Spatial Interaction)](https://zhuanlan.zhihu.com/p/512990457)

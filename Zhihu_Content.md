@@ -74,12 +74,13 @@
 
 ## 5. Human-Robot Interaction
 
-> 人机交互部分与技术关系不是很大，大多数是实践与理念。因此该部分的笔记不多。
+> 人机交互部分与技术关系不是很大，反而是更偏向于社科。
 
 - [HRI1. 人机交互简介 (Human-Robot-Interaction Intro)](https://zhuanlan.zhihu.com/p/511862004)
 - [HRI2. 人机交互的研究方法](https://zhuanlan.zhihu.com/p/511908732)
 - [HRI3. 机器人设计](https://zhuanlan.zhihu.com/p/512422142)
 - [HRI4. 语言交互(Verbal Interaction)](https://zhuanlan.zhihu.com/p/512465712)
+- [HRI5. 空间交互(Spatial Interaction)](https://zhuanlan.zhihu.com/p/512990457)
 
 ## 6. Introduction to Artificial Intelligence
 
