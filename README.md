@@ -155,6 +155,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 - [DRL0. 深度强化学习资料汇总](https://zhuanlan.zhihu.com/p/472689537)
 - [DRL1. 马尔可夫决策过程 (Markov Decision Processes, MDP)](https://zhuanlan.zhihu.com/p/471626124)
 - [DRL 2. 动态编程 (Dynamic Programming)](https://zhuanlan.zhihu.com/p/476488801)
+- [DRL3. 探索与尽用 (exploration and exploitation)](https://zhuanlan.zhihu.com/p/520062204)
 
 > 使用 OpenAI 的 baselines 和 Gym 进行的代码练习， Play With Gym
 
