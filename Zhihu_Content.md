@@ -4,6 +4,16 @@
 >这是来自布里斯托大学，机器人专业授课型硕士课程的开源笔记，笔记内容包括但不限于布里斯托大学的课程，其中也有斯坦福和 MIT 公开课的笔记。此专栏从2021年9月开始更新，维持更新时间预计为1年。希望可以和大家共同学习和讨论机器人相关的知识和内容。随着对在线笔记的编辑，知乎 vscode 插件的逐渐熟悉，该专栏中的笔记质量在逐渐提升。文章的格式也从 Markdown 转移到了更加方便 添加代码并运行的 jupyter notebook。
 
 >笔记以及一些代码已有 github 托管，可以[由此链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
+
+## 0. 前言
+
+截至 22 年 6 月份，本专栏停止更新。对于课程的一些感悟：课程全部结束后，我感觉自己这一年来走了很多的弯路，学校教的很多课程已经完全跟现代社会脱节了，认真上课听讲的同学反而成了冤大头。下面我具体的列举一些我认为完全没用的课程，第一名 MV，该课程的设立实在太落后了，在深度学习时代花大量的时间教我们传统的 CV 方法，深度学习反而只有几节课的内容，本末倒置。第二名 Bio-AI，一时脑抽选了这个课，实在太水了，可以说是毫无用处。第三名 AI，本门课的重点是在教 ML，最后几节课又讲了讲 DL，RL 但都非常的短暂。然后是我认为比较好的几门课，第一是 RRTM，教会了我怎么科学的思考问题，怎么找论文，读论文，做研究，课程的两个老师都是布里斯托的大牛，真的让人受益匪浅。第二名 RS，Paul 老师认真负责，且课程设计重实践，真的可以让小白入门机器人系统设计，是非常棒的一门课。最后我想提出一些建议。第一学期的时候尽量先跟着网课把 DL 学了，然后第二学期再跟着网课学习 CV，太水的课就不去听了，真的很浪费时间。有空的时候多读一些论文，了解领域的最新进展。
+
+虽然该专栏停止更新了，但学习和笔记并不会停止更新，由于我主要的研究方向是自动驾驶，所以在知乎上又开设了一些与自动驾驶技术相关的专栏：
+
+- [自动驾驶学习笔记](https://www.zhihu.com/column/c_1508600564347265024)
+- [自动驾驶论文阅读](https://www.zhihu.com/column/c_1472141905845116928)
+
 ## 1. Robotics Systems
 
 ### Assessment 1
@@ -71,6 +81,10 @@
 - [CV3. 边缘检测 (Edge Detection)](https://zhuanlan.zhihu.com/p/446867045)
 - [CV4. 特征提取 (Features) -- 1](https://zhuanlan.zhihu.com/p/448798850)
 - [CV5. 特征提取 (Features) -- 2](https://zhuanlan.zhihu.com/p/449929845)
+
+> 对于 MV coursework 的一些建议：
+> - CV Boackbone 的发展历史 AlexNet -> VGG -> ResNet / EfficientNet -> ViT / Swin Transformer 这些模型所对应的论文都很值得阅读。
+> - 一个好用的 CV 框架：[OpenMMLab](https://github.com/open-mmlab)
 
 ## 5. Human-Robot Interaction
 
@@ -155,5 +169,5 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 > 使用 OpenAI 的 baselines 和 Gym 进行的代码练习， Play With Gym
 
 - [PWG0. 配置 Gym 的 Anaconda 环境](https://zhuanlan.zhihu.com/p/491871605)
-- [PWG 1. 初识强化学习代码](https://zhuanlan.zhihu.com/p/484023706)
+- [PWG1. 初识强化学习代码](https://zhuanlan.zhihu.com/p/484023706)
 - [PWG2. Atari Space Invader | DQN](https://zhuanlan.zhihu.com/p/496321147)

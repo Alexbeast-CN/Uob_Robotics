@@ -5,7 +5,17 @@
 笔记以及一些代码已有 github 托管，可以[由此链接](https://github.com/Alexbeast-CN/Uob_Robotics)访问
 
 同时会在[知乎](https://zhuanlan.zhihu.com/p/414973930)上更新笔记文章。
-## Robotics Systems
+
+## 0. 前言
+
+截至 22 年 6 月份，本专栏停止更新。对于课程的一些感悟：课程全部结束后，我感觉自己这一年来走了很多的弯路，学校教的很多课程已经完全跟现代社会脱节了，认真上课听讲的同学反而成了冤大头。下面我具体的列举一些我认为完全没用的课程，第一名 MV，该课程的设立实在太落后了，在深度学习时代花大量的时间教我们传统的 CV 方法，深度学习反而只有几节课的内容，本末倒置。第二名 Bio-AI，一时脑抽选了这个课，实在太水了，可以说是毫无用处。第三名 AI，本门课的重点是在教 ML，最后几节课又讲了讲 DL，RL 但都非常的短暂。然后是我认为比较好的几门课，第一是 RRTM，教会了我怎么科学的思考问题，怎么找论文，读论文，做研究，课程的两个老师都是布里斯托的大牛，真的让人受益匪浅。第二名 RS，Paul 老师认真负责，且课程设计重实践，真的可以让小白入门机器人系统设计，是非常棒的一门课。最后我想提出一些建议。第一学期的时候尽量先跟着网课把 DL 学了，然后第二学期再跟着网课学习 CV，太水的课就不去听了，真的很浪费时间。有空的时候多读一些论文，了解领域的最新进展。
+
+虽然该专栏停止更新了，但学习和笔记并不会停止更新，由于我主要的研究方向是自动驾驶，所以在知乎上又开设了一些与自动驾驶技术相关的专栏：
+
+- [自动驾驶学习笔记](https://www.zhihu.com/column/c_1508600564347265024)
+- [自动驾驶论文阅读](https://www.zhihu.com/column/c_1472141905845116928)
+
+## 1. Robotics Systems
 
 > 这是一门褒贬不一的课程。很多同学吐槽老师发完讲义啥也不讲，老师太好当了。但我却非常感激 Prof. Paul，原因如下：
 > - 这门课程的讲义质量非常的高。讲义里有知识的传授，设置各种难度引导学生思考，最后完成实践性 Robotic Lab。
@@ -27,7 +37,7 @@
 
 - [覆盖规划算法 （Updating)](https://zhuanlan.zhihu.com/p/430612058)
 
-## Robotics Research Technology and Methods
+## 2. Robotics Research Technology and Methods
 
 > 这部分的内容很少的原因是
 > - 大多是 saminar (研讨会)，基本都是老师讲自己的研究领域，然后我们来写一些总结作为 report。 由于比较怕老师在查重的时候查到我写的开源笔记，所以暂时不更新这部分的内容。
@@ -38,7 +48,7 @@
 - [如何开始学术研究（学期中的总结）](https://zhuanlan.zhihu.com/p/435485456)
 
 
-## Robotic Fundamentals
+## 3. Robotic Fundamentals
 
 > 该部分的课程结合了多个大学的课程，包括本校，以及台大的[机器人学（一）](https://www.coursera.org/learn/robotics1/home/welcome)，英属哥伦比亚大学的[ENGR486](https://www.youtube.com/playlist?list=PLJzZfbLAMTelwaLxFXteeblbY2ytU2AxX)，国立交通大学的[机器人学理论](https://www.bilibili.com/video/BV19z4y197cf?p=16)。还有苏黎世联邦理工大学的[讲义](https://ethz.ch/content/dam/ethz/special-interest/mavt/robotics-n-intelligent-systems/rsl-dam/documents/RobotDynamics2017/RD_HS2017script.pdf)。此课程需要有一定的力学基础，有机械背景的学生学起来会相对轻松。
 
@@ -52,7 +62,7 @@
 - [机器人动力学(Dynamics) -1](https://zhuanlan.zhihu.com/p/460582634)
 - [机器人动力学 (Dynamics) -2](https://zhuanlan.zhihu.com/p/460840272)
 
-## Machine Vision
+## 4. Machine Vision
 
 > 老实说布大的计算机视觉课程~~是不错的~~（只有第一节课还不错，随后教学质量就不行了），但在我查找资料的过程中发现了一个更好的课程，斯坦福大学开设的卷积神经网络的物体识别课程，所以以后的课程我和结合布大和斯坦福的内容做笔记和总结。下面列出关于斯坦福大学的课程的资料链接：
 > - [B站上的视频【熟肉】](https://www.bilibili.com/video/BV1nJ411z7fe?p=4)
@@ -79,7 +89,12 @@
 - [边缘检测 (Edge Detection)](https://zhuanlan.zhihu.com/p/446867045)
 - [CV4. 特征提取 (Features) -- 1](https://zhuanlan.zhihu.com/p/448798850)
 - [CV5. 特征提取 (Features) -- 2](https://zhuanlan.zhihu.com/p/449929845)
-## Human-Robot Interaction
+
+> 对于 MV coursework 的一些建议：
+> - CV Boackbone 的发展历史 AlexNet -> VGG -> ResNet / EfficientNet -> ViT / Swin Transformer 这些模型所对应的论文都很值得阅读。
+> - 一个好用的 CV 框架：[OpenMMLab](https://github.com/open-mmlab)
+
+## 5. Human-Robot Interaction
 
 > 人机交互部分与技术关系不是很大，反而是更偏向于社科。
 
@@ -90,7 +105,7 @@
 - [HRI5. 空间交互(Spatial Interaction)](https://zhuanlan.zhihu.com/p/512990457)
 
 
-## Introduction to Artificial Intelligence
+## 6. Introduction to Artificial Intelligence
 
 > 该门课程的内容分为 Machine Learning 部分和 Deep Learning 部分。教学的方向以数据科学为主。
 > 由于此部分的内容与 Stanford cs229 部分有些重复，因此重复部分会被一笔带过。
@@ -116,7 +131,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 - [AI 2. 搜索算法 (Search Algorithm)](https://zhuanlan.zhihu.com/p/467959715)
 - [AI 3. A* 搜索 (A* Search)](https://zhuanlan.zhihu.com/p/469512859)
 
-## Bio-Inspire Artificial Intelligence
+## 7. Bio-Inspire Artificial Intelligence
 
 > 由于这门课程为 100% 的项目考核，出于时间问题，该部分的笔记可能不全。
 
@@ -124,7 +139,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 - [BIONIC.2 人工进化(Artificial evolution) -- 1](https://zhuanlan.zhihu.com/p/465160379)
 - [BIONIC.2 人工进化(Artificial evolution) -- 2](https://zhuanlan.zhihu.com/p/465160895)
 
-## Advanced Control & Dynamicscs
+## 8. Advanced Control & Dynamicscs
 
 > 此部分的笔记结合本校的课程以及[Matlab 课程](https://www.youtube.com/watch?v=hpeKrMG-WP0&t=44s&ab_channel=MATLAB) 和 [B站 DR_CAN 的视频](https://space.bilibili.com/230105574/channel/series)
 
@@ -138,7 +153,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 - [ACnD 5. 状态观测器 (State Observer)](https://zhuanlan.zhihu.com/p/476786539)
 
 
-## Machine Learning
+## 9. Machine Learning
 
 - [机器学习资料整理(Machine Learning Resources)](https://zhuanlan.zhihu.com/p/450609713)
 - [ML1. 线性回归(Linear Regression) -1](https://zhuanlan.zhihu.com/p/452328359)
@@ -148,7 +163,7 @@ Pytorch 深度学习（布大教的是 TensorFlow）：
 - [ML4. 生成学习算法(Generative Learning algorithms)](https://zhuanlan.zhihu.com/p/458285940)
 - [ML5. 支持向量机 (Support Vector Machine)](https://zhuanlan.zhihu.com/p/463908093)
 
-## Deep Reinforcement Learning
+## 10. Deep Reinforcement Learning
 
 > 此部分的内容是为了毕业论文打基础，并非布大课程。由于前段时间为了赶 Proposal 一口气把 UCL 的 DRL 课全看完了，但没有怎么做笔记，所以先挖个坑，等有空了再慢慢把笔记都补起来。
 
