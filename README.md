@@ -33,9 +33,11 @@
 
 ### Assessment 2
 
+> 这个项目做的很捞，凑活着看看吧。。。
+
 第二部分的项目仓库： [Robot Navigation](https://github.com/Alexbeast-CN/Robot_navigation_webots)
 
-- [覆盖规划算法 （Updating)](https://zhuanlan.zhihu.com/p/430612058)
+- [覆盖规划算法](https://zhuanlan.zhihu.com/p/430612058)
 
 ## 2. Robotics Research Technology and Methods
 
