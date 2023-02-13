@@ -112,16 +112,15 @@ $$^{0}P_5 = ^{0}P_e - l3*R*\left[
 
 对于前三段来说，先通过正向运动学：
 
-$$\begin{aligned}
-    ^{i-1}_{i}T &=\left[
-            \begin{matrix}
+$$\begin{align}
+    ^{i-1}_{i}T &=
+            \begin{bmatrix}
                     𝑐\theta _𝑖&−𝑠\theta _𝑖&0&𝑎_{𝑖−1}\\
                     𝑠\theta _𝑖𝑐\alpha _{𝑖−1}&𝑐\theta _𝑖𝑐\alpha _{𝑖−1}&−𝑠\alpha _{𝑖−1}&−𝑠\alpha _{𝑖−1}𝑑_𝑖\\
                     𝑠\theta _𝑖𝑠\alpha _{𝑖−1}&𝑐\theta _𝑖𝑠\alpha _{𝑖−1}&𝑐\alpha _{𝑖−1}&𝑐\alpha _{𝑖−1}𝑑_𝑖\\
                     0&0&0&1\\
-            \end{matrix}
-                \right]
-\end{aligned}$$
+            \end{bmatrix}
+\end{align}$$
 
 可以得出来的 $^{0}_{3}T$ 。又由于：
 
